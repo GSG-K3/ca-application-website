@@ -1,0 +1,20 @@
+{
+  "name": "ca-application-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-K3/ca-application-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-K3/ca-application-website/issues"
+  },
+  "homepage": "https://github.com/GSG-K3/ca-application-website#readme"
+}
