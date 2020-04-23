@@ -1,35 +1,34 @@
 BEGIN;
 
-            DROP TABLE IF EXISTS users, account, personal_info, expereince, education, mentors, stories
-            CASCADE;
+    DROP TABLE IF EXISTS users, account, personal_info, expereince, education, mentors, stories
+    CASCADE;
 
 DROP TYPE IF EXISTS gender
-, age , westbank_cities , gaza_cities ,code_exp , interset ,  interset , 
-english_speak ,  english_understand ,  employment  ,gaza_university ,westbank_university ,marketing
-    CASCADE;
+, age, westbank,gaza,code_exp,  interset , marketing, english_speak,english_understand, employment, gazaunis,westbankunis
+CASCADE;
 
 
 CREATE TABLE users
 (
-            user_id SERIAL PRIMARY KEY,
-            name VARCHAR(100) NOT NULL,
-            email TEXT NOT NULL,
-            password TEXT NOT NULL
+    user_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL
 
 );
 
 CREATE TABLE account
 (
-            id SERIAL PRIMARY KEY,
-            user_id INTEGER,
-            FOREIGN KEY (user_id) REFERENCES users (user_id),
-            github_link TEXT NOT NULL,
-            freecodecamp_link TEXT NOT NULL,
-            codewars_link TEXT NOT NULL,
-            freecodecamp_scores TEXT NOT NULL,
-            project1_link TEXT NOT NULL,
-            project2_link TEXT NOT NULL,
-            codewars_level TEXT NOT NULL
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    github_link TEXT NOT NULL,
+    freecodecamp_link TEXT NOT NULL,
+    codewars_link TEXT NOT NULL,
+    freecodecamp_scores TEXT NOT NULL,
+    project1_link TEXT NOT NULL,
+    project2_link TEXT NOT NULL,
+    codewars_level TEXT NOT NULL
 );
 
 CREATE TYPE gender AS ENUM
@@ -58,18 +57,18 @@ CREATE TYPE gaza AS ENUM
 
 CREATE TABLE personal_info
 (
-            id SERIAL PRIMARY KEY,
-            user_id INTEGER,
-            FOREIGN KEY (user_id) REFERENCES users (user_id),
-            first_name VARCHAR(100) NOT NULL,
-            last_name VARCHAR(100) NOT NULL,
-            phone NUMERIC NOT NULL,
-            email_info TEXT NOT NULL,
-            motivation TEXT NOT NULL,
-            age_info age,
-            gender_info gender,
-            westbank_cities westbank,
-            gaza_cities gaza
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    phone NUMERIC NOT NULL,
+    email_info TEXT NOT NULL,
+    motivation TEXT NOT NULL,
+    age_info age,
+    gender_info gender,
+    westbank_cities westbank,
+    gaza_cities gaza
 
 );
 
@@ -94,13 +93,13 @@ CREATE TYPE marketing AS ENUM
 
 CREATE TABLE expereince
 (
-            id SERIAL PRIMARY KEY,
-            user_id INTEGER,
-            FOREIGN KEY (user_id) REFERENCES users (user_id),
-            cv TEXT NOT NULL,
-            coding_expereince code_exp,
-            interset_gsg interset,
-            marketing_question marketing
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    cv TEXT NOT NULL,
+    coding_expereince code_exp,
+    interset_gsg interset,
+    marketing_question marketing
 
 );
 
@@ -157,35 +156,35 @@ CREATE TYPE westbankunis AS ENUM
 
 CREATE TABLE education
 (
-            id SERIAL PRIMARY KEY,
-            user_id INTEGER,
-            FOREIGN KEY (user_id) REFERENCES users (user_id),
-            english_speaking english_speak,
-            english_understanding english_understand,
-            emplyoment_status employment,
-            job_title TEXT NOT NULL,
-            gaza_unis gazaunis,
-            westbank_unis westbankunis,
-            major VARCHAR(100) NOT NULL
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    english_speaking english_speak,
+    english_understanding english_understand,
+    emplyoment_status employment,
+    job_title TEXT NOT NULL,
+    gaza_unis gazaunis,
+    westbank_unis westbankunis,
+    major VARCHAR(100) NOT NULL
 
 );
 
 CREATE TABLE stories
 (
-            id SERIAL PRIMARY KEY,
-            name VARCHAR(50) NOT NULL,
-            job_title VARCHAR(100) NOT NULL,
-            description TEXT NOT NULL,
-            picture TEXT NOT NULL
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    job_title VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    picture TEXT NOT NULL
 
 );
 
 CREATE TABLE mentors
 (
-            id SERIAL PRIMARY KEY,
-            name VARCHAR(50) NOT NULL,
-            description TEXT NOT NULL,
-            picture TEXT NOT NULL
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    description TEXT NOT NULL,
+    picture TEXT NOT NULL
 
 );
 

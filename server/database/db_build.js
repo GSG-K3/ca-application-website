@@ -5,7 +5,6 @@ const connection = require('./connection');
 const dbSql = fs
 	.readFileSync(path.join(__dirname, 'sql', 'db_build.sql'))
 	.toString();
-console.log(dbSql);
 
 connection
 	.query(dbSql)
