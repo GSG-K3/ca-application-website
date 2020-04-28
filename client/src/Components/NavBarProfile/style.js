@@ -7,13 +7,13 @@ const useStyles = makeStyles((theme) => ({
 	image: {
 		width: '230px',
 		height: '129px',
-		marginLeft: '8.75rem',
-		[theme.breakpoints.up('lg')]: {
-			marginLeft: '2.5rem',
-		},
-		[theme.breakpoints.up('xl')]: {
-			marginLeft: '8.75rem',
-		},
+		// marginLeft: '8.75rem',
+		// [theme.breakpoints.up('lg')]: {
+		// 	// marginLeft: '2.5rem',
+		// },
+		// [theme.breakpoints.up('xl')]: {
+		// 	// marginLeft: '3.75rem',
+		// },
 	},
 	typography: {
 		display: 'flex',
@@ -46,6 +46,20 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up('xl')]: {
 			fontSize: '1.65rem',
 		},
+	},
+	iconNotification: {
+		color: '#3F3D56',
+		padding: 'unset',
+		marginLeft: 35,
+		marginRight: 35,
+		marginTop: 8,
+	},
+	iconProfile: {
+		color: '#3F3D56',
+	},
+	large: { width: theme.spacing(7), height: theme.spacing(7) },
+	text: {
+		paddingTop: 4,
 	},
 }));
 
