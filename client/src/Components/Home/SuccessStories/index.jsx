@@ -7,7 +7,6 @@ import ReactPaginate from "react-paginate";
 import avatar from "../../../assets/success story Image.svg";
 import quote from "../../../assets/quote-left.svg";
 
-// import Button from '@material-ui/core/Button';
 
 const styles = makeStyles((theme) => ({
   "*": {
@@ -65,13 +64,7 @@ export default function SupportTeam() {
 
   return (
     <Fragment>
-				<Paper elevation="24" style={{borderRadius:'70px'}} >
-
-
-</Paper>
-
-
-			<Paper elevation="0" style={{borderRadius:'80px'}} >
+			<Paper elevation="24" style={{borderRadius:'80px'}} >
       <Typography className={classes.title} variant="h4">
         <Typed strings={["Success Stories"]} typeSpeed={50} />
       </Typography>
@@ -113,8 +106,8 @@ export default function SupportTeam() {
         desire, giving my brain some time to relax. Because the load that I
         wanted to tackle would be an obstacle for me.”XT
       </Typography>
-			</Paper>
       <img src={quote} className={classes.name} alignItems="center" />
+			</Paper>
     </Fragment>
   );
 }
