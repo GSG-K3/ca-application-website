@@ -1,6 +1,8 @@
 import React, { Fragment, Component } from 'react';
 import NavBar from '../../Components/NavBar';
 import axios from 'axios';
+import { withStyles } from '@material-ui/core';
+import styles from './style';
 
 class Home extends Component {
 	state = {};
@@ -11,13 +13,10 @@ class Home extends Component {
 			.catch((err) => console.log(err));
 	}
 	render() {
-		return (
-			<Fragment>
-				<NavBar />
-				<h1>Hello this is a home screen</h1>
-			</Fragment>
-		);
+		const { classes } = this.props;
+
+		return <Fragment></Fragment>;
 	}
 }
 
-export default Home;
+export default withStyles(styles)(Home);

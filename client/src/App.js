@@ -8,7 +8,6 @@ import {
 
 import Home from './screens/Home';
 import NotFoundPage from './screens/NotFoundPage';
-
 import './App.css';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/" exact component={Home} />
-
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>
