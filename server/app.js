@@ -11,6 +11,6 @@ app.use(router);
 
 app.use(express.static(join(__dirname, '..', 'client', 'build')));
 
-app.set('port', process.env.PORT || 4000);
+// app.set('port', process.env.PORT || 4000);
 
 module.exports = app;

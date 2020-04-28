@@ -6,8 +6,8 @@ import {
 	Redirect,
 } from 'react-router-dom';
 
-import Home from './Screens/Home';
-import NotFoundPage from './Screens/NotFoundPage';
+import Home from './screens/Home';
+import NotFoundPage from './screens/NotFoundPage';
 
 import './App.css';
 
@@ -17,6 +17,7 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/" exact component={Home} />
+
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>
