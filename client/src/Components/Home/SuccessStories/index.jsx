@@ -111,36 +111,3 @@ export default function SupportTeam() {
     </Fragment>
   );
 }
-
-// <Button
-// 					variant="contained"
-// 					color="primary"
-// 					classes={{
-// 						disabled: disabledBtn,
-// 						root: backgroundStyle,
-// 					}}
-// 					className={disabledBtn}
-// 				>{`OK`}</Button>
-
-      // <Typography className={classes.title} variant="h4">
-      //   <Typed strings={["Support Team"]} typeSpeed={50} backSpeed={50} loop />
-      // </Typography>
-      // <Grid container spacing={1}>
-      //   <Grid item md={1}>
-      //     <Avatar className={classes.avatar} src={avatar} alt="success Story" />
-      //   </Grid>
-      //   <Grid item md={6}>
-      //     <Typography className={classes.name}>
-      //       name <br />
-      //       GSG-Community
-      //     </Typography>
-      //   </Grid>
-      // </Grid>
-      // <Typography className={classes.para}>
-      //   Team After reading about what had to be done, I decided to make a plan
-      //   for how I should study in order to achieve my goal and finish the
-      //   courses, because I didn't have time for studying at a leisurely pace. My
-      //   objective was to learn quickly, but not so quickly as to destroy the
-      //   desire, giving my brain some time to relax. Because the load that I
-      //   wanted to tackle would be an obstacle for me.”XT
-      // </Typography>

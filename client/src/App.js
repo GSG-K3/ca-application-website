@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import SupportTeam from './Components/Home/SuccessStories'
+import SuccessStories from './Components/Home/SuccessStories'
 
 function App() {
   return (
     <Fragment>
-    <SupportTeam/>
+    <SuccessStories/>
     
     </Fragment>
   );
