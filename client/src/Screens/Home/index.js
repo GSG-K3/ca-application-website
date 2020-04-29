@@ -1,12 +1,24 @@
 import React, { Fragment, Component } from 'react';
-import NavBarProfile from '../../Components/NavBarProfile';
+import SupportTeam from '../SupportTeam';
+import axios from 'axios';
 
 class Home extends Component {
-	state = {};
+	state = {
+		data: [],
+	};
+	componentDidMount() {
+		axios
+			.get('/home/support-team')
+			.then((result) => {
+				const { data } = result;
+				this.setState({ data });
+			})
+			.catch((err) => console.log(err));
+	}
 	render() {
 		return (
 			<Fragment>
-				<NavBarProfile />
+				<SupportTeam />
 			</Fragment>
 		);
 	}
