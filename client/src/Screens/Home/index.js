@@ -18,7 +18,7 @@ class Home extends Component {
 	render() {
 		return (
 			<Fragment>
-				<SupportTeam />
+				<SupportTeam data={this.state.data} />
 			</Fragment>
 		);
 	}
