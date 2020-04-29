@@ -4,23 +4,29 @@ const useStyles = makeStyles((theme) => ({
 	grid: {
 		height: '100px',
 	},
+	menuGrind: {
+		[theme.breakpoints.between('0', '1035')]: {
+			display: 'none !important;',
+		},
+	},
+	IconButtonGrid: {
+		textAlign: 'end',
+		alignSelf: 'center',
+		padding: '0px 43px',
+	},
 	image: {
 		width: '230px',
 		height: '129px',
-		marginLeft: '8.75rem',
-		[theme.breakpoints.up('lg')]: {
-			marginLeft: '2.5rem',
-		},
-		[theme.breakpoints.up('xl')]: {
-			marginLeft: '8.75rem',
+		[theme.breakpoints.down('1045')]: {
+			marginLeft: '30px',
 		},
 	},
 	typography: {
 		display: 'flex',
 		direction: 'row',
-		justify: 'center',
 		fontStyle: 'normal',
 		color: '#3F6989',
+		justifyContent: 'center',
 	},
 	link: {
 		fontSize: '1.625rem',
@@ -50,12 +56,3 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default useStyles;
-
-// colors: {
-//   darkBlue: '#3F6989',
-//   skyBlue: '#4CB7A7',
-//   darkOrange: '#FB6C04',
-//   titleColor: '#235378',
-//   lightGray: '#899FAA',
-//   white: '#FFFFFF',
-// },

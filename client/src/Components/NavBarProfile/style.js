@@ -4,27 +4,52 @@ const useStyles = makeStyles((theme) => ({
 	grid: {
 		height: '100px',
 	},
+	menuGrid: {
+		[theme.breakpoints.between('0', '1035')]: {
+			display: 'none !important;',
+		},
+	},
+	btnMenu: {
+		[theme.breakpoints.between('0', '1034')]: {
+			display: 'display !important',
+		},
+
+		[theme.breakpoints.between('1035', 'xl')]: {
+			display: 'none !important',
+		},
+
+		position: 'fixed !important;',
+		right: 40,
+		top: 48,
+	},
 	image: {
 		width: '230px',
 		height: '129px',
-		// marginLeft: '8.75rem',
-		// [theme.breakpoints.up('lg')]: {
-		// 	// marginLeft: '2.5rem',
-		// },
-		// [theme.breakpoints.up('xl')]: {
-		// 	// marginLeft: '3.75rem',
-		// },
+		[theme.breakpoints.down('1045')]: {
+			marginLeft: '30px',
+		},
+	},
+	imageGrid: {
+		[theme.breakpoints.down('md')]: {
+			alignContent: 'center',
+		},
 	},
 	typography: {
 		display: 'flex',
-		direction: 'row',
-		justify: 'center',
+		justifyContent: 'center',
 		fontStyle: 'normal',
 		color: '#3F6989',
+		[theme.breakpoints.between('0', '1283')]: {
+			justifyContent: 'unset',
+		},
 	},
 	link: {
 		fontSize: '1.625rem',
 		paddingLeft: '2.75rem',
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '2.8rem',
+			paddingLeft: '1.75rem',
+		},
 		'&:active': {
 			fontSize: '1.8rem',
 			color: '#2c495f',
@@ -64,12 +89,3 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default useStyles;
-
-// colors: {
-//   darkBlue: '#3F6989',
-//   skyBlue: '#4CB7A7',
-//   darkOrange: '#FB6C04',
-//   titleColor: '#235378',
-//   lightGray: '#899FAA',
-//   white: '#FFFFFF',
-// },

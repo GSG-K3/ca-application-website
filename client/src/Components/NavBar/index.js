@@ -1,8 +1,7 @@
 import React, { Fragment, Component } from 'react';
-import axios from 'axios';
 import myStyles from './style';
-import { withStyles } from '@material-ui/core/styles';
 import { Grid, Typography, Link } from '@material-ui/core';
+import TemporaryDrawer from '../TemporaryDrawer';
 
 const NavBar = () => {
 	const classes = myStyles();
@@ -15,15 +14,23 @@ const NavBar = () => {
 				alignItems="center"
 				className={classes.grid}
 			>
-				<Grid item xs={6} xl={6}>
+				<Grid item lg={1}></Grid>
+				<Grid container xs={12} md={3}>
 					<img
 						className={classes.image}
 						src={require('./gsg_logo.png')}
 						alt="logopic"
 					/>
 				</Grid>
-
-				<Grid item xs={6} xl={6} wrap>
+				<TemporaryDrawer />
+				<Grid
+					item
+					xs={12}
+					md={8}
+					wrap
+					alignContent="flex-end"
+					className={classes.menuGrind}
+				>
 					<Typography className={classes.typography}>
 						<Link
 							className={classes.link}
