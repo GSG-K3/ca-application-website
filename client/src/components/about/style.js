@@ -5,11 +5,10 @@ const styles = createStyles((theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		flexWrap: 'wrap',
-		
 		backgroundColor: 'F2F2F2',
-		margin: 50, 
+		margin: 50,
 	},
-	aboutContainer:{
+	aboutContainer: {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
@@ -17,24 +16,28 @@ const styles = createStyles((theme) => ({
 
 	aboutHeader: {
 		textAlign: 'center',
-		fontSize: '20px',
-		fontFamily: 'Lobster Two',
+		fontSize: '25px',
+		fontFtyle: 'normal',
+		fontFamily: 'Roboto',
+		fontWeight: 'bold',
 		color: '#4CB7A7',
-		margin:'20px'
 	},
 	aboutCard: {
-		display:' flex',
+		display: ' flex',
 		flexDirection: 'column',
 		alignitems: 'center',
-		width: '300px',
+		width: '330px',
 		textAlign: 'left',
-		padding: '50px',
+		padding: '40px',
 		borderRadius: '40px',
 		margin: '30px',
 		marginLeft: '50px',
 		backgroundColor: '#F2F2F2',
-		fontFamily: 'robtoContent',
-		height: '200px',
+		fontFamily: 'Roboto',
+		fontWeight: 'bold',
+		fontSize: '20px',
+		lineHeight: '15px',
+		height: '220px',
 		fontSize: '10px',
 	},
 
@@ -45,11 +48,13 @@ const styles = createStyles((theme) => ({
 	buttonAbout: {
 		margin: 'auto',
 		backgroundColor: ' #4CB7A7',
-		width: '95px',
+		width: '110px',
 		color: '#fff',
 		padding: ' 6px',
-		borderRadius: '10px',
-		fontFamily: 'Roboto Condensed',
+		borderRadius: '61px',
+		fontFtyle: 'normal',
+		fontFamily: 'Roboto',
+		fontWeight: 'bold',
 		fontSize: '10px',
 	},
 }));
