@@ -7,12 +7,14 @@ import { MuiThemeProvider } from "@material-ui/core/";
 import theme from "./theme";
 
 ReactDOM.render(
+
   <MuiThemeProvider theme={theme}>
   <React.StrictMode >
     <App />
   </React.StrictMode>
   </MuiThemeProvider>,
   document.getElementById('root')
+
 );
 
 // If you want your app to work offline and load faster, you can change
