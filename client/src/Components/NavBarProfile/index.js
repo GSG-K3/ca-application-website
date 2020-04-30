@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react';
 import myStyles from './style';
-import { Grid, IconButton, Typography, Link, Avatar } from '@material-ui/core';
+import { Grid, IconButton, Typography, Avatar } from '@material-ui/core';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import classNames from 'classnames';
-import TemporaryDrawer from '../TemporaryDrawer';
+import TemporaryDrawerProfile from '../TemporaryDrawerProfile';
+import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 const NavBarProfile = () => {
 	const classes = myStyles();
-	const preventDefault = (event) => event.preventDefault();
 	return (
 		<Fragment>
 			<Grid
@@ -32,7 +33,7 @@ const NavBarProfile = () => {
 						alt="logopic"
 					/>
 				</Grid>
-				<TemporaryDrawer />
+				<TemporaryDrawerProfile />
 				<Grid
 					item
 					xs={12}
@@ -43,58 +44,72 @@ const NavBarProfile = () => {
 				>
 					<Typography className={classes.typography}>
 						<Link
+							activeClass="active"
+							to="home"
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
 							className={classes.link}
-							href="/home"
-							underline="hover"
-							onClick={preventDefault}
 						>
 							Home
 						</Link>
 						<Link
+							activeClass="active"
+							to="about"
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
 							className={classes.link}
-							href="/about"
-							onClick={preventDefault}
 						>
 							About
 						</Link>
 
 						<Link
+							activeClass="active"
+							to="steps"
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
 							className={classes.link}
-							href="/steps"
-							onClick={preventDefault}
 						>
 							Steps
 						</Link>
 
 						<Link
+							activeClass="active"
+							to="mentors"
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
 							className={classes.link}
-							href="/mentors"
-							onClick={preventDefault}
 						>
 							Mentors
 						</Link>
 
-						<Link
-							className={classes.link}
-							href="/contact-us"
-							onClick={preventDefault}
-						>
+						<RouterLink to="/contact-us" className={classes.link}>
 							Contact
-						</Link>
+						</RouterLink>
+						<RouterLink to="/login" className={classes.link}>
+							Login
+						</RouterLink>
 						<label htmlFor="icon-button-file">
 							<IconButton
-								className={classes.iconNotification}
 								aria-label="notification button"
 								component="span"
+								className={classes.notiBtn}
 							>
 								<NotificationsActiveIcon />
 							</IconButton>
 						</label>
 						<label htmlFor="icon-button-file">
 							<IconButton
-								className={classes.iconProfile}
 								aria-label="profile button"
 								component="span"
+								className={classes.notiBtn}
 							>
 								<ArrowDropDownIcon />
 							</IconButton>
@@ -102,7 +117,7 @@ const NavBarProfile = () => {
 						<Avatar
 							alt="Cindy Baker"
 							src={require('./girl.png')}
-							className={classes.large}
+							className={classes.avatarPic}
 						/>
 						<Typography
 							className={classNames(classes.typography, classes.text)}

@@ -17,6 +17,7 @@ import {
 	People,
 	ContactMail,
 	AssignmentInd,
+	ExitToApp,
 } from '@material-ui/icons';
 
 import MenuBar from '../MenuBar';
@@ -124,12 +125,28 @@ export default function TemporaryDrawer() {
 			</List>
 			<Divider />
 			<List>
-				<ListItem button key={'login'}>
+				<ListItem button key={'profile'}>
 					<ListItemIcon>
 						<AssignmentInd color="primary" />
 					</ListItemIcon>
+					<RouterLink href="/profile" className={classes.link}>
+						<ListItemText primary="Profile" />
+					</RouterLink>
+				</ListItem>
+				<ListItem button key={'deleteAccount'}>
+					<ListItemIcon>
+						<AssignmentInd color="primary" />
+					</ListItemIcon>
+					<RouterLink href="/delete-account" className={classes.link}>
+						<ListItemText primary="Delete Account" />
+					</RouterLink>
+				</ListItem>
+				<ListItem button key={'logout'}>
+					<ListItemIcon>
+						<ExitToApp color="primary" />
+					</ListItemIcon>
 					<RouterLink href="/login" className={classes.link}>
-						<ListItemText primary="Login" />
+						<ListItemText primary="Log Out" />
 					</RouterLink>
 				</ListItem>
 			</List>

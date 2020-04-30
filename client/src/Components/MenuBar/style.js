@@ -2,11 +2,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 	btnMenu: {
-		[theme.breakpoints.between('0', '1034')]: {
+		[theme.breakpoints.between('0', '1094')]: {
 			display: 'display !important',
 		},
 
-		[theme.breakpoints.between('1035', 'xl')]: {
+		[theme.breakpoints.between('1094', 'xl')]: {
 			display: 'none !important',
 		},
 

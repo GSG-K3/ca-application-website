@@ -4,8 +4,8 @@ const useStyles = makeStyles((theme) => ({
 	grid: {
 		height: '100px',
 	},
-	menuGrind: {
-		[theme.breakpoints.between('0', '1035')]: {
+	menuGrid: {
+		[theme.breakpoints.between('0', '1094')]: {
 			display: 'none !important;',
 		},
 	},
@@ -31,13 +31,14 @@ const useStyles = makeStyles((theme) => ({
 	link: {
 		fontSize: '1.625rem',
 		paddingLeft: '2.75rem',
+		textDecoration: 'unset',
 		'&:active': {
-			fontSize: '1.8rem',
 			color: '#2c495f',
 			background: 'none',
 		},
 		'&:hover': {
 			color: '#3F6989',
+			textDecoration: 'underline',
 		},
 		'&:visited': {
 			color: '#3F6989',

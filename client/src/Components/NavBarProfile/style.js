@@ -5,22 +5,9 @@ const useStyles = makeStyles((theme) => ({
 		height: '100px',
 	},
 	menuGrid: {
-		[theme.breakpoints.between('0', '1035')]: {
+		[theme.breakpoints.between('0', '1095')]: {
 			display: 'none !important;',
 		},
-	},
-	btnMenu: {
-		[theme.breakpoints.between('0', '1034')]: {
-			display: 'display !important',
-		},
-
-		[theme.breakpoints.between('1035', 'xl')]: {
-			display: 'none !important',
-		},
-
-		position: 'fixed !important;',
-		right: 40,
-		top: 48,
 	},
 	image: {
 		width: '230px',
@@ -46,17 +33,14 @@ const useStyles = makeStyles((theme) => ({
 	link: {
 		fontSize: '1.625rem',
 		paddingLeft: '2.75rem',
-		[theme.breakpoints.down('sm')]: {
-			fontSize: '2.8rem',
-			paddingLeft: '1.75rem',
-		},
+		textDecoration: 'unset',
 		'&:active': {
-			fontSize: '1.8rem',
 			color: '#2c495f',
 			background: 'none',
 		},
 		'&:hover': {
 			color: '#3F6989',
+			textDecoration: 'underline',
 		},
 		'&:visited': {
 			color: '#3F6989',
@@ -72,17 +56,15 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: '1.65rem',
 		},
 	},
-	iconNotification: {
-		color: '#3F3D56',
-		padding: 'unset',
-		marginLeft: 35,
-		marginRight: 35,
-		marginTop: 8,
+	notiBtn: {
+		bottom: '7px',
+		left: '10px',
 	},
-	iconProfile: {
-		color: '#3F3D56',
+	avatarPic: {
+		marginRight: 15,
+		width: theme.spacing(7),
+		height: theme.spacing(7),
 	},
-	large: { width: theme.spacing(7), height: theme.spacing(7) },
 	text: {
 		paddingTop: 4,
 	},

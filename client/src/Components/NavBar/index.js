@@ -1,11 +1,12 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment } from 'react';
 import myStyles from './style';
-import { Grid, Typography, Link } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import TemporaryDrawer from '../TemporaryDrawer';
+import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 const NavBar = () => {
 	const classes = myStyles();
-	const preventDefault = (event) => event.preventDefault();
 	return (
 		<Fragment>
 			<Grid
@@ -29,57 +30,62 @@ const NavBar = () => {
 					md={8}
 					wrap
 					alignContent="flex-end"
-					className={classes.menuGrind}
+					className={classes.menuGrid}
 				>
 					<Typography className={classes.typography}>
 						<Link
+							activeClass="active"
+							to="home"
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
 							className={classes.link}
-							href="/home"
-							underline="hover"
-							onClick={preventDefault}
 						>
 							Home
 						</Link>
-
 						<Link
+							activeClass="active"
+							to="about"
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
 							className={classes.link}
-							href="/about"
-							onClick={preventDefault}
 						>
 							About
 						</Link>
 
 						<Link
+							activeClass="active"
+							to="steps"
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
 							className={classes.link}
-							href="/steps"
-							onClick={preventDefault}
 						>
 							Steps
 						</Link>
 
 						<Link
+							activeClass="active"
+							to="mentors"
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
 							className={classes.link}
-							href="/mentors"
-							onClick={preventDefault}
 						>
 							Mentors
 						</Link>
 
-						<Link
-							className={classes.link}
-							href="/contact-us"
-							onClick={preventDefault}
-						>
+						<RouterLink to="/contact-us" className={classes.link}>
 							Contact
-						</Link>
-
-						<Link
-							className={classes.link}
-							href="/login"
-							onClick={preventDefault}
-						>
+						</RouterLink>
+						<RouterLink to="/login" className={classes.link}>
 							Login
-						</Link>
+						</RouterLink>
 					</Typography>
 				</Grid>
 			</Grid>
