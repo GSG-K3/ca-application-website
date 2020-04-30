@@ -1,48 +1,47 @@
 {
-  "name": "ca-application-website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint . --fix",
-    "build:client": "cd client && npm run build",
-    "server": "cd server && nodemon src/app.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GSG-K3/ca-application-website.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GSG-K3/ca-application-website/issues"
-  },
-  "homepage": "https://github.com/GSG-K3/ca-application-website#readme",
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.20.2",
-    "prettier": "^2.0.5"
-  },
-  "dependencies": {
-    "@hapi/joi": "^17.1.1",
-    "@material-ui/core": "^4.9.12",
-    "axios": "^0.19.2",
-    "bcrypt": "^4.0.1",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "concurrently": "^5.2.0",
-    "cookie-parser": "^1.4.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "nodemon": "^2.0.3",
-    "pg": "^7.18.2",
-    "react-router-dom": "^5.1.2",
-    "request": "^2.88.2"
-  }
+	"name": "ca-application-website",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build:client": "cd client && npm run build",
+		"server": "nodemon server/index.js ",
+		"client": "cd client && npm start",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/GSG-K3/ca-application-website.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/GSG-K3/ca-application-website/issues"
+	},
+	"homepage": "https://github.com/GSG-K3/ca-application-website#readme",
+	"devDependencies": {
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb-base": "^14.1.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.20.2",
+		"prettier": "^2.0.5"
+	},
+	"dependencies": {
+		"@hapi/joi": "^17.1.1",
+		"@material-ui/core": "^4.9.11",
+		"@material-ui/icons": "^4.9.1",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"concurrently": "^5.2.0",
+		"cookie-parser": "^1.4.5",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"jsonwebtoken": "^8.5.1",
+		"nodemon": "^2.0.3",
+		"pg": "^7.4.3",
+		"react-router-dom": "^5.1.2",
+		"request": "^2.88.2"
+	}
 }

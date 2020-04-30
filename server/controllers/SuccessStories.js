@@ -6,7 +6,7 @@ const getStories = (req, res) => {
 
   getStoriesQuery()
     .then((result) => res.json(result))
-    .catch((error) => console.log("An error in SuccessStories-controller"));
+    .catch((error) => {throw new Error(error)});
 };
 
 module.exports = getStories;
