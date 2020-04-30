@@ -1,13 +1,14 @@
 const { Pool } = require('pg');
-const dotEnv = require('dotenv');
+require('dotenv').config();
 
-dotEnv.config();
+
 
 const connectionString = process.env.DATABASE_URL;
-
-if (!connectionString) throw new Error('failed to connect with the database');
+console.log('****connection occured at connection.js')
+if (!connectionString) 
+console.log('connectionString: ',connectionString);
 
 module.exports = new Pool({
 	connectionString,
-	ssl: !connectionString.includes('locahost'),
+	ssl: true,
 });

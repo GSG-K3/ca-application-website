@@ -3,8 +3,8 @@ BEGIN;
     DROP TABLE IF EXISTS users, account, personal_info, expereince, education, mentors, stories
     CASCADE;
 
-DROP TYPE IF EXISTS gender
-, age, westbank,gaza,code_exp,  interset , marketing, english_speak,english_understand, employment, gazaunis,westbankunis
+DROP TYPE IF EXISTS 
+gender, age, westbank,gaza,code_exp,  interset , marketing, english_speak,english_understand, employment, gazaunis,westbankunis
 CASCADE;
 
 
