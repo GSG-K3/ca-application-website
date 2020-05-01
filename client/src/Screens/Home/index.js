@@ -14,12 +14,12 @@ class Home extends Component {
 		return (
 			<Fragment>
 				<div id="home">
-					<NavBarProfile />
-					{/* <NavBar /> */}
+					{/* <NavBarProfile />
+					<NavBar />
 					<About />
 					<Requierments />
 					<SupportTeam />
-					<Contact />
+					<Contact /> */}
 					<Footer />
 				</div>
 			</Fragment>
