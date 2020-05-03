@@ -15,8 +15,7 @@ function App() {
 		<Fragment>
 			<Router>
 				<Switch>
-					<Route path="/" exact component={Home} />
-					<Route path= "/api/home/success-stories" exact component={Home} />
+					<Route path= "/home/success-stories" exact component={Home} />
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>

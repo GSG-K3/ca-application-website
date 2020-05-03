@@ -1,11 +1,12 @@
 import React, { Fragment, Component } from 'react';
+import SuccessStories from '../../Components/Home/SuccessStories'
 
 class Home extends Component {
 	state = {};
 	render() {
 		return (
 			<Fragment>
-				<h1>Hello this is a home screen</h1>
+				<SuccessStories />
 			</Fragment>
 		);
 	}

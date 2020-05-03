@@ -1,9 +1,14 @@
 import React, { Fragment, Component } from 'react';
+import error from '../../assets/error.svg';
 
 class NotFoundPage extends Component {
 	state = {};
 	render() {
-		return <Fragment>Hello this is a 404 page</Fragment>;
+		return (
+			<Fragment>
+				<img src={error} />
+			</Fragment>
+		);
 	}
 }
 

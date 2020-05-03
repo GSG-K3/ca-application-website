@@ -23,16 +23,13 @@ const styles = makeStyles((theme) => ({
 		marginLeft: theme.spacing(45),
 		marginBottom: '1rem',
 		alignItems: 'center',
-
-		// padding: theme.spacing(14)
 	},
 	avatarPrm: {
 		width: theme.spacing(15),
 		height: theme.spacing(15),
 		marginLeft: theme.spacing(45),
 		marginBottom: '1rem',
-		// alignItems: "center"
-	},
+		},
 	avatarSec: {
 		width: theme.spacing(9),
 		height: theme.spacing(9),
@@ -42,7 +39,6 @@ const styles = makeStyles((theme) => ({
 	},
 	title: {
 		color: '#235378',
-		// marginLeft: '35rem',
 		marginTop: '3rem',
 		marginBottom: '2rem',
 		textAlign: 'center',
