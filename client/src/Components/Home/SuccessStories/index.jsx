@@ -64,7 +64,7 @@ export default function SupportTeam() {
 
 
 	useEffect(() => {
-		axios.get('/api/home/success-stories')
+		axios.get('/api/success-stories')
 			.then((response) => {
 				console.log(response.data);
 				namefn(response.data[0]);
