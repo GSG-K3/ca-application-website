@@ -13,7 +13,7 @@ import Typed from 'react-typed';
 import ReactPaginate from 'react-paginate';
 import avatar from '../../../assets/success story Image.svg';
 import quote from '../../../assets/quote-left.svg';
-import error from '../../../assets/error.svg'
+import error from '../../../assets/error1.svg'
 import axios from 'axios';
 
 const styles = makeStyles((theme) => ({
@@ -66,7 +66,6 @@ export default function SupportTeam() {
 	useEffect(() => {
 		axios.get('/api/home/success-stories')
 			.then((response) => {
-				console.log('HoooorYY');
 				console.log(response.data);
 				namefn(response.data[0]);
 				})
@@ -118,8 +117,7 @@ export default function SupportTeam() {
 				</Typography>
 				<img src={quote} className={classes.name} />
 			</Paper>
-			{/* <div>{(Name.picture)} </div> */}
-		</Fragment>
+			</Fragment>
 	):(
 		<div> Sorry !! an Error occurred  ... <br/>
 		<img src={error}/> </div>
