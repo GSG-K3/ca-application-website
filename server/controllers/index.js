@@ -1,8 +1,3 @@
-const express = require('express');
+const login = require('./login');
 
-const router = express.Router();
-router.get('/', (request, response) => {
-	response.send('response from router get');
-});
-
-module.exports = router;
+module.exports = login;

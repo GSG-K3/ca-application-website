@@ -7,6 +7,7 @@ import Requierments from '../Requierments';
 import Contact from '../Contact';
 import SupportTeam from '../SupportTeam';
 import Footer from '../Footer';
+// import Login from '../Login';
 
 class Home extends Component {
 	state = {};
@@ -20,7 +21,8 @@ class Home extends Component {
 					<Requierments />
 					<SupportTeam />
 					<Contact /> */}
-					<Footer />
+					{/* <Footer /> */}
+					{/* <Login /> */}
 				</div>
 			</Fragment>
 		);
