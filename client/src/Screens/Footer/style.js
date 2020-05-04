@@ -6,6 +6,9 @@ const style = (theme: Theme) =>
 			height: 288,
 			color: 'white',
 			textAlign: 'center',
+			[theme.breakpoints.down('216')]: {
+				height: 217,
+			},
 		},
 		firstText: {
 			paddingTop: 38,
@@ -16,6 +19,10 @@ const style = (theme: Theme) =>
 			[theme.breakpoints.down('382')]: {
 				paddingTop: 10,
 				fontSize: 15,
+			},
+			[theme.breakpoints.down('216')]: {
+				paddingTop: 5,
+				fontSize: 12,
 			},
 		},
 		btn: {
@@ -34,6 +41,15 @@ const style = (theme: Theme) =>
 				width: 150,
 				height: 50,
 				fontSize: 15,
+			},
+			[theme.breakpoints.down('216')]: {
+				height: 36,
+				fontSize: 12,
+			},
+		},
+		thirdText: {
+			[theme.breakpoints.down('216')]: {
+				fontSize: 22,
 			},
 		},
 		smallGrid: { height: 88 },

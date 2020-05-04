@@ -15,7 +15,7 @@ class Footer extends Component {
 						<Typography paragraph variant="h5" className={classes.firstText}>
 							Thinking of Development?
 						</Typography>
-						<Typography variant="h4">
+						<Typography variant="h4" className={classes.thirdText}>
 							Do you know someone who’d love this program?
 						</Typography>
 					</Grid>
