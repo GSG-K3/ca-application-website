@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import Home from './Screens/Home';
+import SignUp from './Screens/SignUp'
 import NotFoundPage from './Screens/NotFoundPage';
 
 
@@ -16,7 +17,7 @@ function App() {
 		<Fragment>
 			<Router>
 				<Switch>
-					<Route exact path="/signUp" component={Home}/>
+					<Route exact path="/signUp" component={SignUp}/>
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>

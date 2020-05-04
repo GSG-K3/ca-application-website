@@ -19,7 +19,7 @@ import Paper from '@material-ui/core/Paper';
 class SignUp extends Component {
 	componentDidMount() {
 		axios
-			.get('/signUp')
+			.post('/api/signUp')
 			.then((response) => console.log(response))
 			.catch((error) => console.log(error));
 	}
