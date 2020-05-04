@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from 'react';
-import axios from 'axios';
 
 class SupportTeam extends Component {
 	state = {};
