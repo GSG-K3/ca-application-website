@@ -6,7 +6,6 @@ import {
 	Redirect,
 } from 'react-router-dom';
 import Home from './Screens/Home';
-import NotFoundPage from './Screens/NotFoundPage';
 
 import './App.css';
 
