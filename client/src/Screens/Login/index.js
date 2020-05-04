@@ -38,7 +38,6 @@ class Login extends Component {
 	};
 
 	render() {
-		console.log(this.state);
 		const { classes } = this.props;
 		return (
 			<Fragment>
