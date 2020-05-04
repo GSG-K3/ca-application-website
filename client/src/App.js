@@ -9,7 +9,6 @@ import Home from './Screens/Home';
 import NotFoundPage from './Screens/NotFoundPage';
 
 import './App.css';
-import About from './Screens/Home/index';
 
 function App() {
 	return (
@@ -20,9 +19,6 @@ function App() {
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>
-				<div className="App">
-					<About />
-				</div>
 			</Router>
 		</Fragment>
 	);
