@@ -17,6 +17,7 @@ function App() {
 		<Fragment>
 			<Router>
 				<Switch>
+					<Route exact path='/home' component={Home}/>
 					<Route exact path="/signUp" component={SignUp}/>
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
