@@ -46,6 +46,9 @@ git clone https://github.com/GSG-K3/ca-application-website.git
 ```shell 
  $ cd ca-application-website
  $ npm i
+ $ cd client 
+ $ npm i
+ $ cd ..
  $ npm run dev
 ```
 ---
