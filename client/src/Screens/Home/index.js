@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-
 import NavBarProfile from '../../Components/NavBarProfile';
 import NavBar from '../../Components/NavBar';
 import TemporaryDrawer from '../../Components/TemporaryDrawer';
@@ -27,6 +26,7 @@ class Home extends Component {
 		return (
 			<Fragment>
 				<div id="home">
+					<Footer />
 					{/* <SupportTeam data={this.state.data} /> */}
 					{/* <NavBarProfile /> */}
 					{/* <NavBar /> */}
