@@ -1,4 +1,6 @@
 import React, { Fragment, Component } from 'react';
+import axios from 'axios';
+
 import NavBarProfile from '../../Components/NavBarProfile';
 import NavBar from '../../Components/NavBar';
 import TemporaryDrawer from '../../Components/TemporaryDrawer';
@@ -9,12 +11,23 @@ import Footer from '../../Components/Footer';
 import { withStyles } from '@material-ui/core';
 import styles from './style';
 class Home extends Component {
-	state = {};
-
+	state = {
+		data: [],
+	};
+	componentDidMount() {
+		axios
+			.get('/home/support-team')
+			.then((result) => {
+				const { data } = result;
+				this.setState({ data });
+			})
+			.catch((err) => console.log(err));
+	}
 	render() {
 		return (
 			<Fragment>
 				<div id="home">
+					{/* <SupportTeam data={this.state.data} /> */}
 					{/* <NavBarProfile /> */}
 					{/* <NavBar /> */}
 					{/* <About /> */}
