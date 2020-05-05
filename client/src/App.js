@@ -1,3 +1,4 @@
+
 import React, { Fragment, Component } from 'react';
 import {
 	BrowserRouter as Router,
@@ -5,10 +6,11 @@ import {
 	Switch,
 	Redirect,
 } from 'react-router-dom';
+
 import Home from './Screens/Home';
-import NotFoundPage from './Screens/NotFoundPage';
 
 import './App.css';
+
 import About from './Screens/Home/index';
 import FormLogin from './Screens/login/index';
 
@@ -26,22 +28,20 @@ class App extends Component {
 		});
 	};
 	render() {
-		return (
-			<Fragment>
-				<Router>
-					<Switch>
-						<Route path="/" exact component={Home} />
-						<Route component={NotFoundPage} />
-						<Redirect to="/404" />
-					</Switch>
-					<div className="App">
+	return (
+		<Fragment>
+			<Router>
+				<Switch>
+					<Route path="/" exact component={Home} />
+            <div className="App">
 						<FormLogin  onChange={(fields) => this.onChange(fields)} />
 						
 					</div>
-				</Router>
-			</Fragment>
-		);
-	}
+				</Switch>
+			</Router>
+		</Fragment>
+	);
+}
 }
 
 export default App;

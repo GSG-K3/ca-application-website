@@ -7,12 +7,9 @@ class Home extends Component {
 
 	render() {
 		return (
-
-			<Fragment classes={{ root: classes.pageContent }}>
-				{/* <h1>Hello this is a home screen</h1>
-				<About /> */}
-
-			
+			<Fragment>
+				<h1>Hello this is a home screen</h1>
+				<About />
 			</Fragment>
 		);
 	}
