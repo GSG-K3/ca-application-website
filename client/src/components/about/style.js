@@ -34,7 +34,6 @@ const styles = createStyles((theme) => ({
 		marginLeft: '50px',
 		backgroundColor: '#F2F2F2',
 		fontFamily: 'Roboto',
-
 		fontWeight: 'bold',
 		fontSize: '20px',
 		lineHeight: '15px',
@@ -51,13 +50,13 @@ const styles = createStyles((theme) => ({
 		backgroundColor: ' #4CB7A7',
 		width: '110px',
 		color: '#fff',
-
 		padding: ' 6px',
 		borderRadius: '61px',
 		fontFtyle: 'normal',
 		fontFamily: 'Roboto',
 		fontWeight: 'bold',
 		fontSize: '10px',
+		lineHeight: '10px',
 	},
 }));
 export default styles;
