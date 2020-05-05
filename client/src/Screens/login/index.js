@@ -51,11 +51,12 @@ class login extends Component {
 		};
 		if (this.state.password.length < 8) {
 			isError = true;
-			errors.passwordError = 'password needs to be atleast 8 characters long';
+			errors.passwordError = '* password atleast 8 characters long';
 		}
 		if (this.state.email.indexOf('@') === -1) {
 			isError = true;
-			errors.emailError = 'Requires valid email';
+			errors.emailError = ' * Requires valid email';
+		
 		}
 
 		if (isError) {
@@ -115,7 +116,7 @@ class login extends Component {
 									onChange={(e) => this.change(e)}
 								/>
 								{emailError && (
-									<FormHelperText error={true}>{emailError}</FormHelperText>
+									<FormHelperText className={classes.textErorr}  error={true}>{emailError}</FormHelperText>
 								)}
 							</div>
 							<div>
@@ -133,7 +134,7 @@ class login extends Component {
 									onChange={(e) => this.change(e)}
 								/>
 								{passwordError && (
-									<FormHelperText error={true}>{passwordError}</FormHelperText>
+									<FormHelperText  className={classes.textErorr}  error={true}>{passwordError}</FormHelperText>
 								)}
 							</div>
 							<FormControlLabel

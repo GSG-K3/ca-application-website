@@ -1,36 +1,43 @@
 import { createStyles } from '@material-ui/core';
 const styles = createStyles((theme) => ({
-	
 	root: {
 		height: '50vh',
-	  },
-	  image: {
+	},
+	image: {
 		backgroundImage: 'url(https://source.unsplash.com/random)',
 		backgroundRepeat: 'no-repeat',
 		backgroundColor:
-		  theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+			theme.palette.type === 'light'
+				? theme.palette.grey[50]
+				: theme.palette.grey[900],
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
-	  },
-	  paper: {
+	},
+	paper: {
 		margin: theme.spacing(20, 8),
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-	  },
-	  avatar: {
+	},
+	avatar: {
 		margin: theme.spacing(1),
 		backgroundColor: theme.palette.secondary.main,
-	  },
-	  form: {
+	},
+	form: {
 		width: '50%',
 		marginTop: theme.spacing(1),
-	  },
-	  submit: {
+	},
+	submit: {
 		margin: theme.spacing(3, 0, 2),
-	  },root: {
+	},
+	root: {
 		height: '100vh',
-	  },
-
+	},
+	textErorr: {
+		margin: 'auto',
+		fontFamily: 'Roboto',
+		fontWeight: 'bold',
+		fontSize: '8px',
+	},
 }));
 export default styles;
