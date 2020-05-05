@@ -12,6 +12,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import { FormHelperText } from '@material-ui/core';
 
 function Copyright() {
 	return (
@@ -34,8 +35,8 @@ class login extends Component {
 	};
 
 	change = (e) => {
-		console.log(e.target.name);
-		console.log(e.target.value);
+		// console.log(e.target.name);
+		// console.log(e.target.value);
 		this.props.onChange({ [e.target.name]: e.target.value });
 		this.setState({
 			[e.target.name]: e.target.value,
@@ -51,7 +52,6 @@ class login extends Component {
 		if (this.state.password.length < 8) {
 			isError = true;
 			errors.passwordError = 'password needs to be atleast 8 characters long';
-			
 		}
 		if (this.state.email.indexOf('@') === -1) {
 			isError = true;
@@ -60,16 +60,17 @@ class login extends Component {
 
 		if (isError) {
 			this.setState({
-				...this.state,
-				...errors,
+				emailError: errors.emailError,
+				passwordError: errors.passwordError,
 			});
 		}
 		return isError;
 	};
-	
+
 	onSubmit = (e) => {
 		e.preventDefault();
 		const err = this.validate();
+
 		if (!err) {
 			this.setState({
 				email: '',
@@ -83,96 +84,91 @@ class login extends Component {
 			});
 		}
 	};
+
 	render() {
 		const { classes } = this.props;
+		const { emailError, passwordError } = this.state;
+
 		return (
-			
-				<Grid container component="main" className={classes.root}>
-					<CssBaseline />
-					<Grid item xs={false} sm={4} md={7} className={classes.image} />
-					<Grid
-						item
-						xs={12}
-						sm={8}
-						md={5}
-						component={Paper}
-						elevation={6}
-						square
-					>
-						<div className={classes.paper}>
-							<img src={logo} />
-							<Typography component="h1" variant="h5">
-								Sign in
-							</Typography>
-							<form className={classes.form} noValidate>
-								<div>
-									<TextField
-										variant="outlined"
-										margin="normal"
-										required
-										fullWidth
-										id="email"
-										label="Email Address"
-										name="email"
-										autoComplete="email"
-										autoFocus
-										name="email"
-										value={this.state.email}
-										onChange={(e) => this.change(e)}
-										errorText={this.state.emailError}
-									
-									/>
-								</div>
-								<div>
-									<TextField
-										variant="outlined"
-										margin="normal"
-										required
-										fullWidth
-										name="password"
-										label="Password"
-										type="password"
-										id="password"
-										autoComplete="current-password"
-										value={this.state.password}
-										onChange={(e) => this.change(e)}
-										errorText={this.state.passwordError}
-									/>
-								</div>
-								<FormControlLabel
-									control={<Checkbox value="remember" color="primary" />}
-									label="Remember me"
-								/>
-								<Button
-									type="submit"
+			<Grid container component="main" className={classes.root}>
+				<CssBaseline />
+				<Grid item xs={false} sm={4} md={7} className={classes.image} />
+				<Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+					<div className={classes.paper}>
+						<img src={logo} />
+						<Typography component="h1" variant="h5">
+							Sign in
+						</Typography>
+						<form className={classes.form} noValidate>
+							<div>
+								<TextField
+									variant="outlined"
+									margin="normal"
+									required
 									fullWidth
-									variant="contained"
-									color="primary"
-									className={classes.submit}
-									onClick={(e) => this.onSubmit(e)}
-								>
-									Sign In
-								</Button>
-								<Grid container>
-									<Grid item xs>
-										<Link href="#" variant="body2">
-											Forgot password?
-										</Link>
-									</Grid>
-									<Grid item>
-										<Link href="#" variant="body2">
-											{"Don't have an account? Sign Up"}
-										</Link>
-									</Grid>
+									id="email"
+									label="Email Address"
+									name="email"
+									autoComplete="email"
+									autoFocus
+									value={this.state.email}
+									onChange={(e) => this.change(e)}
+								/>
+								{emailError && (
+									<FormHelperText error={true}>{emailError}</FormHelperText>
+								)}
+							</div>
+							<div>
+								<TextField
+									variant="outlined"
+									margin="normal"
+									required
+									fullWidth
+									name="password"
+									label="Password"
+									type="password"
+									id="password"
+									autoComplete="current-password"
+									value={this.state.password}
+									onChange={(e) => this.change(e)}
+								/>
+								{passwordError && (
+									<FormHelperText error={true}>{passwordError}</FormHelperText>
+								)}
+							</div>
+							<FormControlLabel
+								control={<Checkbox value="remember" color="primary" />}
+								label="Remember me"
+							/>
+							<Button
+								type="submit"
+								fullWidth
+								variant="contained"
+								color="primary"
+								className={classes.submit}
+								onClick={(e) => this.onSubmit(e)}
+							>
+								Sign In
+							</Button>
+							<Grid container>
+								<Grid item xs>
+									<Link href="#" variant="body2">
+										Forgot password?
+									</Link>
 								</Grid>
-								<Box mt={5}>
-									<Copyright />
-								</Box>
-							</form>
-						</div>
-					</Grid>
+								<Grid item>
+									<Link href="#" variant="body2">
+										{"Don't have an account? Sign Up"}
+									</Link>
+								</Grid>
+							</Grid>
+							<Box mt={5}>
+								<Copyright />
+							</Box>
+						</form>
+					</div>
 				</Grid>
-			
+			</Grid>
 		);
 	}
 }
