@@ -10,7 +10,7 @@ class About extends Component {
 		const { classes } = this.props;
 		return (
 			<Fragment>
-				<div className={classes.aboutContainer}>
+				<div className={classes.aboutContainer} id="about">
 					<Card className={classes.aboutCard}>
 						<h1 className={classes.aboutHeader}>CodeAcademy Program</h1>
 						<p className={classes.aboutp1}>
