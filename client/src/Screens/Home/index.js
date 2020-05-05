@@ -1,30 +1,44 @@
 import React, { Fragment, Component } from 'react';
+import axios from 'axios';
 import NavBarProfile from '../../Components/NavBarProfile';
 import NavBar from '../../Components/NavBar';
 import TemporaryDrawer from '../../Components/TemporaryDrawer';
-import About from '../About';
-import Requierments from '../Requierments';
+import Requierments from '../../Components/Requierments';
 import Contact from '../Contact';
-import SupportTeam from '../SupportTeam';
-import Footer from '../Footer';
-
+import SupportTeam from '../../Components/SupportTeam';
+import Footer from '../../Components/Footer';
+import { withStyles } from '@material-ui/core';
+import styles from './style';
 class Home extends Component {
-	state = {};
+	state = {
+		data: [],
+	};
+	componentDidMount() {
+		axios
+			.get('/home/support-team')
+			.then((result) => {
+				const { data } = result;
+				this.setState({ data });
+			})
+			.catch((err) => console.log(err));
+	}
 	render() {
 		return (
 			<Fragment>
 				<div id="home">
-					{/* <NavBarProfile />
-					<NavBar />
-					<About />
-					<Requierments />
-					<SupportTeam />
-					<Contact /> */}
 					<Footer />
+					{/* <SupportTeam data={this.state.data} /> */}
+					{/* <NavBarProfile /> */}
+					{/* <NavBar /> */}
+					{/* <About /> */}
+					{/* <Requierments />
+					<SupportTeam />
+					<Contact />
+					<Footer /> */}
 				</div>
 			</Fragment>
 		);
 	}
 }
 
-export default Home;
+export default withStyles(styles)(Home);

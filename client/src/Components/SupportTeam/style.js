@@ -1,8 +1,7 @@
 const styles = {
 	text: {
-		background: 'blue',
+		background: 'yellow',
 		height: '590px',
-		marginTop: 43,
 	},
 };
 
