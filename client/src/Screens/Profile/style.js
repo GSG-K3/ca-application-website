@@ -3,14 +3,14 @@ const style = (theme) => ({
 		position: 'absolute',
 		width: 1081,
 		height: 52,
-		left: 127,
+		left: 188,
 		top: 239,
 		fontFamily: 'EB Garamond',
 		fontStyle: 'normal',
 		fontWeight: 'bold',
 		fontSize: 36,
 		textAlign: 'center',
-		[theme.breakpoints.between('1220', 'md')]: {
+		[theme.breakpoints.down('md')]: {
 			fontSize: 33,
 			left: 89,
 		},
@@ -20,16 +20,16 @@ const style = (theme) => ({
 		flexDirection: 'column',
 		alignItems: 'center',
 		marginTop: 272,
-		marginLeft: 55,
-		[theme.breakpoints.down('sm')]: {
-			marginLeft: 628,
-		},
-		// [theme.breakpoints.between('sm', 'md')]: {
-		// 	marginLeft: 269,
-		// },
-		[theme.breakpoints.between('1220', 'md')]: {
-			marginLeft: 41,
-		},
+		width: '100%',
+		// 	[theme.breakpoints.down('sm')]: {
+		// 		marginLeft: 628,
+		// 	},
+		// 	// [theme.breakpoints.between('sm', 'md')]: {
+		// 	// 	marginLeft: 269,
+		// 	// },
+		// 	[theme.breakpoints.between('1220', 'md')]: {
+		// 		marginLeft: 41,
+		// 	},
 	},
 	treeImage: {
 		width: 500,
