@@ -10,8 +10,8 @@ class Home extends Component {
 			console.log(classes);
 		return (
 			<Fragment classes={{ root: classes.pageContent }}>
-				<h1>Hello this is a home screen</h1>
-				<About />
+				{/* <h1>Hello this is a home screen</h1>
+				<About /> */}
 			</Fragment>
 		);
 	}
