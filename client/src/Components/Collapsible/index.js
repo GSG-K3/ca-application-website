@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -7,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
 import useStyles from './style';
-import { Button, createStyles } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import Linkify from 'react-linkify';
 
 export default function Profile(props) {

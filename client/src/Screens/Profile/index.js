@@ -31,7 +31,7 @@ class Profile extends Component {
 	};
 
 	handleClickOpen = (id) => (event) => {
-		// if (id === 1) props.history.push('/user/:userid/personal-info');
+		this.props.history.push('/');
 		console.log(this.props, id);
 		event.preventDefault();
 	};
@@ -39,6 +39,7 @@ class Profile extends Component {
 	render() {
 		const { classes } = this.props;
 		console.log(this.state);
+		console.log(this.props);
 		return (
 			<Grid>
 				<NavBarProfile />

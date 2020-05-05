@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 		height: 96,
 		position: 'absolute',
 		fontSize: 30,
-		color: 'rgba(0, 0, 0, 0.79)',
+		// color: 'rgba(0, 0, 0, 0.79)',
 		whiteSpace: 'pre-wrap',
 	},
 	btn: {

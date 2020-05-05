@@ -12,10 +12,18 @@ import Profile from '../Profile';
 class Home extends Component {
 	state = {};
 	render() {
+		console.log(this.props);
 		return (
 			<Fragment>
 				<div id="home">
-					<Profile />
+					{/* <Profile /> */}
+					<button
+						onClick={() => {
+							this.props.history.push('/user/1');
+						}}
+					>
+						hello
+					</button>
 				</div>
 			</Fragment>
 		);
