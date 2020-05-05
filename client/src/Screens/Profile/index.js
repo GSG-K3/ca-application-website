@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import NavBarProfile from '../../Components/NavBarProfile';
 import Collapsible from '../../Components/Collapsible';
-import { Typography } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import style from './style';
 import { animateScroll as scroll, Events } from 'react-scroll';
@@ -40,41 +40,44 @@ class Profile extends Component {
 		const { classes } = this.props;
 		console.log(this.state);
 		return (
-			<Fragment>
+			<Grid>
 				<NavBarProfile />
-				<Typography color="primary" className={classes.welcome}>
-					Welcome Nicole! Please follow the steps below in order to fill your
-					application
-				</Typography>
-				<div className={classes.collapseContainer}>
-					{this.state.data.map((data, index) => {
-						return (
-							<Collapsible
-								key={index}
-								header={data.header}
-								body={data.body}
-								id={data.id}
-								onClick={this.handleClickOpen}
-							/>
-						);
-					})}
-				</div>
-				<div className={classes.bottom}>
-					<img
-						src={require('./tree.png')}
-						alt="tree pic"
-						className={classes.treeImage}
-					/>
-					<IconButton
-						color="secondary"
-						aria-label="up"
-						className={classes.iconBtn}
-						onClick={this.scrollToTop}
-					>
-						<ExpandLessIcon className={classes.upBtn} />
-					</IconButton>
-				</div>
-			</Fragment>
+				<Grid className={classes.pageContent}>
+					<Typography color="primary" className={classes.welcome}>
+						Welcome Nicole! Please follow the steps below in order to fill your
+						application
+					</Typography>
+
+					<Grid className={classes.collapseContainer}>
+						{this.state.data.map((data, index) => {
+							return (
+								<Collapsible
+									key={index}
+									header={data.header}
+									body={data.body}
+									id={data.id}
+									onClick={this.handleClickOpen}
+								/>
+							);
+						})}
+					</Grid>
+					<Grid className={classes.bottom}>
+						<img
+							src={require('./tree.png')}
+							alt="tree pic"
+							className={classes.treeImage}
+						/>
+						<IconButton
+							color="secondary"
+							aria-label="up"
+							className={classes.iconBtn}
+							onClick={this.scrollToTop}
+						>
+							<ExpandLessIcon className={classes.upBtn} />
+						</IconButton>
+					</Grid>
+				</Grid>
+			</Grid>
 		);
 	}
 }
