@@ -7,6 +7,7 @@ import Requierments from '../Requierments';
 import Contact from '../Contact';
 import SupportTeam from '../SupportTeam';
 import Footer from '../Footer';
+import Profile from '../Profile';
 
 class Home extends Component {
 	state = {};
@@ -14,13 +15,7 @@ class Home extends Component {
 		return (
 			<Fragment>
 				<div id="home">
-					<NavBarProfile />
-					{/* <NavBar /> */}
-					<About />
-					<Requierments />
-					<SupportTeam />
-					<Contact />
-					<Footer />
+					<Profile />
 				</div>
 			</Fragment>
 		);

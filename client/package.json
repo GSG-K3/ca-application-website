@@ -10,6 +10,7 @@
 		"classnames": "^2.2.6",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
+		"react-linkify": "^1.0.0-alpha",
 		"react-scripts": "3.4.1",
 		"react-scroll": "^1.7.16"
 	},
