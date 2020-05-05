@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 		height: 96,
 		position: 'absolute',
 		fontSize: 30,
-		color: 'rgba(0, 0, 0, 0.79)',
+		// color: 'rgba(0, 0, 0, 0.79)',
 		whiteSpace: 'pre-wrap',
 	},
 	btn: {
@@ -49,6 +49,48 @@ const useStyles = makeStyles((theme) => ({
 	},
 	bigContent: {
 		height: 789,
+	},
+	ExpansionPanelroot: {
+		width: 1017,
+		marginBottom: 60,
+		border: '1px solid #4CB7A7',
+		boxShadow: 'none',
+		'&:not(:last-child)': {
+			// borderBottom: 1,
+		},
+		'&:before': {
+			display: 'none',
+		},
+		'&$expanded': {
+			marginBottom: 60,
+		},
+	},
+	ExpansionPanelexpanded: {
+		'&last-child': { marginBottom: 60 },
+	},
+
+	ExpansionPanelSummaryroot: {
+		backgroundColor: '#4CB7A7',
+		borderBottom: '1px solid rgba(0, 0, 0, .125)',
+		marginBottom: -1,
+		minHeight: 56,
+		'&$expanded': {
+			minHeight: 56,
+		},
+	},
+	ExpansionPanelSummarycontent: {
+		'&$expanded': {
+			margin: '12px 0',
+		},
+	},
+	ExpansionPanelSummaryexpanded: {},
+
+	ExpansionPanelDetailsroot: {
+		height: 241,
+		padding: theme.spacing(2),
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
 	},
 }));
 

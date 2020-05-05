@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -9,58 +8,6 @@ import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox'
 import useStyles from './style';
 import { Button } from '@material-ui/core';
 import Linkify from 'react-linkify';
-
-const ExpansionPanel = withStyles({
-	root: {
-		width: 1017,
-		marginBottom: 60,
-		border: '1px solid #4CB7A7',
-		boxShadow: 'none',
-		'&:not(:last-child)': {
-			// borderBottom: 1,
-		},
-		'&:before': {
-			display: 'none',
-		},
-		'&$expanded': {
-			marginBottom: 60,
-		},
-	},
-	expanded: {
-		'&last-child': { marginBottom: 60 },
-	},
-})(MuiExpansionPanel);
-
-const ExpansionPanelSummary = withStyles({
-	root: {
-		backgroundColor: '#4CB7A7',
-		borderBottom: '1px solid rgba(0, 0, 0, .125)',
-		marginBottom: -1,
-		minHeight: 56,
-		'&$expanded': {
-			minHeight: 56,
-		},
-	},
-	content: {
-		'&$expanded': {
-			margin: '12px 0',
-		},
-	},
-	expanded: {},
-})(MuiExpansionPanelSummary);
-
-const ExpansionPanelDetails = withStyles((theme) => ({
-	root: {
-		height: 241,
-		padding: theme.spacing(2),
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'center',
-	},
-	panel2: {
-		height: 241,
-	},
-}))(MuiExpansionPanelDetails);
 
 export default function Profile(props) {
 	const [expanded, setExpanded] = React.useState('panel1');
@@ -72,14 +19,23 @@ export default function Profile(props) {
 
 	return (
 		<Fragment>
-			<ExpansionPanel
+			<MuiExpansionPanel
 				square
 				expanded={expanded === `panel${props.id}`}
 				onChange={handleChange(`panel${props.id}`)}
+				classes={{
+					root: classes.ExpansionPanelroot,
+					expanded: classes.ExpansionPanelexpanded,
+				}}
 			>
-				<ExpansionPanelSummary
+				<MuiExpansionPanelSummary
 					aria-controls={`panel${props.id}bh-content`}
 					id={`panel${props.id}bh-header`}
+					classes={{
+						root: classes.ExpansionPanelSummaryroot,
+						expanded: classes.ExpansionPanelSummaryexpanded,
+						content: classes.ExpansionPanelSummarycontent,
+					}}
 				>
 					{expanded === `panel${props.id}` ? (
 						<IndeterminateCheckBoxIcon className={classes.plusIcon} />
@@ -87,10 +43,11 @@ export default function Profile(props) {
 						<AddBoxIcon className={classes.plusIcon} />
 					)}
 					<Typography className={classes.headerText}>{props.header}</Typography>
-				</ExpansionPanelSummary>
+				</MuiExpansionPanelSummary>
 				<div className={classes.bodyBox}>
-					<ExpansionPanelDetails
+					<MuiExpansionPanelDetails
 						style={{ height: props.id === 2 ? 1081 : 241 }}
+						classes={{ root: classes.ExpansionPanelDetailsroot }}
 					>
 						<Linkify>
 							<Typography className={classes.bodyText}>
@@ -106,9 +63,9 @@ export default function Profile(props) {
 								</Button>
 							</Typography>
 						</Linkify>
-					</ExpansionPanelDetails>
+					</MuiExpansionPanelDetails>
 				</div>
-			</ExpansionPanel>
+			</MuiExpansionPanel>
 		</Fragment>
 	);
 }

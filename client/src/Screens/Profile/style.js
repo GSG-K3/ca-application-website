@@ -1,35 +1,22 @@
 const style = (theme) => ({
+	pageContent: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		padding: '30px 20px',
+	},
 	welcome: {
-		position: 'absolute',
-		width: 1081,
-		height: 52,
-		left: 188,
-		top: 239,
 		fontFamily: 'EB Garamond',
 		fontStyle: 'normal',
 		fontWeight: 'bold',
 		fontSize: 36,
 		textAlign: 'center',
-		[theme.breakpoints.down('md')]: {
-			fontSize: 33,
-			left: 89,
-		},
 	},
 	collapseContainer: {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		marginTop: 272,
-		width: '100%',
-		// 	[theme.breakpoints.down('sm')]: {
-		// 		marginLeft: 628,
-		// 	},
-		// 	// [theme.breakpoints.between('sm', 'md')]: {
-		// 	// 	marginLeft: 269,
-		// 	// },
-		// 	[theme.breakpoints.between('1220', 'md')]: {
-		// 		marginLeft: 41,
-		// 	},
+		marginTop: '30px',
 	},
 	treeImage: {
 		width: 500,
@@ -44,6 +31,7 @@ const style = (theme) => ({
 		fontSize: '6.1875rem',
 	},
 	bottom: {
+		width: '90%',
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
