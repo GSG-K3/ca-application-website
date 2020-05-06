@@ -6,4 +6,8 @@ package-lock.json
 
 .vscode
 
+<<<<<<< HEAD
 .vscode/launch.json
+=======
+.vscode/launch.json
+>>>>>>> karmel-backup

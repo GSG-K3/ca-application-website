@@ -1,7 +1,7 @@
 const express = require('express');
 const { join } = require('path');
 const cookieParser = require('cookie-parser');
-const router = require('./controllers');
+const router = require('./controllers/');
 const app = express();
 
 app.use(express.json());
