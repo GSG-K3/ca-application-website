@@ -24,7 +24,7 @@ class Home extends Component {
 		return (
 			<Fragment>
 				<div id="home">
-					{/* <Footer /> */}
+					<Footer />
 					{/* <SupportTeam data={this.state.data} /> */}
 					{/* <NavBarProfile /> */}
 					{/* <NavBar /> */}
