@@ -1,5 +1,5 @@
 const router = require('./login');
 
-const router = require('./supportTeam');
+const secondRouter = require('./supportTeam');
 
-module.exports = { router, router };
+module.exports = { secondRouter, router };

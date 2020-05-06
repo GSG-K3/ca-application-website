@@ -20,7 +20,6 @@ class About extends Component {
 							technical experience is not required.
 						</p>
 						<p className={classes.aboutp1}>
-							{' '}
 							The goal of the Code Academy is to accelerate the growth of
 							globally competitive coding talent in Palestine. We believe that
 							by helping Palestinian youth build high-tech and modern skills to

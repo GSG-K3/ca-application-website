@@ -1,6 +1,5 @@
 const express = require('express');
 const getUserByEmail = require('../database/queries/db_user');
-// const loginValidation = require('../helper/loginValidation');
 const { compareHashed, loginValidation } = require('../helper');
 
 const router = express.Router();

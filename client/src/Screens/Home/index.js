@@ -3,6 +3,9 @@ import axios from 'axios';
 import TemporaryDrawer from '../../Components/TemporaryDrawer';
 import Requierments from '../../Components/Requierments';
 import Contact from '../Contact';
+import About from '../../Components/About';
+import NavBarProfile from '../../Components/NavBarProfile';
+import NavBar from '../../Components/NavBar';
 import SupportTeam from '../../Components/SupportTeam';
 import Footer from '../../Components/Footer';
 import { withStyles } from '@material-ui/core';
@@ -24,15 +27,13 @@ class Home extends Component {
 		return (
 			<Fragment>
 				<div id="home">
-					<Footer />
+					{/* <Footer /> */}
 					{/* <SupportTeam data={this.state.data} /> */}
 					{/* <NavBarProfile /> */}
 					{/* <NavBar /> */}
 					{/* <About /> */}
 					{/* <Requierments />
-					<SupportTeam />
-					<Contact />
-					<Footer /> */}
+					<Contact />*/}
 				</div>
 			</Fragment>
 		);

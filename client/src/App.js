@@ -10,6 +10,8 @@ import SupportTeam from './Components/SupportTeam';
 import NotFoundPage from './Screens/NotFoundPage';
 import Login from './Screens/Login';
 import Contact from './Screens/Contact';
+import Profile from './Screens/Profile';
+import PersonalInfo from './Screens/PersonalInfo';
 
 import './App.css';
 
@@ -21,9 +23,15 @@ function App() {
 					<Route path="/" exact component={Home} />
 					<Route path="/home" exact component={Home} />
 					<Route path="/home/support-team" exact component={SupportTeam} />
-					<Route component={NotFoundPage} />
 					<Route path="/login" exact component={Login} />
+					<Route path="/user/:userId" exact component={Profile} />
+					<Route
+						path="/user/:userId/personal-info"
+						exact
+						component={PersonalInfo}
+					/>
 					<Route path="/contact-us" exact component={Contact} />
+					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>
 			</Router>
