@@ -1,8 +1,5 @@
-const express = require('express');
+const router = require('./login');
 
-const router = express.Router();
-router.get('/', (request, response) => {
-	response.send('response from router get');
-});
+const secondRouter = require('./supportTeam');
 
-module.exports = router;
+module.exports = { secondRouter, router };
