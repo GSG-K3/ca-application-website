@@ -1,63 +1,49 @@
 import { createStyles } from '@material-ui/core';
 const styles = createStyles((theme) => ({
-	pageContent: {
-		spacing: 4,
-		display: 'flex',
-		flexDirection: 'column',
-		flexWrap: 'wrap',
-		backgroundColor: 'F2F2F2',
-		margin: 50,
+	aboutImage: {
+		width: 500,
 	},
-	aboutContainer: {
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
+	gridContainer: {
+		paddingTop: 127,
 	},
-
-	aboutHeader: {
-		textAlign: 'center',
-		fontSize: '25px',
-		fontFtyle: 'normal',
-		fontFamily: 'Roboto',
-		fontWeight: 'bold',
-		color: '#4CB7A7',
-	},
-	aboutCard: {
-		display: ' flex',
-		flexDirection: 'column',
-		alignitems: 'center',
-		width: '330px',
-		textAlign: 'left',
-		padding: '40px',
+	card: {
+		width: 1057,
+		height: 442,
 		borderRadius: '40px',
-		margin: '30px',
-		marginLeft: '50px',
 		backgroundColor: '#F2F2F2',
-		fontFamily: 'Roboto',
-
-		fontWeight: 'bold',
-		fontSize: '20px',
-		lineHeight: '15px',
-		height: '220px',
-		fontSize: '10px',
 	},
-
-	aboutp1: {
-		color: '#000000',
-		textAlign: 'left',
+	header: {
+		paddingTop: 22,
 	},
-	buttonAbout: {
-		margin: 'auto',
-		backgroundColor: ' #4CB7A7',
-		width: '110px',
-		color: '#fff',
-
-		padding: ' 6px',
-		borderRadius: '61px',
-		fontFtyle: 'normal',
-		fontFamily: 'Roboto',
-		fontWeight: 'bold',
-		fontSize: '10px',
+	bodyText: {
+		paddingTop: 20,
+	},
+	btn: {
+		marginTop: 12,
+		color: 'white',
+		backgroundColor: '#4CB7A7',
+		borderRadius: 61,
+		width: 272,
+		height: 68,
+		fontSize: 25,
+		[theme.breakpoints.down('425')]: {
+			width: 200,
+			height: 60,
+			fontSize: 20,
+		},
+		[theme.breakpoints.down('382')]: {
+			width: 150,
+			height: 50,
+			fontSize: 15,
+		},
+	},
+	link: {
+		textDecoration: 'unset',
+		color: 'white',
+		textTransform: 'capitalize',
+		'&:active': {
+			color: 'white',
+		},
 	},
 }));
 export default styles;

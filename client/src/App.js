@@ -12,6 +12,7 @@ import Login from './Screens/Login';
 import Contact from './Screens/Contact';
 import Profile from './Screens/Profile';
 import PersonalInfo from './Screens/PersonalInfo';
+import Signup from './Screens/Signup';
 
 import './App.css';
 
@@ -31,6 +32,7 @@ function App() {
 						component={PersonalInfo}
 					/>
 					<Route path="/contact-us" exact component={Contact} />
+					<Route path="/signup" exact component={Signup} />
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>
