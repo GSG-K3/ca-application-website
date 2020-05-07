@@ -27,6 +27,12 @@ const useStyles = makeStyles((theme) => ({
 			color: '#3F6989',
 		},
 	},
+	hide: {
+		display: 'none !important;',
+	},
+	profileList: {
+		paddingTop: 40,
+	},
 }));
 
 export default useStyles;

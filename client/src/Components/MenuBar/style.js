@@ -6,13 +6,9 @@ const useStyles = makeStyles((theme) => ({
 			display: 'display !important',
 		},
 
-		[theme.breakpoints.between('1094', 'xl')]: {
+		[theme.breakpoints.between('1095', 'xl')]: {
 			display: 'none !important',
 		},
-
-		position: 'fixed !important;',
-		right: 40,
-		top: 48,
 	},
 	root: {
 		fontSize: '2.5rem',
