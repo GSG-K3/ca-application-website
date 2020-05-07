@@ -2,6 +2,7 @@ import { createStyles } from '@material-ui/core';
 const style = (theme: Theme) =>
 	createStyles({
 		grid: {
+			width: '100%',
 			background: '#4CB7A7',
 			height: 288,
 			color: 'white',
