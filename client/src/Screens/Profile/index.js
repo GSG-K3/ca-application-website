@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import NavBarProfile from '../../Components/NavBarProfile';
+import NavBar from '../../Components/NavBar';
 import Collapsible from '../../Components/Collapsible';
 import { Typography, Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
@@ -42,7 +42,7 @@ class Profile extends Component {
 		console.log(this.props);
 		return (
 			<Grid>
-				<NavBarProfile />
+				<NavBar matchPath={this.props.match} />
 				<Grid className={classes.pageContent}>
 					<Typography color="primary" className={classes.welcome}>
 						Welcome Nicole! Please follow the steps below in order to fill your

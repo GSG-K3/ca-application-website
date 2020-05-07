@@ -7,6 +7,7 @@ import {
 	ListItemIcon,
 	ListItemText,
 	Link as RouterLink,
+	Grid,
 } from '@material-ui/core';
 import { Link } from 'react-scroll';
 import useStyles from './style';
@@ -17,17 +18,18 @@ import {
 	People,
 	ContactMail,
 	AssignmentInd,
+	ExitToApp,
 } from '@material-ui/icons';
 
 import MenuBar from '../MenuBar';
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(props) {
 	const classes = useStyles();
 	const [state, setState] = React.useState({
 		right: false,
 		link: '/',
 	});
-
+	console.log(props);
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
 			event.type === 'keydown' &&
@@ -38,6 +40,7 @@ export default function TemporaryDrawer() {
 
 		setState({ ...state, [anchor]: open });
 	};
+	const { path } = props;
 
 	const list = (anchor) => (
 		<div
@@ -46,7 +49,7 @@ export default function TemporaryDrawer() {
 			onClick={toggleDrawer(anchor, false)}
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
-			<List>
+			<List className={path.path === '/user/:userId' ? classes.hide : null}>
 				{['Home', 'About', 'Steps', 'Mentors', 'Contact'].map((text, index) => (
 					<ListItem button key={text}>
 						<ListItemIcon>
@@ -123,13 +126,35 @@ export default function TemporaryDrawer() {
 				))}
 			</List>
 			<Divider />
-			<List>
-				<ListItem button key={'login'}>
+			<List
+				className={
+					path.path === '/' || path.path === '/home'
+						? classes.hide
+						: classes.profileList
+				}
+			>
+				<ListItem button key={'profile'}>
 					<ListItemIcon>
 						<AssignmentInd color="primary" />
 					</ListItemIcon>
+					<RouterLink href="/profile" className={classes.link}>
+						<ListItemText primary="Profile" />
+					</RouterLink>
+				</ListItem>
+				<ListItem button key={'deleteAccount'}>
+					<ListItemIcon>
+						<AssignmentInd color="primary" />
+					</ListItemIcon>
+					<RouterLink href="/delete-account" className={classes.link}>
+						<ListItemText primary="Delete Account" />
+					</RouterLink>
+				</ListItem>
+				<ListItem button key={'logout'}>
+					<ListItemIcon>
+						<ExitToApp color="primary" />
+					</ListItemIcon>
 					<RouterLink href="/login" className={classes.link}>
-						<ListItemText primary="Login" />
+						<ListItemText primary="Log Out" />
 					</RouterLink>
 				</ListItem>
 			</List>
@@ -137,8 +162,8 @@ export default function TemporaryDrawer() {
 	);
 	const anchor = 'right';
 	return (
-		<div>
-			<Fragment key={anchor}>
+		<Fragment key={anchor}>
+			<Grid item>
 				<MenuBar onClick={toggleDrawer(anchor, true)} />
 				<Drawer
 					anchor={anchor}
@@ -147,7 +172,7 @@ export default function TemporaryDrawer() {
 				>
 					{list(anchor)}
 				</Drawer>
-			</Fragment>
-		</div>
+			</Grid>
+		</Fragment>
 	);
 }

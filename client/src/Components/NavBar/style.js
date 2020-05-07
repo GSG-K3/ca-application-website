@@ -1,32 +1,29 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-	grid: {
-		height: '100px',
+	hideMenu: {
+		display: 'none !important;',
 	},
-	menuGrid: {
-		[theme.breakpoints.between('0', '1094')]: {
-			display: 'none !important;',
-		},
+	Container: {
+		height: 155,
+		display: 'flex',
 	},
-	IconButtonGrid: {
-		textAlign: 'end',
-		alignSelf: 'center',
-		padding: '0px 43px',
+
+	logoGrid: {
+		justifyContent: 'center',
 	},
-	image: {
-		width: '230px',
-		height: '129px',
-		[theme.breakpoints.down('1045')]: {
-			marginLeft: '30px',
-		},
+	logo: {
+		width: 320,
+		height: 216,
 	},
 	typography: {
 		display: 'flex',
-		direction: 'row',
+		justifyContent: 'center',
 		fontStyle: 'normal',
 		color: '#3F6989',
-		justifyContent: 'center',
+		[theme.breakpoints.between('0', '1283')]: {
+			justifyContent: 'unset',
+		},
 	},
 	link: {
 		fontSize: '1.625rem',
@@ -53,6 +50,37 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up('xl')]: {
 			fontSize: '1.65rem',
 		},
+	},
+	menu: {
+		[theme.breakpoints.between('0', '1095')]: {
+			display: 'none !important;',
+		},
+	},
+	menuBtn: {
+		[theme.breakpoints.down('1095')]: {
+			position: 'relative',
+			left: 529,
+		},
+	},
+	profileGrid: {
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'flex-end',
+		[theme.breakpoints.between('0', '1095')]: {
+			display: 'none !important;',
+		},
+	},
+	notiBtn: {
+		left: 11,
+		bottom: '-6px',
+	},
+	avatarPic: {
+		marginRight: 15,
+		width: theme.spacing(7),
+		height: theme.spacing(7),
+	},
+	text: {
+		paddingTop: 4,
 	},
 }));
 

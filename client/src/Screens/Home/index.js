@@ -1,13 +1,11 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import TemporaryDrawer from '../../Components/TemporaryDrawer';
 import Requierments from '../../Components/Requierments';
-import Contact from '../Contact';
 import About from '../../Components/About';
-import NavBarProfile from '../../Components/NavBarProfile';
 import NavBar from '../../Components/NavBar';
 import SupportTeam from '../../Components/SupportTeam';
 import Footer from '../../Components/Footer';
+import Stories from '../../Components/Stories';
 import { withStyles } from '@material-ui/core';
 import styles from './style';
 class Home extends Component {
@@ -23,17 +21,19 @@ class Home extends Component {
 			})
 			.catch((err) => console.log(err));
 	}
+
 	render() {
+		const { classes } = this.props;
+		console.log('home props', this.props);
 		return (
 			<Fragment>
-				<div id="home">
-					{/* <Footer /> */}
-					{/* <SupportTeam data={this.state.data} /> */}
-					{/* <NavBarProfile /> */}
-					{/* <NavBar /> */}
-					{/* <About /> */}
-					{/* <Requierments />
-					<Contact />*/}
+				<div id="home" className={classes.body}>
+					<NavBar matchPath={this.props.match} />
+					<About />
+					<Requierments />
+					<Stories />
+					<SupportTeam data={this.state.data} />
+					<Footer />
 				</div>
 			</Fragment>
 		);
