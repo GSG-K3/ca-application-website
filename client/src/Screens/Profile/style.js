@@ -11,6 +11,8 @@ const style = (theme) => ({
 		fontWeight: 'bold',
 		fontSize: 36,
 		textAlign: 'center',
+		width: '70%',
+		paddingTop: 100,
 	},
 	collapseContainer: {
 		display: 'flex',
@@ -31,12 +33,13 @@ const style = (theme) => ({
 		fontSize: '6.1875rem',
 	},
 	bottom: {
-		width: '90%',
+		width: '100%',
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		paddingRight: 32,
 		paddingTop: 71,
+		height: 464,
 	},
 });
 
