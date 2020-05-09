@@ -13,7 +13,7 @@ import Contact from './Screens/Contact';
 import Profile from './Screens/Profile';
 import PersonalInfo from './Screens/PersonalInfo';
 import Signup from './Screens/Signup';
-
+import Accounts from './Screens/Accounts';
 import './App.css';
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
 					/>
 					<Route path="/contact-us" exact component={Contact} />
 					<Route path="/signup" exact component={Signup} />
+					<Route path="/user/:userId/accounts" exact component={Accounts} />
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>

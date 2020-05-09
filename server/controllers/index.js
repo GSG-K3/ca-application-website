@@ -2,4 +2,6 @@ const router = require('./login');
 
 const secondRouter = require('./supportTeam');
 
-module.exports = { secondRouter, router };
+const thirdRouter = require('./accounts');
+
+module.exports = { secondRouter, router, thirdRouter };
