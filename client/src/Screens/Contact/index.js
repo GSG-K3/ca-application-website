@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './style';
+import Cards from '../../Components/Cards';
 
 class Contact extends Component {
 	state = {};
@@ -10,7 +11,7 @@ class Contact extends Component {
 		return (
 			<Fragment>
 				<div className={classes.text} id="contact">
-					<h1>This is Contact section</h1>
+					<Cards />
 				</div>
 			</Fragment>
 		);

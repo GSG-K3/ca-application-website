@@ -9,17 +9,18 @@ import useStyles from './style';
 import { Button } from '@material-ui/core';
 import Linkify from 'react-linkify';
 import Cards from '../Cards';
+import TextFields from '../Textfields';
 
-export default function Collapsible(props) {
+export default function CollapsibleAccounts(props) {
 	const [expanded, setExpanded] = React.useState('panel1');
 
 	const handleChange = (panel) => (event, newExpanded) => {
 		setExpanded(newExpanded ? panel : false);
 	};
+
 	const classes = useStyles();
 
 	const { location } = props;
-	console.log(location);
 
 	return (
 		<Fragment>
@@ -50,24 +51,16 @@ export default function Collapsible(props) {
 				</MuiExpansionPanelSummary>
 				<div className={classes.bodyBox}>
 					<MuiExpansionPanelDetails
-						style={{ height: props.id === 2 ? 1081 : 241 }}
+						style={{ height: props.id === 1 ? 375 : 241 }}
 						classes={{ root: classes.ExpansionPanelDetailsroot }}
 					>
-						<Linkify>
-							<Typography className={classes.bodyText}>
-								<Cards location={location} />
-								{props.body}
-								<Button
-									variant="contained"
-									color="secondary"
-									className={classes.btn}
-									onClick={props.onClick(props.id)}
-									style={{ display: props.id === 2 ? 'none' : 'unset' }}
-								>
-									Check Out
-								</Button>
-							</Typography>
-						</Linkify>
+						<Typography
+							className={props.id === 2 ? classes.bodyText2 : classes.bodyText}
+						>
+							{props.id === 1 ? <Cards location={location} /> : null}
+							{props.id === 2 ? <TextFields /> : null}
+							{props.body}
+						</Typography>
 					</MuiExpansionPanelDetails>
 				</div>
 			</MuiExpansionPanel>
