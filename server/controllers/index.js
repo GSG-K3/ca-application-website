@@ -1,5 +1,7 @@
-const express = require('express');
+const router = require('./login');
 
-const router = express.Router();
+const secondRouter = require('./supportTeam');
 
-module.exports = router;
+const thirdRouter = require('./accounts');
+
+module.exports = { secondRouter, router, thirdRouter };
