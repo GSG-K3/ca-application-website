@@ -12,7 +12,7 @@ import Login from './Screens/Login';
 import Contact from './Screens/Contact';
 import Profile from './Screens/Profile';
 import PersonalInfo from './Screens/PersonalInfo';
-import SignUp from './Screens/signUp'
+import SignUp from './Screens/signUp';
 import Accounts from './Screens/Accounts';
 
 function App() {
@@ -21,8 +21,6 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/" exact component={Home} />
-					<Route path="/home" exact component={Home} />
-					<Route path="/home/support-team" exact component={SupportTeam} />
 					<Route path="/login" exact component={Login} />
 					<Route path="/user/:userId" exact component={Profile} />
 					<Route path="/contact-us" exact component={Contact} />

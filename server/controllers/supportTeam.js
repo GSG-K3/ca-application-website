@@ -1,11 +1,7 @@
 const { join } = require('path');
 const getSupportTeam = require('../database/queries/supportTeam');
 
-// router.get('/', (request, response) => {
-// 	response.sendFile(join(__dirname, '..', 'client', 'build'));
-// });
-
-const SupportTeam= (request, response) => {
+const SupportTeam = (request, response) => {
 	getSupportTeam()
 		.then((result) => {
 			if (result.rows === []) {

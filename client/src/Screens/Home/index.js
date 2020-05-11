@@ -8,6 +8,7 @@ import Footer from '../../Components/Footer';
 import Stories from '../../Components/Stories';
 import { withStyles } from '@material-ui/core';
 import styles from './style';
+
 class Home extends Component {
 	state = {
 		data: [],
@@ -24,21 +25,18 @@ class Home extends Component {
 
 	render() {
 		const { classes } = this.props;
-		console.log('home props', this.props);
+
 		return (
-			<Fragment>
-				<h2>this is home page</h2>
-				<div id="home" className={classes.body}>
-					<NavBar matchPath={this.props.match} />
-					<About />
-					<Requierments />
-					<Stories />
-					<SupportTeam data={this.state.data} />
-					<Footer />
-				</div>
+			<Fragment id="home" className={classes.body}>
+				<NavBar matchPath={this.props.match} />
+				<About />
+				<Requierments />
+				<Stories />
+				<SupportTeam data={this.state.data} />
+				<Footer />
 			</Fragment>
 		);
 	}
 }
 
-export default Home
+export default withStyles(styles)(Home);

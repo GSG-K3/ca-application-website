@@ -1,7 +1,6 @@
 const insertUserData = require('../database/queries/accounts');
 
-
-const Accounts= (req, res) => {
+const Accounts = (req, res) => {
 	console.log(req.body);
 	const user = req.body;
 	const {
