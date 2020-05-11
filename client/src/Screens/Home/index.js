@@ -1,13 +1,13 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import Requierments from '../../Components/Requierments';
-import About from '../../Components/About';
-import NavBar from '../../Components/NavBar';
-import SupportTeam from '../../Components/SupportTeam';
-import Footer from '../../Components/Footer';
-import Stories from '../../Components/Stories';
+import Requierments from '../../components/Requierments';
+import NavBar from '../../components/NavBar';
+import SupportTeam from '../../components/SupportTeam';
+import Footer from '../../components/Footer';
+import Stories from '../../components/Stories';
 import { withStyles } from '@material-ui/core';
 import styles from './style';
+import About from '../../components/About';
 
 class Home extends Component {
 	state = {
