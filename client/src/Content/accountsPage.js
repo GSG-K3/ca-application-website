@@ -16,7 +16,9 @@ export default function firstContent() {
 			body:
 				'For more information about the applications steps' +
 				'\n' +
-				'please follow this link',
+				'please follow this link' +
+				'\n' +
+				'https://github.com/gazaskygeeks/code-academy/blob/master/technical-tasks.md',
 		},
 	];
 	return Content;

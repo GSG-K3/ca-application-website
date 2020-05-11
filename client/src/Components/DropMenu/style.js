@@ -1,6 +1,6 @@
-import { createStyles } from '@material-ui/core';
+// import { createStyles } from '@material-ui/core';
 
-const StyledMenuItem = createStyles((theme) => ({
+const StyledMenuItem = (theme) => ({
 	root: {
 		'&:focus': {
 			backgroundColor: 'gray',
@@ -9,6 +9,6 @@ const StyledMenuItem = createStyles((theme) => ({
 			},
 		},
 	},
-}));
+});
 
 export default StyledMenuItem;

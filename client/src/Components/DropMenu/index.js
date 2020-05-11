@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import {
 	Menu,
@@ -12,8 +12,10 @@ import {
 	ExitToApp as ExitToAppIcon,
 	HighlightOff as HighlightOffIcon,
 	AccountBox as AccountBoxIcon,
+	SentimentSatisfied,
 } from '@material-ui/icons';
 import style from './style';
+import Dialog from '../Dialog';
 
 const StyledMenu = withStyles({
 	paper: {
@@ -35,56 +37,81 @@ const StyledMenu = withStyles({
 	/>
 ));
 
-export default function CustomizedMenus(props) {
-	const classes = style();
-	const [anchorEl, setAnchorEl] = React.useState(null);
-
-	const handleClick = (event) => {
-		setAnchorEl(event.currentTarget);
+class DropMenu extends Component {
+	state = {
+		anchorEl: null,
+		open: false,
 	};
 
-	const handleClose = () => {
-		setAnchorEl(null);
+	handleClick = (event) => {
+		this.setState({ anchorEl: event.currentTarget });
 	};
 
-	return (
-		<Fragment>
-			<label htmlFor="icon-button-file">
-				<IconButton
-					aria-label="profile button"
-					component="span"
-					className={props.btnStyle}
-					onClick={handleClick}
+	handleClose = () => {
+		console.log('here');
+		this.setState({ anchorEl: null });
+	};
+
+	handleMenuClick = (event, index) => {
+		if (index === 1) {
+			return this.props.history.push('/user/:userId/profile');
+		} else if (index === 3) {
+			return this.props.history.push('/');
+		} else this.setState({ open: true });
+		event.preventDefault();
+	};
+	render() {
+		const { classes } = this.props;
+		return (
+			<Fragment>
+				<label htmlFor="icon-button-file">
+					<IconButton
+						aria-label="profile button"
+						component="span"
+						className={this.props.btnStyle}
+						onClick={this.handleClick}
+					>
+						<ArrowDropDownIcon />
+					</IconButton>
+				</label>
+				<StyledMenu
+					id="customized-menu"
+					anchorEl={this.state.anchorEl}
+					keepMounted
+					open={Boolean(this.state.anchorEl)}
+					onClose={this.handleClose}
 				>
-					<ArrowDropDownIcon />
-				</IconButton>
-			</label>
-			<StyledMenu
-				id="customized-menu"
-				anchorEl={anchorEl}
-				keepMounted
-				open={Boolean(anchorEl)}
-				onClose={handleClose}
-			>
-				<MenuItem className={classes.StyledMenuItem}>
-					<ListItemIcon>
-						<AccountBoxIcon fontSize="small" />
-					</ListItemIcon>
-					<ListItemText primary="Profile" />
-				</MenuItem>
-				<MenuItem className={classes.StyledMenuItem}>
-					<ListItemIcon>
-						<HighlightOffIcon fontSize="small" />
-					</ListItemIcon>
-					<ListItemText primary="Delete Account" />
-				</MenuItem>
-				<MenuItem className={classes.StyledMenuItem}>
-					<ListItemIcon>
-						<ExitToAppIcon fontSize="small" />
-					</ListItemIcon>
-					<ListItemText primary="Sign Out" />
-				</MenuItem>
-			</StyledMenu>
-		</Fragment>
-	);
+					<MenuItem
+						className={classes.StyledMenuItem}
+						onClick={(event) => this.handleMenuClick(event, 1)}
+					>
+						<ListItemIcon>
+							<AccountBoxIcon fontSize="small" />
+						</ListItemIcon>
+						<ListItemText primary="Profile" />
+					</MenuItem>
+					<MenuItem
+						className={classes.StyledMenuItem}
+						onClick={(event) => this.handleMenuClick(event, 2)}
+					>
+						<ListItemIcon>
+							<HighlightOffIcon fontSize="small" />
+						</ListItemIcon>
+						<ListItemText primary="Delete Account" />
+					</MenuItem>
+					<MenuItem
+						className={classes.StyledMenuItem}
+						onClick={(event) => this.handleMenuClick(event, 3)}
+					>
+						<ListItemIcon>
+							<ExitToAppIcon fontSize="small" />
+						</ListItemIcon>
+						<ListItemText primary="Sign Out" />
+						{this.state.open ? <Dialog /> : null}
+					</MenuItem>
+				</StyledMenu>
+			</Fragment>
+		);
+	}
 }
+export default withStyles(style)(DropMenu);

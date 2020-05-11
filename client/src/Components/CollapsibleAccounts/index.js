@@ -51,16 +51,22 @@ export default function CollapsibleAccounts(props) {
 				</MuiExpansionPanelSummary>
 				<div className={classes.bodyBox}>
 					<MuiExpansionPanelDetails
-						style={{ height: props.id === 1 ? 375 : 241 }}
+						style={{
+							height: props.id === 1 ? 375 : props.id === 2 ? 338 : 241,
+						}}
 						classes={{ root: classes.ExpansionPanelDetailsroot }}
 					>
-						<Typography
-							className={props.id === 2 ? classes.bodyText2 : classes.bodyText}
-						>
-							{props.id === 1 ? <Cards location={location} /> : null}
-							{props.id === 2 ? <TextFields /> : null}
-							{props.body}
-						</Typography>
+						<Linkify>
+							<Typography
+								className={
+									props.id === 2 ? classes.bodyText2 : classes.bodyText
+								}
+							>
+								{props.id === 1 ? <Cards location={location} /> : null}
+								{props.id === 2 ? <TextFields /> : null}
+								{props.body}
+							</Typography>
+						</Linkify>
 					</MuiExpansionPanelDetails>
 				</div>
 			</MuiExpansionPanel>

@@ -30,7 +30,6 @@ export default function FormDialog() {
 				className={classes.btn}
 				onClick={handleClickOpen}
 			>
-				{' '}
 				Share
 			</Button>
 			<Dialog
