@@ -1,39 +1,38 @@
-const Joi = require('@hapi/joi');
-const { getUserQuery, postUserQuery } = require('../database/queries/db_users');
-console.log('Outside-controller');
-
-const getUser = (req, res) => {
-	console.log('inside controller');
-
-	getUserQuery()
-		.then((result) => res.json(result))
-		.catch((error) => {
-			throw new Error(error,"an error at getUserQuery fn occur");
-		});
-};
+const { postUserQuery } = require("../database/queries/db_users");
+const signUpValidation = require("../helper/signUpValidation");
 
 const postUser = (req, res) => {
-	console.log('inside post controller');
-	const data = req.body;
-	console.log(data);
-	const { error } = signUpValidation(data);
-	if (error) {
-		return res.status(400).json({ message: error.toString() });
-	}
-	postUserQuery(data, (error, result) => {
-		if (error) return res.status(400).json({ message: 'An error occur' });
-		return res.status(200).json({ message: 'Thanks for registration' });
-	});
+  const userData = req.body.user;
+  const { error } = signUpValidation(userData);
+
+  if (error) {
+    if (error.message.includes("[ref:password]"))
+      return res.status(200).json({
+        message: "passwords do not match",
+      });
+
+    else if (error.message.includes("length must be"))
+      return res.status(200).json({
+        message: "passwords length must be at least 8 characters long",
+      });
+
+    else if (error.message.includes("required pattern"))
+      return res.status(200).json({
+        message:
+          "fails to match the required pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/",
+      });
+  }
+
+  postUserQuery(userData, (error, result) => {
+    if (error) {
+      return res.status(200).json({
+        message: "Email is already exists",
+      });
+    }
+    return res.status(200).json({
+      message: "Successfully registered",
+    });
+  });
 };
 
-const signUpValidation = (data) => {
-	const schema = Joi.object({
-		name: Joi.string().alphanum().min(3).required(),
-		email: Joi.string().min(6).required().email(),
-		password: Joi.string()
-			.min(8)
-			.pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])')),
-	});
-	return schema.validate(data);
-};
-module.exports = { getUser, postUser, signUpValidation };
+module.exports = { postUser };

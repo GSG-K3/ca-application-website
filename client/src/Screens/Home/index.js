@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from 'react';
-import SignUp from '../../components/signUp/SignUp';
 class Home extends Component {
 	state = {};
 
@@ -12,4 +11,4 @@ class Home extends Component {
 	}
 }
 
-export default withStyles(styles)(Home);
+export default Home

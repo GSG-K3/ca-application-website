@@ -1,11 +1,7 @@
 import { createStyles } from '@material-ui/core/styles';
 const Styles = createStyles((theme) => ({
 	paper: {
-		// marginTop: theme.spacing(8),
-		// display: 'flex',
-		// flexDirection: 'column',
-		// alignItems: 'center',
-		margin: theme.spacing(8, 4),
+		margin: theme.spacing(10, 10),
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
@@ -14,7 +10,7 @@ const Styles = createStyles((theme) => ({
 		height: '100vh',
 	},
 	image: {
-		backgroundImage: 'url(https://source.unsplash.com/random)',
+		backgroundImage: 'url(http://www.philanthropyage.org/sites/default/files/styles/930x440/public/field/image/gaza_sky_geeks_co-working_space._credit_gaza_sky_geeks_mercy_corps.jpg?itok=vAq9QGID)',
 		backgroundRepeat: 'no-repeat',
 		backgroundColor:
 			theme.palette.type === 'light'
@@ -23,20 +19,20 @@ const Styles = createStyles((theme) => ({
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: theme.palette.secondary.main,
-	},
 	form: {
-		// marginTop: theme.spacing(8),
-		width: '60%', // Fix IE 11 issue.
-		margin: theme.spacing(3),
+		width: '100%', // Fix IE 11 issue.
+		margin: theme.spacing(6),
 		color: '3F6989',
 	},
 	submit: {
-		margin: theme.spacing(3, 0, 2),
+		width: '90%',
+		margin: theme.spacing(3, 3, 2),
 		borderRadius: 10,
 	},
+	TextField: {
+		fontSize: '10',
+	},
 }));
+// https://source.unsplash.com/random 
 
 export default Styles;
