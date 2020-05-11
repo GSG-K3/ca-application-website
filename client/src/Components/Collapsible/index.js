@@ -64,7 +64,7 @@ export default function Collapsible(props) {
 									onClick={props.onClick(props.id)}
 									style={{ display: props.id === 2 ? 'none' : 'unset' }}
 								>
-									Check Out
+									{props.id === 5 ? 'Submit' : 'Check Out'}
 								</Button>
 							</Typography>
 						</Linkify>
