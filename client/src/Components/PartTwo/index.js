@@ -9,20 +9,11 @@ import {
 	FormControlLabel,
 	FormLabel,
 } from '@material-ui/core';
+import axios from 'axios';
 
 class PartTwo extends Component {
-	state = {
-		gender: '',
-		age: '',
-		WestBankCity: '',
-		GazaCity: '',
-	};
-	handleChange = (event) => {
-		let { name, value } = event.target;
-		this.setState({ [name]: value });
-	};
 	render() {
-		const { classes } = this.props;
+		const { classes, state, handleChange } = this.props;
 		return (
 			<Fragment>
 				<div className={classes.container}>
@@ -33,8 +24,8 @@ class PartTwo extends Component {
 							</InputLabel>
 							<Select
 								native
-								value={this.state.gender}
-								onChange={this.handleChange}
+								value={state.gender}
+								onChange={handleChange}
 								inputProps={{
 									name: 'gender',
 								}}
@@ -47,11 +38,7 @@ class PartTwo extends Component {
 						</div>
 						<div className={classes.age}>
 							<FormLabel component="legend">What age range are you?</FormLabel>
-							<RadioGroup
-								aria-label="age"
-								name="age"
-								onChange={this.handleChange}
-							>
+							<RadioGroup aria-label="age" name="age" onChange={handleChange}>
 								<FormControlLabel value="<18" control={<Radio />} label="<18" />
 								<FormControlLabel
 									value="18-20"
@@ -78,7 +65,7 @@ class PartTwo extends Component {
 									control={<Radio />}
 									label="36-40"
 								/>
-								<FormControlLabel value="+40" control={<Radio />} label="+40" />
+								<FormControlLabel value="40+" control={<Radio />} label="+40" />
 							</RadioGroup>
 						</div>
 					</div>
@@ -88,8 +75,8 @@ class PartTwo extends Component {
 								Where do you live in West Bank?
 							</InputLabel>
 							<Select
-								value={this.state.WestBankCity}
-								onChange={this.handleChange}
+								value={state.WestBankCity}
+								onChange={handleChange}
 								inputProps={{
 									name: 'WestBankCity',
 								}}
@@ -120,10 +107,10 @@ class PartTwo extends Component {
 							</InputLabel>
 
 							<Select
-								value={this.state.GazaCity}
-								onChange={this.handleChange}
+								value={state.GazaCity}
+								onChange={handleChange}
 								inputProps={{
-									name: 'WestBankCity',
+									name: 'GazaCity',
 								}}
 								className={classes.citySelect}
 							>

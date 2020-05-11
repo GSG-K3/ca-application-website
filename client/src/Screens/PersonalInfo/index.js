@@ -7,22 +7,44 @@ import { Grid } from '@material-ui/core';
 import InfoTextFeilds from '../../Components/InfoTextFeilds';
 import PartTwo from '../../Components/PartTwo';
 import NextBtn from '../../Components/NextBtn';
+import axios from 'axios';
 
 class PersonalInfo extends Component {
 	state = {
 		activeStep: 0,
+		firstName: '',
+		lastName: '',
+		email: '',
+		phone: '',
+		motivation:
+			'Tell us - in your own words - about your background and why you want to be considered for this program. This is your opportunity to tell your story and make your application unique. Please write at least 5 sentences.',
+		gender: '',
+		age: '',
+		WestBankCity: '',
+		GazaCity: '',
 	};
 
 	handleNext = () => {
-		this.setState((prevState) => {
-			return { activeStep: prevState.activeStep + 1 };
-		});
+		axios
+			.post('/api/user/:userId/personal-info', this.state)
+			.then((data) => {
+				if (data.data === 'yes')
+					this.setState((prevState) => {
+						return { activeStep: prevState.activeStep + 1 };
+					});
+			})
+			.catch((err) => console.log(err));
 	};
 
 	handleBack = () => {
 		this.setState((prevState) => {
 			return { activeStep: prevState.activeStep - 1 };
 		});
+	};
+
+	handleChange = (event) => {
+		let { name, value } = event.target;
+		this.setState({ [name]: value });
 	};
 
 	handleReset = () => {
@@ -49,10 +71,13 @@ class PersonalInfo extends Component {
 							alt="man pic"
 							className={classes.img}
 						/>
-						<InfoTextFeilds />
+						<InfoTextFeilds
+							handleChange={this.handleChange}
+							state={this.state.motivation}
+						/>
 					</Grid>
 					<Grid wrap item container direction="row" justify="flex-end">
-						<PartTwo />
+						<PartTwo handleChange={this.handleChange} state={this.state} />
 						<img
 							src={require('../../assets/girlinfo.png')}
 							alt="man pic"

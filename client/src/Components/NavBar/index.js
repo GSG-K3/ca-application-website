@@ -13,7 +13,6 @@ const NavBarProfile = (props) => {
 	const classes = myStyles();
 
 	const { matchPath } = props;
-	console.log(props);
 	return (
 		<Fragment>
 			<Grid
