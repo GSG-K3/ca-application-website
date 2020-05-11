@@ -16,7 +16,6 @@ CREATE TABLE users
     password TEXT NOT NULL,
     CONSTRAINT unique_email UNIQUE(email)
 
-
 );
 
 CREATE TABLE account

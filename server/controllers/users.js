@@ -1,7 +1,7 @@
-const { postUserQuery } = require("../database/queries/db_users");
+const  postUserQuery  = require("../database/queries/db_postUser");
 const signUpValidation = require("../helper/signUpValidation");
 
-const postUser = (req, res) => {
+const SignUp = (req, res) => {
   const userData = req.body.user;
   const { error } = signUpValidation(userData);
 
@@ -35,4 +35,4 @@ const postUser = (req, res) => {
   });
 };
 
-module.exports = { postUser };
+module.exports =  SignUp ;

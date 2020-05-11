@@ -1,7 +1,14 @@
-const express = require('express');
-const { postUser } = require('./users');
-const router = express.Router();
+const router = require('express').Router();
 
-router.post('/api/signUp', postUser);
+const SignUp  = require('./users');
+const Login = require('./login');
+const SupportTeam = require('./supportTeam');
+const Accounts = require('./accounts');
+
+
+router.get('/home/support-team',SupportTeam)
+router.post('/api/signup', SignUp);
+router.post('/api/login',Login)
+router.post('/api/user/:userId/accounts',Accounts)
 
 module.exports = router;

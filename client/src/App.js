@@ -1,18 +1,38 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	Redirect,
+} from 'react-router-dom';
 import Home from './Screens/Home';
-import SignUp from './Screens/signUp'
+import SupportTeam from './Components/SupportTeam';
 import NotFoundPage from './Screens/NotFoundPage';
-
+import Login from './Screens/Login';
+import Contact from './Screens/Contact';
+import Profile from './Screens/Profile';
+import PersonalInfo from './Screens/PersonalInfo';
+import SignUp from './Screens/signUp'
+import Accounts from './Screens/Accounts';
 
 function App() {
 	return (
 		<Fragment>
 			<Router>
 				<Switch>
-					<Route exact path='/home' component={Home}/>
-					<Route exact path="/signUp"  component={SignUp} />
+					<Route path="/" exact component={Home} />
+					<Route path="/home" exact component={Home} />
+					<Route path="/home/support-team" exact component={SupportTeam} />
+					<Route path="/login" exact component={Login} />
+					<Route path="/user/:userId" exact component={Profile} />
+					<Route path="/contact-us" exact component={Contact} />
+					<Route path="/signUp" exact component={SignUp} />
+					<Route path="/user/:userId/accounts" exact component={Accounts} />
+					<Route
+						path="/user/:userId/personal-info"
+						exact
+						component={PersonalInfo}
+					/>
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>

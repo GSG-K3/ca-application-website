@@ -1,3 +1,7 @@
-import { createStyles } from '@material-ui/core';
-const styles = createStyles((theme) => ({}));
+const styles = (theme) => ({
+	body: {
+		boxSizing: 'content-box',
+		width: '100%',
+	},
+});
 export default styles;

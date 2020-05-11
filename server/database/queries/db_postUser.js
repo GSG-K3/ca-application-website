@@ -19,4 +19,4 @@ const postUserQuery = (data, callback) => {
     });
 };
 
-module.exports = { postUserQuery };
+module.exports =  postUserQuery ;

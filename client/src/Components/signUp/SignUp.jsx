@@ -58,7 +58,7 @@ class SignUp extends Component {
     const isValid = this.validate();
     if (isValid) {
       axios
-        .post("/api/signUp", {
+        .post("/api/signup", {
           user: { email, password, passwordConfirm },
         })
         .then((res) => {
