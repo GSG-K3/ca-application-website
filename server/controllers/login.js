@@ -1,6 +1,7 @@
 const express = require('express');
 const getUserByEmail = require('../database/queries/db_user');
 const { compareHashed, loginValidation } = require('../helper');
+const insertPersonalInfo = require('../database/queries/personalInfo');
 
 const router = express.Router();
 router.get('/', (request, response) => {
@@ -41,4 +42,12 @@ router.post('/api/login', (request, response) => {
 		});
 });
 
+router.post('/api/user/:userId/personal-info', (request, response) => {
+	const user = request.body;
+	insertPersonalInfo(user)
+		.then((result) => {
+			if (result.rowCount !== 0) response.send('yes');
+		})
+		.catch((err) => console.log(err));
+});
 module.exports = router;

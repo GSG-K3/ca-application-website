@@ -5,20 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import { Typography } from '@material-ui/core';
 
 class InfoTextFeilds extends Component {
-	state = {
-		firstName: '',
-		lastName: '',
-		email: '',
-		phone: '',
-		motivation:
-			'Tell us - in your own words - about your background and why you want to be considered for this program. This is your opportunity to tell your story and make your application unique. Please write at least 5 sentences.',
-	};
-	handleChange = (event) => {
-		let { name, value } = event.target;
-		this.setState({ [name]: value });
-	};
 	render() {
-		const { classes } = this.props;
+		const { classes, handleChange, state } = this.props;
 		return (
 			<Fragment>
 				<form className={classes.form}>
@@ -29,7 +17,7 @@ class InfoTextFeilds extends Component {
 							id="outlined-basic"
 							label="First Name"
 							variant="outlined"
-							onChange={this.handleChange}
+							onChange={handleChange}
 						/>
 						<TextField
 							name="lastName"
@@ -37,7 +25,7 @@ class InfoTextFeilds extends Component {
 							id="outlined-basic"
 							label="Last Name"
 							variant="outlined"
-							onChange={this.handleChange}
+							onChange={handleChange}
 						/>
 					</div>
 					<div className={classes.textfields}>
@@ -47,7 +35,7 @@ class InfoTextFeilds extends Component {
 							id="outlined-basic"
 							label="Email"
 							variant="outlined"
-							onChange={this.handleChange}
+							onChange={handleChange}
 						/>
 						<TextField
 							name="phone"
@@ -56,7 +44,7 @@ class InfoTextFeilds extends Component {
 							id="outlined-basic"
 							label="Phone Number"
 							variant="outlined"
-							onChange={this.handleChange}
+							onChange={handleChange}
 						/>
 					</div>
 					<div className={classes.motivSection}>
@@ -66,10 +54,10 @@ class InfoTextFeilds extends Component {
 						<TextField
 							name="motivation"
 							id="4"
-							label={this.state.motivation}
+							label={state}
 							multiline
 							rowsMax={10}
-							onChange={this.handleChange}
+							onChange={handleChange}
 							variant="outlined"
 							className={classes.box}
 							inputProps={{ style: { height: 60 } }}
