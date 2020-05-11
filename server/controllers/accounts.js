@@ -1,9 +1,6 @@
-const express = require('express');
 const insertUserData = require('../database/queries/accounts');
 
-const router = express.Router();
-
-router.post('/api/user/:userId/accounts', (req, res) => {
+const Accounts = (req, res) => {
 	console.log(req.body);
 	const user = req.body;
 	const {
@@ -35,6 +32,6 @@ router.post('/api/user/:userId/accounts', (req, res) => {
 			})
 			.catch((err) => console.log(err));
 	}
-});
+};
 
-module.exports = router;
+module.exports = Accounts;

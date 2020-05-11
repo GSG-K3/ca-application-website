@@ -7,5 +7,5 @@ if (!connectionString) throw new Error('failed to connect with the database');
 
 module.exports = new Pool({
 	connectionString,
-	ssl: !connectionString.includes('locahost'),
+	ssl: !connectionString.includes('localhost'),
 });

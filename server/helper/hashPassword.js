@@ -1,6 +1,5 @@
+const bycrpt = require('bcryptjs');
 'use strict';
-
-const bycrpt = require('bcrypt');
 
 const hashPassword = () => {
 	return bycrpt.hash('password123', 10);

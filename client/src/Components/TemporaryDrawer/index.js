@@ -29,7 +29,7 @@ export default function TemporaryDrawer(props) {
 		right: false,
 		link: '/',
 	});
-	console.log(props);
+
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
 			event.type === 'keydown' &&

@@ -27,15 +27,13 @@ class Home extends Component {
 		const { classes } = this.props;
 
 		return (
-			<Fragment>
-				<div id="home" className={classes.body}>
-					<NavBar matchPath={this.props.match} />
-					<About />
-					<Requierments />
-					<Stories />
-					<SupportTeam data={this.state.data} />
-					<Footer />
-				</div>
+			<Fragment id="home" className={classes.body}>
+				<NavBar matchPath={this.props.match} />
+				<About />
+				<Requierments />
+				<Stories />
+				<SupportTeam data={this.state.data} />
+				<Footer />
 			</Fragment>
 		);
 	}

@@ -12,53 +12,37 @@ import Login from './Screens/Login';
 import Contact from './Screens/Contact';
 import Profile from './Screens/Profile';
 import PersonalInfo from './Screens/PersonalInfo';
-import Signup from './Screens/Signup';
+import SignUp from './Screens/signUp';
 import Accounts from './Screens/Accounts';
-import './App.css';
 
-class App extends Component {
-	state = {
-		fields: {},
-	};
-
-	onChange = (updatedValue) => {
-		this.setState({
-			fields: {
-				...this.state.fields,
-				...updatedValue,
-			},
-		});
-	};
-	render() {
-		return (
-			<Fragment>
-				<Router>
-					<Switch>
-						<Route path="/" exact component={Home} />
-
-						<Route
-							path="/login"
-							exact
-							render={() => (
-								<Login onChange={(fields) => this.onChange(fields)} />
-							)}
-						/>
-						<Route path="/user/:userId" exact component={Profile} />
-						<Route
-							path="/user/:userId/personal-info"
-							exact
-							component={PersonalInfo}
-						/>
-						<Route path="/contact-us" exact component={Contact} />
-						<Route path="/signup" exact component={Signup} />
-						<Route path="/user/:userId/accounts" exact component={Accounts} />
-						<Route component={NotFoundPage} />
-						<Redirect to="/404" />
-					</Switch>
-				</Router>
-			</Fragment>
-		);
-	}
+function App() {
+	return (
+		<Fragment>
+			<Router>
+				<Switch>
+					<Route path="/" exact component={Home} />
+					<Route
+						path="/login"
+						exact
+						render={() => (
+							<Login onChange={(fields) => this.onChange(fields)} />
+						)}
+					/>
+					<Route path="/user/:userId" exact component={Profile} />
+					<Route path="/contact-us" exact component={Contact} />
+					<Route path="/signUp" exact component={SignUp} />
+					<Route path="/user/:userId/accounts" exact component={Accounts} />
+					<Route
+						path="/user/:userId/personal-info"
+						exact
+						component={PersonalInfo}
+					/>
+					<Route component={NotFoundPage} />
+					<Redirect to="/404" />
+				</Switch>
+			</Router>
+		</Fragment>
+	);
 }
 
 export default App;
