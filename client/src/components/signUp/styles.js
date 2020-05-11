@@ -1,7 +1,8 @@
 import { createStyles } from '@material-ui/core/styles';
+
 const Styles = createStyles((theme) => ({
 	paper: {
-		margin: theme.spacing(10, 10),
+		margin: theme.spacing(15, 10),
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
@@ -20,19 +21,18 @@ const Styles = createStyles((theme) => ({
 		backgroundPosition: 'center',
 	},
 	form: {
-		width: '100%', // Fix IE 11 issue.
+		width: '100%', 
 		margin: theme.spacing(6),
 		color: '3F6989',
 	},
 	submit: {
-		width: '90%',
-		margin: theme.spacing(3, 3, 2),
+		width: '100%',
+		margin: theme.spacing(3, 0, 2),
 		borderRadius: 10,
 	},
 	TextField: {
 		fontSize: '10',
 	},
 }));
-// https://source.unsplash.com/random 
 
 export default Styles;

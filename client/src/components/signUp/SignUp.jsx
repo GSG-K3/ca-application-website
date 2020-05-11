@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from "react";
-import FlipMove from "react-flip-move";
 import {
   Button,
   CssBaseline,
@@ -8,10 +7,7 @@ import {
   Grid,
   Box,
   Typography,
-  Container,
-  FormControlLabel,
   Paper,
-  Checkbox,
 } from "@material-ui/core";
 import Styles from "./styles";
 import logo from "../../assets/logo-GsG.svg";
@@ -27,31 +23,23 @@ const initialState = {
   passwordConfirmedError: "",
 };
 
+let regex = /^[A-Za-z]\w{7,}$/;
 class SignUp extends Component {
   state = initialState;
 
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-    console.log(value);
   };
 
   validate = () => {
     const { email, password, passwordConfirm } = this.state;
 
-    let emailError =
-      !email.includes("@") ||
-      !email.includes("gmail.com", "hotmail.com", ".net", ".ps")
-        ? "Invalid email address"
-        : "";
+    let emailError = !email.includes("@") ? "Invalid email address" : "";
 
-    let passwordError =
-      password.length < 8 ? "minimum 9 charchters Required" : "";
-    new RegExp();
-    if (!password.includes("^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$")) {
-      console.log(password.includes("^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$"));
-      passwordError = "Failed to meet the required pattern[A-Z][a-z][0-9]";
-    }
+    let passwordError = !password.match(regex)
+      ? "minimum 8 charcters, one Capital letter, one small letter,one number at least"
+      : "";
 
     let passwordConfirmedError =
       password !== passwordConfirm ? "Passwords do not match" : "";
@@ -60,6 +48,7 @@ class SignUp extends Component {
       this.setState({ emailError, passwordError, passwordConfirmedError });
       return false;
     }
+
     return true;
   };
 
@@ -68,17 +57,22 @@ class SignUp extends Component {
     const { email, password, passwordConfirm } = this.state;
     const isValid = this.validate();
     if (isValid) {
-      console.log(this.state);
       axios
         .post("/api/signUp", {
           user: { email, password, passwordConfirm },
         })
         .then((res) => {
-          if (res.data.message.includes("Email is already exists")) {
+          if (res.data.message.includes("exists")) {
             const emailError = res.data.message.toString();
             this.setState({ emailError });
             return false;
+          } 
+          else if (res.data.message.includes("pattern")) {
+            const passwordError = res.data.message.toString();
+            this.setState({ passwordError });
+            return false;
           }
+          else this.props.props.history.push("/home");
         })
         .catch((err) => console.log(err));
       this.setState(initialState);
@@ -165,7 +159,11 @@ class SignUp extends Component {
                       label="Password"
                       type="password"
                       onChange={this.handleChange}
-                      helperText={passwordError}
+                      helperText={
+                        passwordError
+                          ? passwordError
+                          : "minimum 8 charcters, one Capital letter, one small letter,one number at least"
+                      }
                       error={passwordError}
                       autoFocus
                     />
@@ -200,7 +198,7 @@ class SignUp extends Component {
                 </Button>
                 <Grid container justify="flex-end">
                   <Grid item xs>
-                    <Link href="#" variant="body2">
+                    <Link href={"/home"} variant="body2">
                       Already have an account? Sign in
                     </Link>
                   </Grid>

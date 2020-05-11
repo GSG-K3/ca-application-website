@@ -1,7 +1,4 @@
-
-// const userData = require('../controllers/users');
 const Joi = require('@hapi/joi');
-
 
 const signUpValidation = (userData) => {
 	const schema = Joi.object({
