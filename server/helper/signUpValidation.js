@@ -6,10 +6,9 @@ const signUpValidation = (userData) => {
 		password: Joi.string()
 			.min(8)
 			.required()
-			.pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])')),
-		passwordConfirm: Joi.ref('password'),
+			.regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/),
 	});
 	return schema.validate(userData);
 };
 
-module.exports= signUpValidation
+module.exports = signUpValidation;
