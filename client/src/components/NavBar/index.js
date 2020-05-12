@@ -13,7 +13,6 @@ const NavBarProfile = (props) => {
 	const classes = myStyles();
 
 	const { matchPath } = props;
-
 	return (
 		<Fragment>
 			<Grid
@@ -118,7 +117,7 @@ const NavBarProfile = (props) => {
 							<NotificationsActiveIcon />
 						</IconButton>
 					</label>
-					<DropMenu btnStyle={classes.notiBtn} />
+					<DropMenu btnStyle={classes.notiBtn} history={props.history} />
 					<Avatar
 						alt="Cindy Baker"
 						src={require('../../assets/girl.png')}

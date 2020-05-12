@@ -31,8 +31,10 @@ class Profile extends Component {
 	};
 
 	handleClickOpen = (id) => (event) => {
-		this.props.history.push('/');
-		console.log(this.props, id);
+		if (id === 1) this.props.history.push('/user/:userId/personal-info');
+		else if (id === 3) this.props.history.push('/user/:userId/accounts');
+		else if (id === 4) this.props.history.push('/user/:userId/projects');
+		else if (id === 5) this.props.history.push('/user/:userId/submitted-form');
 		event.preventDefault();
 	};
 
@@ -41,7 +43,7 @@ class Profile extends Component {
 		const location = this.props.match.path;
 		return (
 			<Grid>
-				<NavBar matchPath={this.props.match} />
+				<NavBar matchPath={this.props.match} history={this.props.history} />
 				<Grid className={classes.pageContent}>
 					<Typography color="primary" className={classes.welcome}>
 						Welcome Nicole! Please follow the steps below in order to fill your

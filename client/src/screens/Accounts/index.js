@@ -40,7 +40,7 @@ class Accounts extends Component {
 
 		return (
 			<Grid>
-				<NavBar matchPath={this.props.match} />
+				<NavBar matchPath={this.props.match} history={this.props.history} />
 				<Grid className={classes.pageContent}>
 					<Typography color="primary" className={classes.welcome}>
 						Step three of the application

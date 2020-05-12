@@ -12,6 +12,13 @@ const style = (theme) => ({
 			backgroundColor: 'unset',
 		},
 	},
+	container: {
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		alignItems: 'center',
+		paddingTop: 46,
+	},
 });
 
 export default style;
