@@ -1,7 +1,6 @@
 const getUserByEmail = require('../database/queries/db_user');
 const { compareHashed, loginValidation } = require('../helper');
 
-
 const Login = (request, response) => {
 	let { user } = request.body;
 	const { error } = loginValidation(user);
