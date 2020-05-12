@@ -12,7 +12,7 @@ import Login from './screens/Login';
 import Contact from './screens/Contact';
 import Profile from './screens/Profile';
 import PersonalInfo from './screens/PersonalInfo';
-import SignUp from './screens/signUp';
+import SignUp from './screens/SignUp';
 import Accounts from './screens/Accounts';
 
 function App() {
