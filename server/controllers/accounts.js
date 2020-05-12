@@ -1,12 +1,9 @@
-const express = require('express');
 const insertUserAccounts = require('../database/queries/accounts');
 
-const router = express.Router();
-
-router.post('/api/user/:userId/accounts', (req, res) => {
+const Accounts = (req, res) => {
 	const user = req.body;
 
-	if (user.github !== '' && user.freecodecamp !== '' && user.codewars) {
+	if (user.github !== '' && user.freecodecamp !== '' && user.codewars !== '') {
 		insertUserAccounts(user)
 			.then((result) => {
 				if (result.rowCount === 1) {
@@ -15,6 +12,6 @@ router.post('/api/user/:userId/accounts', (req, res) => {
 			})
 			.catch((err) => console.log(err));
 	} else res.send(false);
-});
+};
 
-module.exports = router;
+module.exports = Accounts;
