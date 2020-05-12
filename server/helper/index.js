@@ -1,5 +1,6 @@
+const signUpValidation = require("./signUpValidation");
 const hashPassword = require('./hashPassword');
 const compareHashed = require('./compareHashed');
 const loginValidation = require('./loginValidation');
 
-module.exports = { loginValidation, compareHashed, hashPassword };
+module.exports = { signUpValidation, loginValidation, compareHashed, hashPassword };

@@ -1,15 +1,15 @@
 import React, { Fragment, Component } from 'react';
-import NavBar from '../../Components/NavBar';
-import Collapsible from '../../Components/Collapsible';
+import NavBar from '../../components/NavBar';
+import CollapsibleAccounts from '../../components/CollapsibleAccounts';
 import { Typography, Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import style from './style';
 import { animateScroll as scroll, Events } from 'react-scroll';
-import Content from '../../Content/firstPage';
+import Content from '../../Content/accountsPage';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import { IconButton } from '@material-ui/core';
 
-class Profile extends Component {
+class Accounts extends Component {
 	state = {
 		data: [],
 	};
@@ -23,37 +23,33 @@ class Profile extends Component {
 		});
 		return this.setState({ data: Content() });
 	}
-	updateState = () => {
-		return this.setState({ data: Content() });
-	};
+
 	scrollToTop = () => {
 		scroll.scrollToTop();
 	};
 
 	handleClickOpen = (id) => (event) => {
-		if (id === 1) this.props.history.push('/user/:userId/personal-info');
-		else if (id === 3) this.props.history.push('/user/:userId/accounts');
-		else if (id === 4) this.props.history.push('/user/:userId/projects');
-		else if (id === 5) this.props.history.push('/user/:userId/submitted-form');
+		// this.props.history.push('/');
+		// console.log(this.props, id);
 		event.preventDefault();
 	};
 
 	render() {
 		const { classes } = this.props;
-		const location = this.props.match.path;
+		let location = this.props.match.path;
+
 		return (
 			<Grid>
 				<NavBar matchPath={this.props.match} history={this.props.history} />
 				<Grid className={classes.pageContent}>
 					<Typography color="primary" className={classes.welcome}>
-						Welcome Nicole! Please follow the steps below in order to fill your
-						application
+						Step three of the application
 					</Typography>
 
 					<Grid className={classes.collapseContainer}>
 						{this.state.data.map((data, index) => {
 							return (
-								<Collapsible
+								<CollapsibleAccounts
 									key={index}
 									header={data.header}
 									body={data.body}
@@ -85,4 +81,4 @@ class Profile extends Component {
 	}
 }
 
-export default withStyles(style)(Profile);
+export default withStyles(style)(Accounts);
