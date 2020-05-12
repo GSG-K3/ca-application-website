@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Home from './Screens/Home';
 
+
 import './App.css';
 
 function App() {
@@ -15,7 +16,6 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path= "/home" exact component={Home} />
-					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>
 			</Router>
