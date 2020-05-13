@@ -50,9 +50,7 @@ const styles = makeStyles((theme) => ({
   grid: {
     display: "flex",
     flexDirection: "row",
-		// alignItems: "space-around",
-		
-  },
+	  },
 }));
 
 const settings = {
@@ -73,7 +71,6 @@ export default function SupportTeam() {
     axios
       .get("/api/success-stories")
       .then((response) => {
-        console.log(response);
         storyFn(response.data);
       })
       .catch((error) => console.log(error));
@@ -151,54 +148,9 @@ export default function SupportTeam() {
           )}
         </Slider>
       </Paper>
-
-      <Paper elevation="24" style={{ borderRadius: "80px" }}>
-        <Typography className={classes.title} variant="h4">
-          <Typed strings={["Success Stories"]} typeSpeed={50} backSpeed={50} />
-        </Typography>
-
-        {Story.length && (
-          <Grid container spacing={2} className={classes.grid}>
-            <Grid item xs={2}>
-              <Avatar
-                className={classes.avatarSec}
-                src={Story[1].picture}
-                alt="success Story"
-              />
-            </Grid>
-            <Grid item md={1} sm={6}>
-              <Avatar
-                className={classes.avatarPrm}
-                src={Story[0].picture}
-                alt="success Story"
-              />
-            </Grid>
-            <Grid item md={2}>
-              <Avatar
-                className={classes.avatarSec}
-                src={Story[2].picture}
-                alt="success Story"
-              />
-            </Grid>
-            <br />
-            <Typography className={classes.name}>
-              {Story[0].job_title}
-              <br />
-              {Story[0].name}
-            </Typography>
-
-            <Typography className={classes.para}>
-              {" "}
-              {Story[0].description}{" "}
-            </Typography>
-          </Grid>
-        )}
-      </Paper>
     </Fragment>
   ) : (
     <div>
-      {" "}
-      Sorry !! an Error occurred ... <br />
       <img src={error} />
     </div>
   );
