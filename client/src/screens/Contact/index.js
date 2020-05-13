@@ -8,6 +8,7 @@ class Contact extends Component {
 
 	render() {
 		const { classes } = this.props;
+		console.log(this.props);
 		return (
 			<Fragment>
 				<div className={classes.text} id="contact">
