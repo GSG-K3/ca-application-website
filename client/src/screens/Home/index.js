@@ -4,7 +4,7 @@ import Requierments from '../../components/Requierments';
 import NavBar from '../../components/NavBar';
 import SupportTeam from '../../components/SupportTeam';
 import Footer from '../../components/Footer';
-import Stories from '../../components/Stories';
+import SuccessStories from '../../components/successStories';
 import { withStyles } from '@material-ui/core';
 import styles from './style';
 import About from '../../components/About';
@@ -31,7 +31,7 @@ class Home extends Component {
 				<NavBar matchPath={this.props.match} />
 				<About />
 				<Requierments />
-				<Stories />
+				<SuccessStories />
 				<SupportTeam data={this.state.data} />
 				<Footer />
 			</Fragment>

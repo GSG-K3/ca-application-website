@@ -10,25 +10,12 @@ import error from "../../assets/error1.svg";
 import axios from "axios";
 
 const styles = makeStyles((theme) => ({
-  avatar: {
-    width: theme.spacing(10),
-    height: theme.spacing(10),
-    marginLeft: theme.spacing(45),
-    marginBottom: "1rem",
-    alignItems: "center",
-  },
   avatarPrm: {
     width: theme.spacing(15),
     height: theme.spacing(15),
     marginLeft: theme.spacing(45),
     marginBottom: "1rem",
-  },
-  avatarSec: {
-    width: theme.spacing(9),
-    height: theme.spacing(9),
-    marginLeft: theme.spacing(55),
-    marginBottom: "1rem",
-    alignItems: "center",
+  
   },
   title: {
     color: "#235378",
@@ -38,7 +25,7 @@ const styles = makeStyles((theme) => ({
   },
   para: {
     color: "black",
-    marginBottom: "2rem",
+    marginBottom: "3rem",
     marginLeft: theme.spacing(45),
     marginRight: theme.spacing(40),
   },
@@ -80,9 +67,9 @@ export default function SupportTeam() {
 
   return Story ? (
     <Fragment>
-      <Paper elevation="24" style={{ borderRadius: "80px" }}>
+      <Paper elevation="12" style={{ borderRadius: "80px" ,marginBottom:'3rem'}}>
         <Typography className={classes.title} variant="h4">
-          <Typed strings={["Success Stories"]} typeSpeed={50} backSpeed={50} loop/>
+          <Typed strings={["Success Stories"]} typeSpeed={50}/>
         </Typography>
         <Slider {...settings}>
           {Story.length && (
