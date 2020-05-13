@@ -38,6 +38,17 @@ class Login extends Component {
 
 	render() {
 		const { classes } = this.props;
+		const { loginError } = this.state;
+		const emailError = loginError
+			? loginError.includes(' "email" is not allowed to be empty')
+				? 'Please insert your email'
+				: 'incorrect email'
+			: '';
+		const passwordError = loginError
+			? loginError.includes('"password" is not allowed to be empty')
+				? 'Please fill this field'
+				: 'password should be at least 7 charachters long'
+			: '';
 		return (
 			<Fragment>
 				<div className={classes.body} id="login">
@@ -81,6 +92,8 @@ class Login extends Component {
 										<TextFieldValidation
 											onChange={this.handleChange}
 											error={this.state.loginError}
+											emailError={emailError}
+											passwordError={passwordError}
 										/>
 									</Grid>
 									<Grid item>

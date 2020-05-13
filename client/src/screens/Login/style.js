@@ -31,13 +31,12 @@ const styles = {
 		alignItems: 'center',
 	},
 	btn: {
-		marginTop: 12,
 		color: 'white',
 		backgroundColor: '#4CB7A7',
 		borderRadius: 61,
 		width: 272,
-		height: 68,
-		fontSize: 25,
+		height: 45,
+		fontSize: 20,
 		marginTop: 20,
 	},
 };
