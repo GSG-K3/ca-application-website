@@ -3,10 +3,10 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './style';
 import { Button, Grid, Typography, Link } from '@material-ui/core';
 import axios from 'axios';
-class welcome extends Component {
-    handleClick=(e)=>{
-        e.preventDefault();
-    }
+class ContactUs extends Component {
+	handleClick = (e) => {
+		e.preventDefault();
+	};
 	render() {
 		const { classes } = this.props;
 		return (
@@ -42,16 +42,23 @@ class welcome extends Component {
 								/>
 							</Grid>
 							<Grid item>
-								<Typography color="primary" variant="h6" className={classes.welcomP1}>
-									Welcome to GSG Application For The code Academy Program
-                                  
-                                </Typography>
+								<Typography
+									color="primary"
+									variant="h6"
+									className={classes.welcomP1}
+								>
+									Contact Us
+								</Typography>
 							</Grid>
-                            <Grid item>
-								<Typography color="primary" variant="h6" className={classes.welcomP2}>
-									
-                                    Please Sign in to continue your application
-                                </Typography>
+							<Grid item>
+								<Typography
+									color="primary"
+									variant="h6"
+									className={classes.welcomP2}
+								>
+									Feel free to contact us anytime we will get back to you as
+									soon as we can!
+								</Typography>
 							</Grid>
 
 							<Grid item>
@@ -62,12 +69,10 @@ class welcome extends Component {
 									color="primary"
 									className={classes.btn}
 								>
-									Sign in
+									Submit
 								</Button>
 							</Grid>
 						</Grid>
-
-		
 					</Grid>
 				</div>
 			</Fragment>
@@ -75,4 +80,4 @@ class welcome extends Component {
 	}
 }
 
-export default withStyles(styles)(welcome);
+export default withStyles(styles)(ContactUs);

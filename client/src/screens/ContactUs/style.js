@@ -9,21 +9,21 @@ const styles = {
 	welcomP1: {
 		fontFamily: ' Roboto',
 		fontStyle: ' normal',
-		fontWeight: ' bold',
-		fontSize: '25px',
-		lineHeight: '30px',
+		fontWeight: 'bold',
+		fontSize: '40px',
+		lineHeight: '50px',
 		display: 'flex',
 		alignItems: 'center',
 		textAlign: 'center',
-    },
-    welcomP2: {
-        lineHeight: '15px',
-        fontFamily: ' Roboto',
+	},
+	welcomP2: {
+		lineHeight: '15px',
+		fontFamily: ' Roboto',
 		fontStyle: ' normal',
-		fontWeight: ' bold',
-		fontSize: '15px',
-    },
-
+		fontSize: '20px',
+		textAlign: 'center',
+		color: '#BDBDBD',
+	},
 	body: {
 		display: 'flex',
 		flexDirection: 'column',
@@ -49,8 +49,8 @@ const styles = {
 		alignItems: 'center',
 	},
 	btn: {
-        color: 'white',
-        fontFamily: ' Roboto',
+		color: 'white',
+		fontFamily: ' Roboto',
 		backgroundColor: '#4CB7A7',
 		borderRadius: 61,
 		width: 272,
