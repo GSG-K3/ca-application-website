@@ -38,13 +38,3 @@ class TextFieldValidation extends Component {
 }
 
 export default withStyles(style)(TextFieldValidation);
-{
-	/* {error.includes('no user exist in the db') ? ( */
-}
-// 	<Typography
-// 		color="primary"
-// 		gutterBottom
-// 		className={classes.incorrect}
-// 	>
-// 		email or password are incorrect!
-// 	</Typography>
