@@ -21,7 +21,13 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/" exact component={Home} />
-					<Route path="/login" exact component={Login} />
+					<Route
+						path="/login"
+						exact
+						render={() => (
+							<Login onChange={(fields) => this.onChange(fields)} />
+						)}
+					/>
 					<Route path="/user/:userId" exact component={Profile} />
 					<Route path="/contact-us" exact component={Contact} />
 					<Route path="/signUp" exact component={SignUp} />
