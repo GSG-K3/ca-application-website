@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './style';
-import { Button, Grid, Typography, Link } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import axios from 'axios';
 import TextFieldValidation from '../../components/LoginForm';
 
@@ -28,9 +28,10 @@ class Login extends Component {
 			.then((data) => {
 				let info = data.data;
 				let userId = info.user_id;
+
 				if (typeof info === 'string') {
 					return this.setState({ loginError: info });
-				} else if (info) return this.props.history.push(`/user/${userId}`);
+				} else this.props.history.push(`/user/${userId}`);
 			})
 			.catch((err) => console.log(err));
 		event.preventDefault();
@@ -40,72 +41,21 @@ class Login extends Component {
 		const { classes } = this.props;
 		return (
 			<Fragment>
-				<div className={classes.body} id="login">
-					<img
-						src={require('../../assets/Polygon.png')}
-						alt="polygon image"
-						className={classes.polygon}
-					/>
-					<Grid
-						wrap
-						className={classes.container}
-						container
-						direction="row"
-						justify="center"
-						alignItems="center"
-						spacing={3}
-					>
-						<Grid
-							item
-							wrap
-							container
-							justify="center"
-							alignItems="center"
-							xl={6}
-							className={classes.loginGrid}
+				<div className={classes.text} id="login">
+					<form className={classes.root} noValidate autoComplete="off">
+						<TextFieldValidation
+							onChange={this.handleChange}
+							error={this.state.loginError}
+						/>
+						<Button
+							type="submit"
+							onClick={this.handleSubmit}
+							variant="contained"
+							color="primary"
 						>
-							<Grid item>
-								<img
-									src={require('../../assets/logo-GsG.svg')}
-									alt="GSG logo"
-								/>
-							</Grid>
-							<Grid item>
-								<Typography color="primary" variant="h6">
-									please sign in to your account
-								</Typography>
-							</Grid>
-							<Grid item container alignItems="center" justify="center">
-								<form className={classes.root} noValidate autoComplete="off">
-									<Grid item container direction="column" alignItems="center">
-										<TextFieldValidation
-											onChange={this.handleChange}
-											error={this.state.loginError}
-										/>
-									</Grid>
-									<Grid item>
-										<Link href="#" color="secondary">
-											Forget your password?
-										</Link>
-									</Grid>
-									<Grid item>
-										<Button
-											type="submit"
-											onClick={this.handleSubmit}
-											variant="contained"
-											color="primary"
-											className={classes.btn}
-										>
-											Log in
-										</Button>
-									</Grid>
-								</form>
-							</Grid>
-						</Grid>
-						<Grid item wrap xl={6}>
-							<img src={require('../../assets/loginpic.png')} alt="login pic" />
-						</Grid>
-					</Grid>
+							Login
+						</Button>
+					</form>
 				</div>
 			</Fragment>
 		);
