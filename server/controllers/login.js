@@ -1,14 +1,7 @@
-const express = require('express');
 const getUserByEmail = require('../database/queries/db_user');
 const { compareHashed, loginValidation } = require('../helper');
-const insertPersonalInfo = require('../database/queries/personalInfo');
 
-const router = express.Router();
-router.get('/', (request, response) => {
-	response.send('response from router get');
-});
-
-router.post('/api/login', (request, response) => {
+const Login = (request, response) => {
 	let { user } = request.body;
 	const { error } = loginValidation(user);
 	if (typeof error !== 'undefined') {
@@ -40,14 +33,6 @@ router.post('/api/login', (request, response) => {
 		.catch((err) => {
 			throw new Error(err);
 		});
-});
+};
 
-router.post('/api/user/:userId/personal-info', (request, response) => {
-	const user = request.body;
-	insertPersonalInfo(user)
-		.then((result) => {
-			if (result.rowCount !== 0) response.send('yes');
-		})
-		.catch((err) => console.log(err));
-});
-module.exports = router;
+module.exports = Login;

@@ -1,12 +1,12 @@
 import React, { Fragment, Component } from 'react';
-import NavBar from '../../Components/NavBar';
+import NavBar from '../../components/NavBar';
 import { withStyles } from '@material-ui/styles';
 import style from './style';
-import Stepper from '../../Components/Stepper';
+import Stepper from '../../components/Stepper';
 import { Grid } from '@material-ui/core';
-import InfoTextFeilds from '../../Components/InfoTextFeilds';
-import PartTwo from '../../Components/PartTwo';
-import NextBtn from '../../Components/NextBtn';
+import InfoTextFeilds from '../../components/InfoTextFeilds';
+import PartTwo from '../../components/PartTwo';
+import NextBtn from '../../components/NextBtn';
 import axios from 'axios';
 
 class PersonalInfo extends Component {
