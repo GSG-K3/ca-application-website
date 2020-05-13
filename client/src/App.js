@@ -13,6 +13,7 @@ import Profile from './screens/Profile';
 import PersonalInfo from './screens/PersonalInfo';
 import SignUp from './screens/SignUp';
 import Accounts from './screens/Accounts';
+import Welcome from "./screens/Welcome"
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 					<Route path="/user/:userId" exact component={Profile} />
 					<Route path="/contact-us" exact component={Contact} />
 					<Route path="/signUp" exact component={SignUp} />
+					<Route path ="/signup/welcome" exact component={Welcome}/>
 					<Route path="/user/:userId/accounts" exact component={Accounts} />
 					<Route
 						path="/user/:userId/personal-info"
