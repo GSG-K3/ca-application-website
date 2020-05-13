@@ -3,17 +3,18 @@ BEGIN;
     DROP TABLE IF EXISTS users, account, personal_info, expereince, education, mentors, stories
     CASCADE;
 
-DROP TYPE IF EXISTS gender
-, age, westbank,gaza,code_exp,  interset , marketing, english_speak,english_understand, employment, gazaunis,westbankunis
+DROP TYPE IF EXISTS 
+gender, age, westbank,gaza,code_exp,  interset , marketing, english_speak,english_understand, employment, gazaunis,westbankunis
 CASCADE;
 
 
 CREATE TABLE users
 (
     user_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
+    name VARCHAR(100) ,
     email TEXT NOT NULL,
-    password TEXT NOT NULL
+    password TEXT NOT NULL,
+    CONSTRAINT unique_email UNIQUE(email)
 
 );
 
@@ -53,7 +54,8 @@ CREATE TYPE gaza AS ENUM
 'Gaza City',
 'Middle Area of Gaza',
 'Khan Younis',
-'Rafah');
+'Rafah',
+'Other');
 
 CREATE TABLE personal_info
 (
