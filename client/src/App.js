@@ -6,7 +6,6 @@ import {
 	Redirect,
 } from 'react-router-dom';
 import Home from './screens/Home';
-import SupportTeam from './components/SupportTeam';
 import NotFoundPage from './screens/NotFoundPage';
 import Login from './screens/Login';
 import Contact from './screens/Contact';
