@@ -8,5 +8,5 @@ console.log('connectionString: ',connectionString);
 
 module.exports = new Pool({
 	connectionString,
-	ssl: !connectionString.includes('locahost'),
+	ssl: !connectionString.includes('localhost'),
 });
