@@ -40,33 +40,28 @@ class Home extends Component {
 		const { isLoading } = this.state;
 		return (
 			<>
-			{isLoading  ? 
-					<div style={{position:"relative"}}>
-						
+				{true ? (
+					<div style={{ position: 'relative' }}>
 						<div className={classes.loader}>
 							<BounceLoader
 								// css={override}
 								className={classes.loader}
-								size={150}
-								color={'#4CB7A7'}
-								height={100}
-								width={100}
+								size={170}
+								color={' #4CB7A7'}
 								isLoading={isLoading}
 							/>
 						</div>
 					</div>
-				:
-			<Fragment id="home" className={classes.body}>
-				
-
-				<NavBar matchPath={this.props.match} />
-				<About />
-				<Requierments />
-				<Stories />
-				<SupportTeam data={this.state.data} />
-				<Footer />
-			</Fragment>
-			}
+				) : (
+					<Fragment id="home" className={classes.body}>
+						<NavBar matchPath={this.props.match} />
+						<About />
+						<Requierments />
+						<Stories />
+						<SupportTeam data={this.state.data} />
+						<Footer />
+					</Fragment>
+				)}
 			</>
 		);
 	}
