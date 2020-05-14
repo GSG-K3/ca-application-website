@@ -44,7 +44,7 @@ const settings = {
   dots: true,
   fade: true,
   infinite: true,
-  slidesToShow: 5,
+  slidesToShow: 3,
   slidesToScroll: 3,
   autoplay: true,
   autoplaySpeed: 800,
@@ -67,11 +67,12 @@ export default function SupportTeam() {
 
   return Story ? (
     <Fragment>
-      <Paper elevation="12" style={{ borderRadius: "80px" ,marginBottom:'3rem'}}>
+      <Paper elevation="0" style={{ borderRadius: "80px" ,marginBottom:'3rem'}}>
         <Typography className={classes.title} variant="h4">
-          <Typed strings={["Success Stories"]} typeSpeed={50}/>
+          <Typed strings={["Success Stories"]} typeSpeed={50} backSpeed={50} loop/>
         </Typography>
         <Slider {...settings}>
+          
           {Story.length && (
             <Grid container spacing={2}>
               <Grid item md={1} sm={6} className={classes.grid}>
