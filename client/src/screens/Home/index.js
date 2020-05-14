@@ -40,7 +40,7 @@ class Home extends Component {
 		const { isLoading } = this.state;
 		return (
 			<>
-				{true ? (
+				{isLoading  ? (
 					<div style={{ position: 'relative' }}>
 						<div className={classes.loader}>
 							<BounceLoader
