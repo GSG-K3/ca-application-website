@@ -15,6 +15,8 @@ import PersonalInfo from './screens/PersonalInfo';
 import SignUp from './screens/SignUp';
 import Accounts from './screens/Accounts';
 import Welcome from "./screens/Welcome"
+import { BeatLoader } from "react-spinners";
+import { red } from '@material-ui/core/colors';
 
 function App() {
 	return (
