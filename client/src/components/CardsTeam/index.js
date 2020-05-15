@@ -56,14 +56,6 @@ class CardsTeam extends Component {
 							/>
 						</Link>
 					</Grid>
-					<Typography
-						gutterBottom
-						variant="subtitle1"
-						align="center"
-						className={classes.mentorDescription}
-					>
-						{data.description}
-					</Typography>
 				</Paper>
 			</Fragment>
 		);

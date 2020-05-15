@@ -35,8 +35,8 @@ const styles = {
 		backgroundColor: '#4CB7A7',
 		borderRadius: 61,
 		width: 272,
-		height: 45,
-		fontSize: 20,
+		height: 68,
+		fontSize: 25,
 		marginTop: 20,
 	},
 };
