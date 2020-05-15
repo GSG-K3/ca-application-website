@@ -6,6 +6,7 @@ import { AppBar, Tabs, Tab, Box, Typography } from '@material-ui/core';
 import styles from './style';
 import AcoountsInfo from '../AccountInfo';
 import ScoresInfo from '../ScoresInfo';
+import axios from 'axios';
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -40,7 +41,18 @@ function a11yProps(index) {
 	};
 }
 class TabsComponent extends Component {
-	state = {};
+	state = {
+		userId: 1,
+		data: {},
+	};
+	componentDidMount() {
+		axios
+			.post('/api/user/:userId/profile', this.state)
+			.then((data) => {
+				this.setState({ data: data.data[0] });
+			})
+			.catch((err) => console.log(err));
+	}
 	render() {
 		const { classes } = this.props;
 		return (
@@ -63,10 +75,10 @@ class TabsComponent extends Component {
 					onChangeIndex={this.props.handleChangeIndex}
 				>
 					<TabPanel value={this.props.value} index={0}>
-						<AcoountsInfo />
+						<AcoountsInfo info={this.state.data} />
 					</TabPanel>
 					<TabPanel value={this.props.value} index={1}>
-						<ScoresInfo />
+						<ScoresInfo info={this.state.data} />
 					</TabPanel>
 				</SwipeableViews>
 			</Fragment>
