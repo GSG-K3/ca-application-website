@@ -3,10 +3,6 @@ const { compareHashed, loginValidation } = require('../helper');
 const { sign } = require('jsonwebtoken');
 const { SECRET } = process.env;
 
-const createToken = (email, secret) => {
-	return sign({ email }, secret);
-};
-
 const Login = (request, response) => {
 	let { user } = request.body;
 	const { email, password } = user;
@@ -15,6 +11,7 @@ const Login = (request, response) => {
 		return response.send(error.toString().replace('validationError:', ''));
 	}
 	getUserByEmail(email, (error, result) => {
+		console.log('QUERY RESULT!', result);
 		if (result.rowCount === 0) return response.send('no user exist in the db');
 
 		const data = result.rows[0];
@@ -22,8 +19,10 @@ const Login = (request, response) => {
 		if (data !== null) {
 			compareHashed(password, data.password)
 				.then((result) => {
+					console.log('PASSWORD RESULT!', result);
+
 					if (result) {
-						const token = createToken(email, SECRET);
+						const token = sign({ email }, SECRET);
 						response
 							.cookie('token', token, { maxAge: 900000, httpOnly: true })
 							.json({ status: 'success', token });

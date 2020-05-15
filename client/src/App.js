@@ -6,14 +6,14 @@ import {
 	Redirect,
 	useHistory,
 } from 'react-router-dom';
-import Home from './screens/Home';
-import NotFoundPage from './screens/NotFoundPage';
-import Login from './screens/Login';
-import Contact from './screens/Contact';
-import Profile from './screens/Profile';
-import PersonalInfo from './screens/PersonalInfo';
-import SignUp from './screens/SignUp';
-import Accounts from './screens/Accounts';
+import Home from './Screens/Home';
+import NotFoundPage from './Screens/NotFoundPage';
+import Login from './Screens/Login';
+import Contact from './Screens/Contact';
+import Profile from './Screens/Profile';
+import PersonalInfo from './Screens/PersonalInfo';
+import SignUp from './Screens/SignUp';
+import Accounts from './Screens/Accounts';
 import Cookies from 'js-cookie';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
