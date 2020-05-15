@@ -23,9 +23,15 @@ const Login = (request, response) => {
 
 					if (result) {
 						const token = sign({ email }, SECRET);
+						let info = {
+							user_id: data.user_id,
+							name: data.name,
+							email: data.email,
+						};
 						response
+							.status(200)
 							.cookie('token', token, { maxAge: 900000, httpOnly: true })
-							.json({ status: 'success', token });
+							.json({ info, token });
 					} else {
 						response.status(400).json({ message: 'incorrect password' });
 					}

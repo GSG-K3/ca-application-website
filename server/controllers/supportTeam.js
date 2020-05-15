@@ -2,6 +2,7 @@ const { join } = require('path');
 const getSupportTeam = require('../database/queries/supportTeam');
 
 const SupportTeam = (request, response) => {
+	console.log('CONTROLLER REQUEST!!', request);
 	getSupportTeam()
 		.then((result) => {
 			if (result.rows === []) {

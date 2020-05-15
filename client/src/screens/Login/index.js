@@ -27,7 +27,7 @@ class Login extends Component {
 			)
 			.then((data) => {
 				console.log('login data!!', data);
-				let info = data.data;
+				let { info } = data.data;
 				let userId = info.user_id;
 				if (typeof info === 'string') {
 					return this.setState({ loginError: info });

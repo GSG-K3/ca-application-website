@@ -4,14 +4,16 @@ const { SECRET } = process.env;
 exports.isAuthenticated = (req, res, next) => {
 	if (req.cookies && req.cookies.token) {
 		const { token } = req.cookies;
-		return verify(token, SECRET, (err, decoded) => {
+		return verify(token, SECRET, (err, result) => {
+			console.log('	TOKEN VERIFY!!', result);
 			if (err) {
 				return res.status(401).clearCookie('token').json({
 					status: 'error',
 					message: 'unauthorised',
 				});
 			}
-			return res.status(200).end();
+
+			next();
 		});
 	} else {
 		return res
