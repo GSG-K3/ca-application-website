@@ -17,6 +17,10 @@ const style = {
 	logo: {
 		marginTop: 25,
 	},
+	border: {
+		border: '1px solid #4CB7A7',
+		marginTop: 30,
+	},
 };
 
 export default style;
