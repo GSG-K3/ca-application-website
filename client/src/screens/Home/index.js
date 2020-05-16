@@ -7,34 +7,63 @@ import Footer from '../../components/Footer';
 import SuccessStories from '../../components/SuccessStories';
 import { withStyles } from '@material-ui/core';
 import styles from './style';
+import { css } from '@emotion/core';
 import About from '../../components/About';
+import * as Spinners from 'react-spinners';
+import { BounceLoader } from 'react-spinners';
 
+const override = css`
+	display: block;
+	margin: 0 auto;
+	border-color: red;
+`;
 class Home extends Component {
 	state = {
 		data: [],
+		isLoading: true,
 	};
 	componentDidMount() {
 		axios
 			.get('/home/support-team')
 			.then((result) => {
 				const { data } = result;
-				this.setState({ data });
+				this.setState({ isLoading: false, data });
 			})
-			.catch((err) => console.log(err));
+
+			.catch((err) => {
+				this.setState({ isLoading: false });
+				console.log(err);
+			});
 	}
 
 	render() {
 		const { classes } = this.props;
-
+		const { isLoading } = this.state;
 		return (
-			<Fragment id="home" className={classes.body}>
-				<NavBar matchPath={this.props.match} />
-				<About />
-				<Requierments />
-				<SuccessStories />
-				<SupportTeam data={this.state.data} />
-				<Footer />
-			</Fragment>
+			<>
+				{isLoading ? (
+					<div style={{ position: 'relative' }}>
+						<div className={classes.loader}>
+							<BounceLoader
+								// css={override}
+								className={classes.loader}
+								size={170}
+								color={' #4CB7A7'}
+								isLoading={isLoading}
+							/>
+						</div>
+					</div>
+				) : (
+					<Fragment id="home" className={classes.body}>
+						<NavBar matchPath={this.props.match} />
+						<About />
+						<Requierments />
+						<SuccessStories />
+						<SupportTeam data={this.state.data} />
+						<Footer />
+					</Fragment>
+				)}
+			</>
 		);
 	}
 }
