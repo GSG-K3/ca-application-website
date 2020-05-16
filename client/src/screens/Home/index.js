@@ -4,7 +4,7 @@ import Requierments from '../../components/Requierments';
 import NavBar from '../../components/NavBar';
 import SupportTeam from '../../components/SupportTeam';
 import Footer from '../../components/Footer';
-import SuccessStories from '../../components/successStories';
+import SuccessStories from '../../components/SuccessStories';
 import { withStyles } from '@material-ui/core';
 import styles from './style';
 import About from '../../components/About';

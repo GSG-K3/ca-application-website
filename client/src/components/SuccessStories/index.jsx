@@ -51,7 +51,7 @@ const settings = {
   speed: 1000,
 };
 
-export default function SupportTeam() {
+export default function SuccessStories() {
   let [Story, storyFn] = useState([]);
 
   useEffect(() => {
