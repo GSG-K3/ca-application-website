@@ -20,7 +20,8 @@
 		"react-typed": "^1.2.0",
 		"react-slick": "^0.26.1",
 		"slick-carousel": "^1.8.1",
-		"react-spinners": "^0.8.3"
+		"react-spinners": "^0.8.3",
+		"react-router-dom": "^5.1.2"
 	},
 	"scripts": {
 		"start": "react-scripts start",
