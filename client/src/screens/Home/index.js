@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import Requierments from '../../Components/Requierments';
+import Requierments from '../../Components/Requirments';
 import About from '../../Components/About';
 import NavBar from '../../Components/NavBar';
 import SupportTeam from '../../Components/SupportTeam';
@@ -28,7 +28,10 @@ class Home extends Component {
 		return (
 			<Fragment>
 				<h2>this is home page</h2>
-				<div id="home" className={classes.body}>
+				<div
+					id="home"
+					// className={classes.body}
+				>
 					<NavBar matchPath={this.props.match} />
 					<About />
 					<Requierments />
@@ -40,4 +43,4 @@ class Home extends Component {
 	}
 }
 
-export default Home
+export default Home;
