@@ -28,9 +28,10 @@ class Login extends Component {
 			.then((data) => {
 				let info = data.data;
 				let userId = info.user_id;
+
 				if (typeof info === 'string') {
 					return this.setState({ loginError: info });
-				} else if (info) return this.props.history.push(`/user/${userId}`);
+				} else this.props.history.push(`/user/${userId}`);
 			})
 			.catch((err) => console.log(err));
 		event.preventDefault();

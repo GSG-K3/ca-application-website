@@ -1,16 +1,17 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import Requierments from '../../components/Requierments';
+import Requierments from '../../components/Requirments';
 import NavBar from '../../components/NavBar';
 import SupportTeam from '../../components/SupportTeam';
 import Footer from '../../components/Footer';
-import Stories from '../../components/Stories';
+import SuccessStories from '../../components/SuccessStories';
 import { withStyles } from '@material-ui/core';
 import styles from './style';
 import { css } from '@emotion/core';
 import About from '../../components/About';
 import * as Spinners from 'react-spinners';
 import { BounceLoader } from 'react-spinners';
+
 const override = css`
 	display: block;
 	margin: 0 auto;
@@ -40,7 +41,7 @@ class Home extends Component {
 		const { isLoading } = this.state;
 		return (
 			<>
-				{isLoading  ? (
+				{isLoading ? (
 					<div style={{ position: 'relative' }}>
 						<div className={classes.loader}>
 							<BounceLoader
@@ -57,7 +58,7 @@ class Home extends Component {
 						<NavBar matchPath={this.props.match} />
 						<About />
 						<Requierments />
-						<Stories />
+						<SuccessStories />
 						<SupportTeam data={this.state.data} />
 						<Footer />
 					</Fragment>
