@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import Requierments from '../../components/Requierments';
+import Requierments from '../../components/Requirments';
 import NavBar from '../../components/NavBar';
 import SupportTeam from '../../components/SupportTeam';
 import Footer from '../../components/Footer';

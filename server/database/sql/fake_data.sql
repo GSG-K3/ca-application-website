@@ -1,7 +1,7 @@
 INSERT INTO users
   (name, email, password)
 VALUES
-  ('karmel', 'karmel@gmail.com', '$2a$10$JgrvVlB6kvF64xCs4WltAuwgYqGy.GsyUumc9HkF2YBwsc63fXTre');
+  ('karmel', 'karmel@gmail.com', '$2b$10$CjZpDGgIdCTEzy53vmu4W.VSxRv6065ptxz3zDdp4SUWWH6S4lJVm');
 
 
 
