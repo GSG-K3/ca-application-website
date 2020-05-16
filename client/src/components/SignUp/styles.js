@@ -11,7 +11,8 @@ const Styles = createStyles((theme) => ({
 		height: '100vh',
 	},
 	image: {
-		backgroundImage: 'url(http://www.philanthropyage.org/sites/default/files/styles/930x440/public/field/image/gaza_sky_geeks_co-working_space._credit_gaza_sky_geeks_mercy_corps.jpg?itok=vAq9QGID)',
+		backgroundImage:
+			'url(http://www.philanthropyage.org/sites/default/files/styles/930x440/public/field/image/gaza_sky_geeks_co-working_space._credit_gaza_sky_geeks_mercy_corps.jpg?itok=vAq9QGID)',
 		backgroundRepeat: 'no-repeat',
 		backgroundColor:
 			theme.palette.type === 'light'
@@ -21,7 +22,7 @@ const Styles = createStyles((theme) => ({
 		backgroundPosition: 'center',
 	},
 	form: {
-		width: '100%', 
+		width: '100%',
 		margin: theme.spacing(6),
 		color: '3F6989',
 	},

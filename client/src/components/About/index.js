@@ -76,7 +76,7 @@ class About extends Component {
 										className={classes.btn}
 										onClick={this.handleClick}
 									>
-										<RouterLink to="/signup" className={classes.link}>
+										<RouterLink to="/register" className={classes.link}>
 											Join us
 										</RouterLink>
 									</Button>

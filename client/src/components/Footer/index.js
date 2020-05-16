@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import style from './style';
-import ShareDialog from '../../components/ShareDialog';
+import ShareDialog from '../../Components/ShareDialog';
 import { withStyles } from '@material-ui/core/styles';
 
 class Footer extends Component {

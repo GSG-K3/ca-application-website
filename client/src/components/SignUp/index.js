@@ -73,7 +73,7 @@ class SignUp extends Component {
 						const passwordError = res.data.message.toString();
 						this.setState({ passwordError });
 						return false;
-					} else this.props.props.history.push('/');
+					} else this.props.props.history.push('/welcome');
 				})
 				.catch((err) => console.log(err));
 		}
