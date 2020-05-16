@@ -44,11 +44,11 @@ const settings = {
   dots: true,
   fade: true,
   infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 3,
+  slidesToShow: 1,
+  slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 800,
-  speed: 800,
+  autoplaySpeed: 3200,
+  speed: 1000,
 };
 
 export default function SupportTeam() {
@@ -58,6 +58,7 @@ export default function SupportTeam() {
     axios
       .get("/api/success-stories")
       .then((response) => {
+        console.log(response.data)
         storyFn(response.data);
       })
       .catch((error) => console.log(error));
@@ -118,7 +119,7 @@ export default function SupportTeam() {
               <Grid item md={1} sm={6}>
                 <Avatar
                   className={classes.avatarPrm}
-                  src={Story[1].picture}
+                  src={Story[3].picture}
                   alt="success Story"
                 />
               </Grid>
