@@ -54,7 +54,8 @@ CREATE TYPE gaza AS ENUM
 'Gaza City',
 'Middle Area of Gaza',
 'Khan Younis',
-'Rafah');
+'Rafah',
+'Other');
 
 CREATE TABLE personal_info
 (
