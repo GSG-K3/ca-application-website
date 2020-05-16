@@ -72,7 +72,7 @@ class SignUp extends Component {
             this.setState({ passwordError });
             return false;
           }
-          else this.props.props.history.push("/home");
+          else this.props.props.history.push("/signup/welcome");
         })
         .catch((err) => console.log(err));
       this.setState(initialState);
@@ -198,7 +198,7 @@ class SignUp extends Component {
                 </Button>
                 <Grid container justify="flex-end">
                   <Grid item xs>
-                    <Link href={"/home"} variant="body2">
+                    <Link href={"/login"} variant="body2">
                       Already have an account? Sign in
                     </Link>
                   </Grid>

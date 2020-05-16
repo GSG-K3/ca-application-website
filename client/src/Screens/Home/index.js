@@ -5,7 +5,7 @@ import About from '../../Components/About';
 import NavBar from '../../Components/NavBar';
 import SupportTeam from '../../Components/SupportTeam';
 import Footer from '../../Components/Footer';
-import Stories from '../../Components/Stories';
+
 import { withStyles } from '@material-ui/core';
 import styles from './style';
 class Home extends Component {
@@ -32,7 +32,6 @@ class Home extends Component {
 					<NavBar matchPath={this.props.match} />
 					<About />
 					<Requierments />
-					<Stories />
 					<SupportTeam data={this.state.data} />
 					<Footer />
 				</div>
