@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
-import NavBar from '../../components/NavBar';
-import Collapsible from '../../components/Collapsible';
+import NavBar from '../../Components/NavBar';
+import Collapsible from '../../Components/Collapsible';
 import { Typography, Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import style from './style';

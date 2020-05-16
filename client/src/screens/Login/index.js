@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './style';
 import { Button, Grid, Typography, Link } from '@material-ui/core';
 import axios from 'axios';
-import TextFieldValidation from '../../components/LoginForm';
+import TextFieldValidation from '../../Components/LoginForm';
 
 class Login extends Component {
 	state = {

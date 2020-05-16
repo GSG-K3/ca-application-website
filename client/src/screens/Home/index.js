@@ -1,14 +1,14 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import Requierments from '../../components/Requirments';
-import NavBar from '../../components/NavBar';
-import SupportTeam from '../../components/SupportTeam';
-import Footer from '../../components/Footer';
-import SuccessStories from '../../components/SuccessStories';
+import Requierments from '../../Components/Requirments';
+import NavBar from '../../Components/NavBar';
+import SupportTeam from '../../Components/SupportTeam';
+import Footer from '../../Components/Footer';
+import SuccessStories from '../../Components/SuccessStories';
 import { withStyles } from '@material-ui/core';
 import styles from './style';
 import { css } from '@emotion/core';
-import About from '../../components/About';
+import About from '../../Components/About';
 import * as Spinners from 'react-spinners';
 import { BounceLoader } from 'react-spinners';
 
