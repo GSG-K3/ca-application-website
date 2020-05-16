@@ -1,7 +1,7 @@
 const styles = (theme) => ({
 	paper: {
 		width: 271,
-		height: 350,
+		height: 331,
 		backgroundColor: 'whitesmoke',
 		display: 'flex',
 		flexDirection: 'column',
@@ -20,13 +20,6 @@ const styles = (theme) => ({
 		width: 24,
 		height: 24,
 		padding: ' 0px 5px 0px  5px',
-	},
-	mentorDescription: {
-		whiteSpace: 'nowrap',
-		overflow: 'hidden',
-		textOverflow: 'ellipsis',
-		width: '80%',
-		height: '40px',
 	},
 });
 
