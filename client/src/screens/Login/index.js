@@ -11,7 +11,13 @@ class Login extends Component {
 		password: '',
 		loginError: '',
 	};
-
+	
+	componentDidMount() {
+		const isLoggedIn = localStorage.getItem('isLoggedIn');
+		if (isLoggedIn) {
+				this.props.history.push('/');
+		}
+}
 	handleChange = (event) => {
 		let { name, value } = event.target;
 		this.setState({ [name]: value });
