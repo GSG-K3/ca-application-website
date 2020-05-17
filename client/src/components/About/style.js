@@ -4,7 +4,7 @@ const styles = createStyles((theme) => ({
 		width: 500,
 	},
 	gridContainer: {
-		paddingTop: 80,
+		paddingTop: 40,
 	},
 	card: {
 		width: 1057,

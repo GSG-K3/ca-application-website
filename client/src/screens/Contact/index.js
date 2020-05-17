@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './style';
-import Cards from '../../Components/Cards';
+import Cards from '../../components/Cards';
 
 class Contact extends Component {
 	state = {};

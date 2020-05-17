@@ -12,7 +12,7 @@ const style = (theme) => ({
 		fontSize: 36,
 		textAlign: 'center',
 		width: '70%',
-		paddingTop: 100,
+		paddingTop:10,
 	},
 	collapseContainer: {
 		display: 'flex',

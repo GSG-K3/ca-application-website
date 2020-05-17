@@ -4,7 +4,7 @@ const styles = createStyles((theme) => ({
 	container: {
 		display: 'flex',
 		flexDirection: 'column',
-		marginTop: 150,
+		marginTop: 100,
 	},
 	root: {
 		width: 287,

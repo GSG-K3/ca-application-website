@@ -64,19 +64,21 @@ class SignUp extends Component {
 				})
 				.then((res) => {
 					this.setState(initialState);
-
+					
 					if (res.data.message.includes('exists')) {
 						const emailError = res.data.message.toString();
 						this.setState({ emailError });
 						return false;
-					} else if (res.data.message.includes('pattern')) {
+					} 
+					else if (res.data.message.includes('pattern')) {
 						const passwordError = res.data.message.toString();
 						this.setState({ passwordError });
 						return false;
-					} else this.props.props.history.push('/welcome');
+					} 
+					else this.props.props.history.push('/welcome');
 				})
 				.catch((err) => console.log(err));
-		}
+			}
 	};
 
 	render() {
@@ -198,7 +200,7 @@ class SignUp extends Component {
 								</Button>
 								<Grid container justify="flex-end">
 									<Grid item xs>
-										<Link href={'/home'} variant="body2">
+										<Link href={'/login'} variant="body2">
 											Already have an account? Sign in
 										</Link>
 									</Grid>
