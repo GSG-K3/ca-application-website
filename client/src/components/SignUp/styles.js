@@ -2,13 +2,13 @@ import { createStyles } from '@material-ui/core/styles';
 
 const Styles = createStyles((theme) => ({
 	paper: {
-		margin: theme.spacing(15, 10),
+		margin: theme.spacing(20, 20),
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
 	},
 	root: {
-		height: '100vh',
+		height: '90vh',
 	},
 	image: {
 		backgroundImage:
