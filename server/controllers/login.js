@@ -6,10 +6,10 @@ const { SECRET } = process.env;
 const Login = (request, response) => {
 	let { user } = request.body;
 	const { email, password } = user;
-	// const { error } = loginValidation(user);
-	// if (typeof error !== 'undefined') {
-	// 	return response.send(error.toString().replace('validationError:', ''));
-	// }
+	const { error } = loginValidation(user);
+	if (typeof error !== 'undefined') {
+		return response.send(error.toString().replace('validationError:', ''));
+	}
 	getUserByEmail(email, (error, result) => {
 		console.log('QUERY RESULT!', result);
 		if (result.rowCount === 0) return response.send('no user exist in the db');
