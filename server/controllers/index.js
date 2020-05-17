@@ -12,7 +12,7 @@ router.get('/api/success-stories', getStories);
 router.get('/api/support-team', SupportTeam);
 router.post('/api/signup', SignUp);
 router.post('/api/login', Login);
-router.post('/api/user/:userId/accounts', isAuthenticated, Accounts);
-router.post('/api/user/:userId/personal-info', isAuthenticated, PersonalInfo);
+router.post('/api/user/:userId/accounts', Accounts);
+router.post('/api/user/:userId/personal-info', PersonalInfo);
 
 module.exports = router;
