@@ -3,11 +3,9 @@ package-lock.json
 /node_modules
 
 .env
+config.env
 
 .vscode
 
-<<<<<<< HEAD
 .vscode/launch.json
-=======
 .vscode/launch.json
->>>>>>> karmel-backup
