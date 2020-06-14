@@ -2,8 +2,9 @@ const { Pool } = require('pg');
 require('dotenv').config();
 
 const connectionString = process.env.DATABASE_URL;
-
-if (!connectionString) throw new Error('failed to connect with the database');
+console.log('****connection occured at connection.js')
+if (!connectionString) 
+console.log('connectionString: ',connectionString);
 
 module.exports = new Pool({
 	connectionString,

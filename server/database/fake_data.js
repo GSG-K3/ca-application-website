@@ -1,7 +1,5 @@
 const path = require('path');
-
 const fs = require('fs');
-
 const connection = require('./connection');
 
 const dbsql = fs

@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'center',
 	},
 	logo: {
-		width: 320,
-		height: 216,
+		width: 280,
+		height: 170,
 	},
 	typography: {
 		display: 'flex',
