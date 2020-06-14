@@ -1,7 +1,7 @@
 INSERT INTO users
   (name, email, password)
 VALUES
-  ('karmel', 'karmel@gmail.com', '$2a$10$JgrvVlB6kvF64xCs4WltAuwgYqGy.GsyUumc9HkF2YBwsc63fXTre');
+  ('karmel', 'karmel@gmail.com', '$2b$10$CjZpDGgIdCTEzy53vmu4W.VSxRv6065ptxz3zDdp4SUWWH6S4lJVm');
 
 
 
@@ -15,9 +15,10 @@ VALUES
 INSERT INTO stories
   (name, job_title, description,picture)
 VALUES
-  ('Haneen E.Shahwan', 'Full-Stack web developer', 'TEAfter reading about what had to be done, I decided to make a plan for how I should study in order to achieve my goal and finish the courses, because I didnt have time for studying at a leisurely pace. My objective was to learn quickly, but not so quickly as to destroy the desire, giving my brain some time to relax. Because the load that I wanted to tackle would be an obstacle for me.XT', 'https://avatars1.githubusercontent.com/u/32449667?s=460&u=2da5ec6b8ef77b676c81ba4be774738cbca1a43b&v=4' ),
-  ('Ishak Kassab', 'Full-Stack web developer', 'TEAfter reading about what had to be done, I decided to make a plan for how I should study in order to achieve my goal and finish the courses, because I didnt have time for studying at a leisurely pace. My objective was to learn quickly, but not so quickly as to destroy the desire, giving my brain some time to relax. Because the load that I wanted to tackle would be an obstacle for me.XT', 'https://avatars0.githubusercontent.com/u/34238574?s=460&u=7289e9e939a6e787ec22144ece95f8505c0b5f85&v=4' ),
-  ('Farah Zaqout', 'Full-Stack web developer', 'TEAfter reading about what had to be done, I decided to make a plan for how I should study in order to achieve my goal and finish the courses, because I didnt have time for studying at a leisurely pace. My objective was to learn quickly, but not so quickly as to destroy the desire, giving my brain some time to relax. Because the load that I wanted to tackle would be an obstacle for me.XT', '../../assets/Haneen.jpeg' );
+            ('Haneen E.Shahwan', 'Full-Stack web developer', 'Haneeeeeeeeen After reading about what had to be done, I decided to make a plan for how I should study in order to achieve my goal and finish the courses, because I didnt have time for studying at a leisurely pace. My objective was to learn quickly, but not so quickly as to destroy the desire, giving my brain some time to relax. Because the load that I wanted to tackle would be an obstacle for me.XT', 'https://avatars1.githubusercontent.com/u/32449667?s=460&u=2da5ec6b8ef77b676c81ba4be774738cbca1a43b&v=4' ),
+            ('Ishak Kassab', 'Full-Stack web developer', 'TEAfter reading about what had to be done, I decided to make a plan for how I should study in order to achieve my goal and finish the courses, because I didnt have time for studying at a leisurely pace. My objective was to learn quickly, but not so quickly as to destroy the desire, giving my brain some time to relax. Because the load that I wanted to tackle would be an obstacle for me.XT', 'https://media-exp1.licdn.com/dms/image/C5603AQEpgQ438nGQzQ/profile-displayphoto-shrink_200_200/0?e=1593648000&v=beta&t=imLdxIpy34SLtaym3aaSdl9nyG7_Ddag_TkupLlH-Bg' ),
+            ('Farah Zaqout', 'Full-Stack web developer', 'TEAfter reading about what had to be done, I decided to make a plan for how I should study in order to achieve my goal and finish the courses, because I didnt have time for studying at a leisurely pace. My objective was to learn quickly, but not so quickly as to destroy the desire, giving my brain some time to relax. Because the load that I wanted to tackle would be an obstacle for me.XT', 'https://avatars2.githubusercontent.com/u/25854070?s=400&u=4c1ad584013fc4f8b451bb51697e4a70674620e2&v=4' ),
+            ('Ishak Kassab', 'Full-Stack web developer', 'TEAfter reading about what had to be done, I decided to make a plan for how I should study in order to achieve my goal and finish the courses, because I didnt have time for studying at a leisurely pace. My objective was to learn quickly, but not so quickly as to destroy the desire, giving my brain some time to relax. Because the load that I wanted to tackle would be an obstacle for me.XT', 'https://media-exp1.licdn.com/dms/image/C5603AQEpgQ438nGQzQ/profile-displayphoto-shrink_200_200/0?e=1593648000&v=beta&t=imLdxIpy34SLtaym3aaSdl9nyG7_Ddag_TkupLlH-Bg' );
 
 INSERT INTO mentors
   (name,description,picture)

@@ -10,3 +10,5 @@ connection
 	.query(dbSql)
 	.then((data) => console.log('database has been created'))
 	.catch((err) => console.log(err));
+
+	

@@ -23,13 +23,13 @@ class Cards extends Component {
 							className={classes.logo}
 						/>
 						<Typography gutterBottom variant="h4" align="center">
-							GetHub
+							GitHub
 						</Typography>
 						<Divider className={classes.divider} variant="middle" />
 						<Typography gutterBottom variant="subtitle1" align="center">
-							create a github account for your projects and back here to post
-							your account's link Please Click
-							<a href="https://github.com/">here!</a>
+							Create a github account for your projects and back here to post
+							your account's link. Please Click
+							<a href="https://github.com/"> Here!</a>
 						</Typography>
 					</Paper>
 					<Paper
@@ -47,9 +47,9 @@ class Cards extends Component {
 						</Typography>
 						<Divider className={classes.divider} variant="middle" />
 						<Typography gutterBottom variant="subtitle1" align="center">
-							create a Freecodecamp account.You should acheive at least 200
-							points.Please Click
-							<a href="https://https://www.freecodecamp.org/.com/">here!</a>
+							Create a Freecodecamp account.You should acheive at least 200
+							points. Please Click
+							<a href="https://www.freecodecamp.org/"> Here!</a>
 						</Typography>
 					</Paper>
 					<Paper
@@ -67,9 +67,9 @@ class Cards extends Component {
 						</Typography>
 						<Divider className={classes.divider} variant="middle" />
 						<Typography gutterBottom variant="subtitle1" align="center">
-							create a codewars account.You should acheive the 5kyu level of
-							javascript.Please Click
-							<a href="https://www.codewars.com/">here!</a>
+							Create a codewars account.You should acheive the 5kyu level of
+							javascript. Please Click 
+							<a href="https://www.codewars.com/"> Here!</a>
 						</Typography>
 					</Paper>
 				</Grid>
