@@ -6,10 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
 import useStyles from './style';
-import { Button } from '@material-ui/core';
 import Linkify from 'react-linkify';
 import Cards from '../Cards';
 import TextFields from '../Textfields';
+import ProjectsTextFields from '../ProjectsTextfields';
 
 export default function CollapsibleAccounts(props) {
 	const [expanded, setExpanded] = React.useState('panel1');
@@ -21,6 +21,7 @@ export default function CollapsibleAccounts(props) {
 	const classes = useStyles();
 
 	const { location } = props;
+	console.log(location);
 
 	return (
 		<Fragment>
@@ -52,18 +53,38 @@ export default function CollapsibleAccounts(props) {
 				<div className={classes.bodyBox}>
 					<MuiExpansionPanelDetails
 						style={{
-							height: props.id === 1 ? 375 : props.id === 2 ? 338 : 241,
+							height:
+								props.id === 1 && location.includes('/accounts')
+									? 375
+									: props.id === 2 && location.includes('/accounts')
+									? 338
+									: props.id === 1 && location.includes('/projects')
+									? 2602
+									: props.id === 2 && location.includes('/projects')
+									? 3200
+									: props.id === 3 && location.includes('/projects')
+									? 300
+									: 241,
 						}}
 						classes={{ root: classes.ExpansionPanelDetailsroot }}
 					>
 						<Linkify>
 							<Typography
 								className={
-									props.id === 2 ? classes.bodyText2 : classes.bodyText
+									props.id === 2 && location.includes('/accounts')
+										? classes.bodyText2
+										: classes.bodyText
 								}
 							>
-								{props.id === 1 ? <Cards location={location} /> : null}
-								{props.id === 2 ? <TextFields /> : null}
+								{props.id === 1 && location.includes('/accounts') ? (
+									<Cards location={location} />
+								) : null}
+								{props.id === 2 && location.includes('/accounts') ? (
+									<TextFields />
+								) : null}
+								{props.id === 3 && location.includes('/projects') ? (
+									<ProjectsTextFields />
+								) : null}
 								{props.body}
 							</Typography>
 						</Linkify>

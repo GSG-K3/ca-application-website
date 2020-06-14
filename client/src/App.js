@@ -13,6 +13,7 @@ import Profile from './screens/Profile';
 import PersonalInfo from './screens/PersonalInfo';
 import SignUp from './screens/SignUp';
 import Accounts from './screens/Accounts';
+import Projects from './screens/Projects';
 
 function App() {
 	return (
@@ -30,6 +31,7 @@ function App() {
 						exact
 						component={PersonalInfo}
 					/>
+					<Route path="/user/:userId/projects" exact component={Projects} />
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
 				</Switch>
