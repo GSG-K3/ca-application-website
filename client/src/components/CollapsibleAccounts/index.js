@@ -20,8 +20,7 @@ export default function CollapsibleAccounts(props) {
 
 	const classes = useStyles();
 
-	const { location } = props;
-	console.log(location);
+	const { location, userId } = props;
 
 	return (
 		<Fragment>
@@ -59,9 +58,9 @@ export default function CollapsibleAccounts(props) {
 									: props.id === 2 && location.includes('/accounts')
 									? 338
 									: props.id === 1 && location.includes('/projects')
-									? 2602
+									? 338
 									: props.id === 2 && location.includes('/projects')
-									? 3200
+									? 500
 									: props.id === 3 && location.includes('/projects')
 									? 300
 									: 241,
@@ -70,6 +69,7 @@ export default function CollapsibleAccounts(props) {
 					>
 						<Linkify>
 							<Typography
+								component={'span'}
 								className={
 									props.id === 2 && location.includes('/accounts')
 										? classes.bodyText2
@@ -83,7 +83,7 @@ export default function CollapsibleAccounts(props) {
 									<TextFields />
 								) : null}
 								{props.id === 3 && location.includes('/projects') ? (
-									<ProjectsTextFields />
+									<ProjectsTextFields location={location} userId={userId} />
 								) : null}
 								{props.body}
 							</Typography>

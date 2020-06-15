@@ -8,19 +8,20 @@ class Textfields extends Component {
 	state = {
 		firstProject: '',
 		secondProject: '',
+		userId: this.props.userId,
 		Submitted: false,
 	};
 	handleClick = (event) => {
-		// axios
-		// 	.post('/api/user/:userId/projects', {
-		// 		github: this.state.github,
-		// 		freecodecamp: this.state.freecodecamp,
-		// 		codewars: this.state.codewars,
-		// 	})
-		// 	.then((data) => {
-		// 		if (data.data) return this.setState({ Submitted: true });
-		// 	})
-		// 	.catch();
+		axios
+			.post('/api/user/:userId/projects', {
+				firstProject: this.state.firstProject,
+				secondProject: this.state.secondProject,
+				userId: this.state.userId,
+			})
+			.then((data) => {
+				if (data.data) return this.setState({ Submitted: true });
+			})
+			.catch();
 		event.preventDefault();
 	};
 	handleChange = (event) => {
@@ -29,6 +30,8 @@ class Textfields extends Component {
 	};
 	render() {
 		const { classes } = this.props;
+		console.log(this.props);
+
 		return (
 			<Fragment>
 				<div className={classes.container}>
@@ -44,6 +47,7 @@ class Textfields extends Component {
 							shrink: true,
 						}}
 						variant="outlined"
+						disabled={this.state.Submitted ? true : false}
 					/>
 					<TextField
 						name="secondProject"
@@ -57,6 +61,7 @@ class Textfields extends Component {
 						}}
 						variant="outlined"
 						onChange={this.handleChange}
+						disabled={this.state.Submitted ? true : false}
 					/>
 					<Button
 						variant="contained"

@@ -18,6 +18,7 @@ const style = (theme) => ({
 		justifyContent: 'center',
 		alignItems: 'center',
 		paddingTop: 46,
+		paddingRight: 64,
 	},
 });
 

@@ -31,16 +31,19 @@ class Profile extends Component {
 	};
 
 	handleClickOpen = (id) => (event) => {
-		if (id === 1) this.props.history.push('/user/:userId/personal-info');
-		else if (id === 3) this.props.history.push('/user/:userId/accounts');
-		else if (id === 4) this.props.history.push('/user/:userId/projects');
-		else if (id === 5) this.props.history.push('/user/:userId/submitted-form');
+		const userId = this.props.match.params.userId;
+		if (id === 1) this.props.history.push(`/user/:${userId}/personal-info`);
+		else if (id === 3) this.props.history.push(`/user/:${userId}/accounts`);
+		else if (id === 4) this.props.history.push(`/user/:${userId}/projects`);
+		else if (id === 5)
+			this.props.history.push(`/user/:${userId}/submitted-form`);
 		event.preventDefault();
 	};
 
 	render() {
 		const { classes } = this.props;
 		const location = this.props.match.path;
+
 		return (
 			<Grid>
 				<NavBar matchPath={this.props.match} history={this.props.history} />
