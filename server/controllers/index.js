@@ -6,13 +6,14 @@ const Login = require('./login');
 const SupportTeam = require('./supportTeam');
 const Accounts = require('./accounts');
 const PersonalInfo = require('./personalInfo');
+const isAuthenticated = require('../middleware/auth')
 
 router.get('/api/success-stories',getStories )
 router.get('/home/support-team', SupportTeam);
 router.post('/api/signup', SignUp);
-router.post('/api/login', Login);
-router.post('/api/user/:userId/accounts', Accounts);
-router.post('/api/user/:userId/personal-info', PersonalInfo);
+router.post('/api/login',Login);
+router.post('/api/user/:userId/accounts',isAuthenticated, Accounts);
+router.post('/api/user/:userId/personal-info',isAuthenticated, PersonalInfo);
 
 
 

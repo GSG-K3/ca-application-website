@@ -9,4 +9,5 @@ console.log('connectionString: ',connectionString);
 module.exports = new Pool({
 	connectionString,
 	ssl: !connectionString.includes('localhost'),
+	rejectUnauthorized: true,
 });
