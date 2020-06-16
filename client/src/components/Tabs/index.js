@@ -7,6 +7,7 @@ import styles from './style';
 import AcoountsInfo from '../AccountInfo';
 import ScoresInfo from '../ScoresInfo';
 import axios from 'axios';
+import { ValueConsmer } from '../../screens/PersonalProfile/contextProvider';
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -21,7 +22,7 @@ function TabPanel(props) {
 		>
 			{value === index && (
 				<Box p={3}>
-					<Typography>{children}</Typography>
+					<Typography component={'span'}>{children}</Typography>
 				</Box>
 			)}
 		</div>
@@ -51,36 +52,57 @@ class TabsComponent extends Component {
 			.then((data) => {
 				this.setState({ data: data.data[0] });
 			})
-			.catch((err) => console.log(err));
+			.catch(err);
 	}
 	render() {
 		const { classes } = this.props;
+
 		return (
 			<Fragment>
-				<AppBar position="static" color="default" className={classes.appbar}>
-					<Tabs
-						value={this.props.value}
-						onChange={this.props.handleChange}
-						indicatorColor="secondary"
-						textColor="#00000"
-						variant="fullWidth"
-						aria-label="full width tabs example"
-					>
-						<Tab label="Accounts" {...a11yProps(0)} className={classes.btn1} />
-						<Tab label="Scores" {...a11yProps(1)} className={classes.btn2} />
-					</Tabs>
-				</AppBar>
-				<SwipeableViews
-					index={this.props.value}
-					onChangeIndex={this.props.handleChangeIndex}
-				>
-					<TabPanel value={this.props.value} index={0}>
-						<AcoountsInfo info={this.state.data} />
-					</TabPanel>
-					<TabPanel value={this.props.value} index={1}>
-						<ScoresInfo info={this.state.data} />
-					</TabPanel>
-				</SwipeableViews>
+				<ValueConsmer>
+					{(context) => {
+						return (
+							<Fragment>
+								<AppBar
+									position="static"
+									color="default"
+									className={classes.appbar}
+								>
+									<Tabs
+										value={context.value}
+										onChange={context.handleChange}
+										indicatorColor="secondary"
+										textColor="inherit"
+										variant="fullWidth"
+										aria-label="full width tabs example"
+									>
+										<Tab
+											label="Accounts"
+											{...a11yProps(0)}
+											className={classes.btn1}
+										/>
+										<Tab
+											label="Scores"
+											{...a11yProps(1)}
+											className={classes.btn2}
+										/>
+									</Tabs>
+								</AppBar>
+								<SwipeableViews
+									index={context.value}
+									onChangeIndex={context.handleChangeIndex}
+								>
+									<TabPanel children={'span'} value={context.value} index={0}>
+										<AcoountsInfo info={this.state.data} />
+									</TabPanel>
+									<TabPanel children={'span'} value={context.value} index={1}>
+										<ScoresInfo info={this.state.data} />
+									</TabPanel>
+								</SwipeableViews>
+							</Fragment>
+						);
+					}}
+				</ValueConsmer>
 			</Fragment>
 		);
 	}

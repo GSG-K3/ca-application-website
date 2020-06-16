@@ -4,6 +4,7 @@ import { Avatar, Grid, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
 import style from './style';
 import Tabs from '../../components/Tabs';
+import { ValueProvider } from './contextProvider';
 
 class PersonalProfile extends Component {
 	state = {
@@ -20,31 +21,40 @@ class PersonalProfile extends Component {
 	componentDidMount() {}
 	render() {
 		const { classes } = this.props;
+
 		return (
 			<Fragment>
-				<NavBar matchPath={this.props.match} history={this.props.history} />
-				<Grid
-					container
-					direction="column"
-					justify="flex-start"
-					alignItems="center"
-					className={classes.container}
-					spacing={2}
+				<ValueProvider
+					value={{
+						value: this.state.value,
+						handleChange: this.handleChange,
+						handleChangeIndex: this.handleChangeIndex,
+					}}
 				>
-					<Grid item>
-						<Avatar
-							alt="Cindy Baker"
-							src={require('../../assets/girl.png')}
-							className={classes.avatarPic}
-						/>
+					<NavBar matchPath={this.props.match} history={this.props.history} />
+					<Grid
+						container
+						direction="column"
+						justify="flex-start"
+						alignItems="center"
+						className={classes.container}
+						spacing={2}
+					>
+						<Grid item>
+							<Avatar
+								alt="Cindy Baker"
+								src={require('../../assets/girl.png')}
+								className={classes.avatarPic}
+							/>
+						</Grid>
+						<Grid item>
+							<Typography>Nicole Kidman</Typography>
+						</Grid>
+						<Grid item>
+							<Tabs />
+						</Grid>
 					</Grid>
-					<Grid item>
-						<Typography>Nicole Kidman</Typography>
-					</Grid>
-					<Grid item>
-						<Tabs handleChange={this.handleChange} value={this.state.value} />
-					</Grid>
-				</Grid>
+				</ValueProvider>
 			</Fragment>
 		);
 	}

@@ -8,7 +8,7 @@ const profileInfo = (request, response) => {
 				response.send(result.rows);
 			}
 		})
-		.catch((err) => console.log(err));
+		.catch((err) => res.status(500).json({ error: err }));
 };
 
 module.exports = profileInfo;
