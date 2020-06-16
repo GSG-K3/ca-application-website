@@ -43,14 +43,10 @@ export default function FormDialog() {
 						To Share our Program among your friends,Please copy the link
 					</DialogContentText>
 					<TextField
-						autoFocus
-						margin="dense"
-						id="name"
-						label="https://gazaskygeeks.com/code-academy-application-gaza/"
-						type="link"
-						fullWidth
-						disabled
-						placeholder="https://gazaskygeeks.com/code-academy-application-gaza/"
+					id="name"
+					defaultValue="https://gazaskygeeks.com/code-academy-application-gaza/"
+					fullWidth
+				
 					/>
 				</DialogContent>
 				<DialogActions>
