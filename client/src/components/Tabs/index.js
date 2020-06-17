@@ -43,16 +43,16 @@ function a11yProps(index) {
 }
 class TabsComponent extends Component {
 	state = {
-		userId: 1,
+		userId: this.props.userId,
 		data: {},
 	};
 	componentDidMount() {
 		axios
-			.post('/api/user/:userId/profile', this.state)
+			.get(`/api/user/${this.state.userId}/profile`)
 			.then((data) => {
 				this.setState({ data: data.data[0] });
 			})
-			.catch(err);
+			.catch((err) => this.props.history.push('/404'));
 	}
 	render() {
 		const { classes } = this.props;

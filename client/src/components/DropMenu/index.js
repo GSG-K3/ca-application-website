@@ -41,6 +41,7 @@ class DropMenu extends Component {
 	state = {
 		anchorEl: null,
 		open: false,
+		userId: this.props.match.params.userId,
 	};
 
 	handleClick = (event) => {
@@ -54,7 +55,7 @@ class DropMenu extends Component {
 
 	handleMenuClick = (event, index) => {
 		if (index === 1) {
-			return this.props.history.push('/user/:userId/profile');
+			return this.props.history.push(`/user/${this.state.userId}/profile`);
 		} else if (index === 3) {
 			return this.props.history.push('/');
 		} else this.setState({ open: true });

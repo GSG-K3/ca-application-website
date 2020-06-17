@@ -9,6 +9,7 @@ import { ValueProvider } from './contextProvider';
 class PersonalProfile extends Component {
 	state = {
 		value: 0,
+		userId: this.props.match.params.userId,
 	};
 
 	handleChange = (event, newValue) => {
@@ -18,7 +19,7 @@ class PersonalProfile extends Component {
 	handleChangeIndex = (index) => {
 		this.setState({ value: index });
 	};
-	componentDidMount() {}
+
 	render() {
 		const { classes } = this.props;
 
@@ -51,7 +52,7 @@ class PersonalProfile extends Component {
 							<Typography>Nicole Kidman</Typography>
 						</Grid>
 						<Grid item>
-							<Tabs />
+							<Tabs userId={this.state.userId} history={this.props.history} />
 						</Grid>
 					</Grid>
 				</ValueProvider>

@@ -117,7 +117,11 @@ const NavBarProfile = (props) => {
 							<NotificationsActiveIcon />
 						</IconButton>
 					</label>
-					<DropMenu btnStyle={classes.notiBtn} history={props.history} />
+					<DropMenu
+						btnStyle={classes.notiBtn}
+						history={props.history}
+						match={matchPath}
+					/>
 					<Avatar
 						alt="Cindy Baker"
 						src={require('../../assets/girl.png')}
