@@ -7,7 +7,6 @@ const Login = (request, response) => {
   let { user } = request.body;
   let { email, password } = user;
   const { error } = loginValidation(user);
-
   if (typeof error !== "undefined") {
     return response.send(error.toString().replace("validationError:", ""));
   }

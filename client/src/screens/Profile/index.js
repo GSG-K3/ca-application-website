@@ -14,7 +14,6 @@ class Profile extends Component {
     data: [],
   };
   componentDidMount() {
-    console.log("waaaaaa3");
     Events.scrollEvent.register("begin", function () {
       console.log("begin", arguments);
     });
