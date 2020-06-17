@@ -11,7 +11,7 @@ const profileInfo = (request, response) => {
 				response.send(result.rows);
 			}
 		})
-		.catch((err) => serverErr(request, response, err));
+		.catch((err) => serverErr(err, request, response));
 };
 
 module.exports = profileInfo;

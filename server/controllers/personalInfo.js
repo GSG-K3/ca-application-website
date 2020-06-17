@@ -8,7 +8,7 @@ const PersonalInfo = (request, response) => {
 		.then((result) => {
 			if (result.rowCount !== 0) response.send('yes');
 		})
-		.catch((err) => serverErr(request, response));
+		.catch((err) => serverErr(err, request, response));
 };
 
 module.exports = PersonalInfo;

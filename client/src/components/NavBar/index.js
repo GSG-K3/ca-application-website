@@ -30,9 +30,8 @@ const NavBarProfile = (props) => {
 				</Grid>
 				<Grid
 					item
-					xs={0}
+					xs={false}
 					md={6}
-					wrap
 					lg={6}
 					className={classes.menu}
 					classes={
@@ -99,8 +98,8 @@ const NavBarProfile = (props) => {
 				</Grid>
 				<Grid
 					item
-					xs={0}
-					md={matchPath.path === '/' || matchPath.path === '/home' ? 0 : 6}
+					xs={false}
+					md={matchPath.path === '/' || matchPath.path === '/home' ? false : 6}
 					classes={
 						matchPath.path === '/' || matchPath.path === '/home'
 							? { root: classes.hideMenu }
@@ -140,7 +139,14 @@ const NavBarProfile = (props) => {
 						Nicole
 					</Typography>
 				</Grid>
-				<Grid container item xs={6} md={1} lg={0} className={classes.menuBtn}>
+				<Grid
+					container
+					item
+					xs={6}
+					md={1}
+					lg={false}
+					className={classes.menuBtn}
+				>
 					<TemporaryDrawer path={matchPath} />
 				</Grid>
 			</Grid>

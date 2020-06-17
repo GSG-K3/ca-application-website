@@ -14,12 +14,14 @@ class TabsComponent extends Component {
 	state = {
 		userId: this.props.userId,
 		data: {},
+		loading: false,
 	};
 	componentDidMount() {
+		this.setState({ loading: true });
 		axios
 			.get(`/api/user/${this.state.userId}/profile`)
 			.then((data) => {
-				this.setState({ data: data.data[0] });
+				this.setState({ data: data.data[0], loading: false });
 			})
 			.catch((err) => this.props.history.push('/404'));
 	}
@@ -62,10 +64,16 @@ class TabsComponent extends Component {
 									onChangeIndex={context.handleChangeIndex}
 								>
 									<TabPanel children={'span'} value={context.value} index={0}>
-										<AcoountsInfo info={this.state.data} />
+										<AcoountsInfo
+											loading={this.state.loading}
+											info={this.state.data}
+										/>
 									</TabPanel>
 									<TabPanel children={'span'} value={context.value} index={1}>
-										<ScoresInfo info={this.state.data} />
+										<ScoresInfo
+											loading={this.state.loading}
+											info={this.state.data}
+										/>
 									</TabPanel>
 								</SwipeableViews>
 							</Fragment>

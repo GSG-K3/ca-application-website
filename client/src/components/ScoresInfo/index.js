@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Grid } from '@material-ui/core';
 
 function ScoresInfo(props) {
-	const { info } = props;
+	const { info, loading } = props;
 	return (
 		<Fragment>
 			<Grid
@@ -11,8 +11,14 @@ function ScoresInfo(props) {
 				justify="center"
 				alignItems="flex-start"
 			>
-				<Grid item>Scores :{info.freecodecamp_scores}</Grid>
-				<Grid item>CodeWars Level:{info.codewars_level}</Grid>
+				{loading ? (
+					'Please wait its loading...'
+				) : (
+					<Fragment>
+						<Grid item>Scores :{info.freecodecamp_scores}</Grid>
+						<Grid item>CodeWars Level:{info.codewars_level}</Grid>
+					</Fragment>
+				)}
 			</Grid>
 		</Fragment>
 	);
