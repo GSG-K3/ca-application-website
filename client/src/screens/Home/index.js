@@ -24,7 +24,7 @@ class Home extends Component {
 	};
 	componentDidMount() {
 		axios
-			.get('/home/support-team')
+			.get('/api/support-team')
 			.then((result) => {
 				const { data } = result;
 				this.setState({ isLoading: false, data });
