@@ -1,34 +1,18 @@
-const { verify } = require('jsonwebtoken');
+const { verify } = require("jsonwebtoken");
 const { SECRET } = process.env;
 
-const isAuthenticated = (req, res, next) => {
-	if (req.cookies) {
-		let  {token } = req.cookies; // it has to be req.cookies not req.header.cookie
-		console.log('token',token)
-		verify(token, SECRET, (error, result) => {
-			if (error) {
-				return res.status(401).json({
-					status: 'error',
-					message: 'unauthorised',
-				});
-			}
-			if (result) {
-				res.status(200).json({
-					message: ' auth successfully',
-
-				});
-				return next();
-			} else {
-				return res.json({
-					message: 'Oops! something went wrong dude :/',
-				});
-			}
-		});
-	} else {
-		return res.status(401).json({
-			status: 'fail',
-			message: 'please login to continue',
-		});
-	}
+module.exports = (req, res, next) => {
+  if (req.cookies && req.cookies.token) {
+    let { token } = req.cookies;
+    verify(token, SECRET, (error, result) => {
+      if (result) {
+        req.user_id = result.user_id;
+        return res.status(200).json({ message: "Authorized" });
+      }
+      if (error) return res.status(401).json({ message: "unauthorized" });
+      return next();
+    });
+  } return res
+    .status(401)
+    .json({message: "please login to continue.." });
 };
-module.exports= isAuthenticated
