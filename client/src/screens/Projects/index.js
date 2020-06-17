@@ -53,6 +53,7 @@ class Profile extends Component {
 									onClick={this.handleClickOpen}
 									location={location}
 									userId={this.props.match.params.userId}
+									history={this.props.history}
 								/>
 							);
 						})}

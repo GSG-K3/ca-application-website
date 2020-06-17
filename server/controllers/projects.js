@@ -1,9 +1,8 @@
 const insertUserProjects = require('../database/queries/projects');
+const { serverErr } = require('./error');
 
 const Projects = (req, res) => {
 	const user = req.body;
-	console.log(user);
-
 	if (user.firstProject !== '' && user.secondProject !== '') {
 		insertUserProjects(user)
 			.then((result) => {
@@ -11,7 +10,7 @@ const Projects = (req, res) => {
 					res.send(true);
 				}
 			})
-			.catch((err) => console.log(err));
+			.catch((err) => serverErr(req, res, err));
 	} else res.send(false);
 };
 

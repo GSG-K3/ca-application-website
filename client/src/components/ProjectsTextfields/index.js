@@ -12,17 +12,17 @@ class Textfields extends Component {
 		Submitted: false,
 	};
 	handleClick = (event) => {
+		event.preventDefault();
 		axios
-			.post('/api/user/:userId/projects', {
+			.post(`/api/user/${this.state.userId}/projects`, {
 				firstProject: this.state.firstProject,
 				secondProject: this.state.secondProject,
 				userId: this.state.userId,
 			})
-			.then((data) => {
-				if (data.data) return this.setState({ Submitted: true });
+			.then(({ data }) => {
+				if (data) return this.setState({ Submitted: true });
 			})
-			.catch();
-		event.preventDefault();
+			.catch((err) => this.props.history.push('/404'));
 	};
 	handleChange = (event) => {
 		const { name, value } = event.target;
@@ -30,7 +30,6 @@ class Textfields extends Component {
 	};
 	render() {
 		const { classes } = this.props;
-		console.log(this.props);
 
 		return (
 			<Fragment>

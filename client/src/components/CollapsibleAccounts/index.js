@@ -20,7 +20,7 @@ export default function CollapsibleAccounts(props) {
 
 	const classes = useStyles();
 
-	const { location, userId } = props;
+	const { location, userId, history } = props;
 
 	return (
 		<Fragment>
@@ -83,7 +83,11 @@ export default function CollapsibleAccounts(props) {
 									<TextFields />
 								) : null}
 								{props.id === 3 && location.includes('/projects') ? (
-									<ProjectsTextFields location={location} userId={userId} />
+									<ProjectsTextFields
+										location={location}
+										userId={userId}
+										history={history}
+									/>
 								) : null}
 								{props.body}
 							</Typography>
