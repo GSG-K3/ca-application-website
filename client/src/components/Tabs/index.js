@@ -15,6 +15,7 @@ class TabsComponent extends Component {
 		userId: this.props.userId,
 		data: {},
 		loading: false,
+		errMessage: '',
 	};
 	componentDidMount() {
 		this.setState({ loading: true });
@@ -23,7 +24,13 @@ class TabsComponent extends Component {
 			.then((data) => {
 				this.setState({ data: data.data[0], loading: false });
 			})
-			.catch((err) => this.props.history.push('/404'));
+			.catch((err) =>
+				this.setState({
+					errMessage:
+						'No such a data Please create accounts (freeCode camp, Codewars, Github) to display your information ',
+					loading: false,
+				}),
+			);
 	}
 	render() {
 		const { classes } = this.props;
@@ -64,16 +71,24 @@ class TabsComponent extends Component {
 									onChangeIndex={context.handleChangeIndex}
 								>
 									<TabPanel children={'span'} value={context.value} index={0}>
-										<AcoountsInfo
-											loading={this.state.loading}
-											info={this.state.data}
-										/>
+										{this.state.errMessage ? (
+											this.state.errMessage
+										) : (
+											<AcoountsInfo
+												loading={this.state.loading}
+												info={this.state.data}
+											/>
+										)}
 									</TabPanel>
 									<TabPanel children={'span'} value={context.value} index={1}>
-										<ScoresInfo
-											loading={this.state.loading}
-											info={this.state.data}
-										/>
+										{this.state.errMessage ? (
+											this.state.errMessage
+										) : (
+											<ScoresInfo
+												loading={this.state.loading}
+												info={this.state.data}
+											/>
+										)}
 									</TabPanel>
 								</SwipeableViews>
 							</Fragment>
