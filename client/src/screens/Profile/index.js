@@ -34,7 +34,7 @@ class Profile extends Component {
 		if (id === 1) this.props.history.push('/user/:userId/personal-info');
 		else if (id === 3) this.props.history.push('/user/:userId/accounts');
 		else if (id === 4) this.props.history.push('/user/:userId/projects');
-		else if (id === 5) this.props.history.push('/user/:userId/submitted-form');
+		else if (id === 5) this.props.history.push('/user/:userId/congratulation');
 		event.preventDefault();
 	};
 

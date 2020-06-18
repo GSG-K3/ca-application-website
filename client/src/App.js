@@ -15,6 +15,7 @@ import PersonalInfo from './screens/PersonalInfo';
 import SignUp from './screens/SignUp';
 import Accounts from './screens/Accounts';
 import Welcome from './screens/Welcome';
+import SubmitPage from './screens/SubmitPage';
 import { BeatLoader } from 'react-spinners';
 import { red } from '@material-ui/core/colors';
 
@@ -34,6 +35,11 @@ function App() {
 						path="/user/:userId/personal-info"
 						exact
 						component={PersonalInfo}
+					/>
+					<Route
+						path="/user/:userId/congratulation"
+						exact
+						component={SubmitPage}
 					/>
 					<Route component={NotFoundPage} />
 					<Redirect to="/404" />
