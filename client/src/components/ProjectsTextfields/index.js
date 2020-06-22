@@ -11,6 +11,13 @@ class Textfields extends Component {
 		userId: this.props.userId,
 		Submitted: false,
 	};
+	componentDidMount = () => {
+		if (JSON.parse(sessionStorage.getItem('submitted'))) {
+			this.setState({ Submitted: true });
+		} else {
+			this.setState({ Submitted: false });
+		}
+	};
 	handleClick = (event) => {
 		event.preventDefault();
 		axios
@@ -20,7 +27,13 @@ class Textfields extends Component {
 				userId: this.state.userId,
 			})
 			.then(({ data }) => {
-				if (data) return this.setState({ Submitted: true });
+				if (data) {
+					this.setState({ Submitted: true });
+					return sessionStorage.setItem(
+						'submitted',
+						JSON.stringify(this.state.Submitted),
+					);
+				}
 			})
 			.catch((err) => this.props.history.push('/404'));
 	};

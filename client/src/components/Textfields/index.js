@@ -11,6 +11,14 @@ class Textfields extends Component {
 		codewars: '',
 		Submitted: false,
 	};
+
+	componentDidMount = () => {
+		if (JSON.parse(sessionStorage.getItem('submitted'))) {
+			this.setState({ Submitted: true });
+		} else {
+			this.setState({ Submitted: false });
+		}
+	};
 	handleClick = (event) => {
 		axios
 			.post('/api/user/:userId/accounts', {
@@ -18,8 +26,14 @@ class Textfields extends Component {
 				freecodecamp: this.state.freecodecamp,
 				codewars: this.state.codewars,
 			})
-			.then((data) => {
-				if (data.data) return this.setState({ Submitted: true });
+			.then(({ data }) => {
+				if (data) {
+					this.setState({ Submitted: true });
+					return sessionStorage.setItem(
+						'submitted',
+						JSON.stringify(this.state.Submitted),
+					);
+				}
 			})
 			.catch();
 		event.preventDefault();
@@ -45,6 +59,7 @@ class Textfields extends Component {
 							shrink: true,
 						}}
 						variant="outlined"
+						disabled={this.state.Submitted ? true : false}
 					/>
 					<TextField
 						name="freecodecamp"
@@ -58,6 +73,7 @@ class Textfields extends Component {
 						}}
 						variant="outlined"
 						onChange={this.handleChange}
+						disabled={this.state.Submitted ? true : false}
 					/>
 					<TextField
 						name="codewars"
@@ -71,6 +87,7 @@ class Textfields extends Component {
 						}}
 						variant="outlined"
 						onChange={this.handleChange}
+						disabled={this.state.Submitted ? true : false}
 					/>
 					<Button
 						variant="contained"
