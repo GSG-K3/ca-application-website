@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class AccountInfo extends Component {
-	state = {};
-	render() {
-		return <h6>accounts links </h6>;
-	}
-}
+const AccountInfo = () => {
+	return <h6>accounts links </h6>;
+};
 
 export default AccountInfo;

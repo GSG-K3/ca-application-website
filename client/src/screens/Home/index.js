@@ -54,7 +54,7 @@ class Home extends Component {
 						</div>
 					</div>
 				) : (
-					<Fragment id="home" className={classes.body}>
+					<Fragment id="/" className={classes.body}>
 						<NavBar matchPath={this.props.match} />
 						<About />
 						<Requierments />
