@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, Component, useState, useEffect } from 'react';
 import {
 	BrowserRouter as Router,
 	Route,
@@ -17,9 +17,38 @@ import Accounts from './screens/Accounts';
 import Welcome from './screens/Welcome';
 import { BeatLoader } from 'react-spinners';
 import { red } from '@material-ui/core/colors';
+import axios from 'axios';
 
+
+const PrivateComponent = ({ component: Component, ...props }) => {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  return (
+		<Route
+			exact={true}{...props}
+			render={(innerProps) => {
+        return isLoggedIn
+        ? (<Component {...innerProps} />)
+        : (<Redirect to={{ pathname: '/login', state: { from: props.location } }}	/>);
+			}}
+		/>
+	);
+};
 function App() {
-	return (
+
+  const [isLoggedIn, setIsLoggedIn]= useState(localStorage.getItem('isLoggedIn'))
+  useEffect(async()=>{
+    try{
+      const res= await axios('/api/user/checkAuth')
+      console.log('res', res)
+      console.log('isLogged', isLoggedIn)
+      if(isLoggedIn)
+      setIsLoggedIn(localStorage.getItem('res.token'));
+    }
+    catch(error){ throw Error(error)}
+   
+  },[] )
+
+  return (
 		<Fragment>
 			<Router>
 				<Switch>

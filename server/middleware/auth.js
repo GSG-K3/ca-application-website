@@ -12,6 +12,5 @@ module.exports = (req, res, next) => {
       if (error) return res.status(401).json({ message: "unauthorized" });
       return next();
     });
-  }
-  return res.status(401).json({ message: "please login to continue.." });
+  } else return res.status(401).json({ message: "please login to continue.." });
 };
