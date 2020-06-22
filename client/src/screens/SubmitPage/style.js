@@ -2,14 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const styles = makeStyles({
 	box: {
-		paddingTop: 100,
+		paddingTop: 62,
 		border: '5px solid #4CB7A7',
 		width: '80%',
 		alignSelf: 'center',
-		height: 801,
+		height: 470,
 	},
 	image: {
-		height: 500,
+		height: 171,
+		width: 245,
 	},
 });
 
