@@ -8,6 +8,7 @@ import { animateScroll as scroll, Events } from 'react-scroll';
 import Content from '../../Content/firstPage';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import { IconButton } from '@material-ui/core';
+import axios from 'axios';
 
 class Profile extends Component {
 	state = {
@@ -21,6 +22,11 @@ class Profile extends Component {
 		Events.scrollEvent.register('end', function () {
 			console.log('end', arguments);
 		});
+		axios
+			.get('/api/user/checkAuth')
+			.then((res) => this.props.history.push('/user/:userId'))
+			.catch((error) => this.props.history.push('/login'));
+
 		return this.setState({ data: Content() });
 	}
 	updateState = () => {

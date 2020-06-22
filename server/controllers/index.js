@@ -6,14 +6,17 @@ const Login = require('./login');
 const SupportTeam = require('./supportTeam');
 const Accounts = require('./accounts');
 const PersonalInfo = require('./personalInfo');
+const IsAuthenticated = require('../middleware/auth');
+const CheckAuth = require('./checkAuth');
 const profileInfo = require('./profile');
 
 router.get('/api/success-stories', getStories);
 router.get('/home/support-team', SupportTeam);
 router.post('/api/signup', SignUp);
 router.post('/api/login', Login);
-router.post('/api/user/:userId/accounts', Accounts);
-router.post('/api/user/:userId/personal-info', PersonalInfo);
-router.get('/api/user/:userId/profile', profileInfo);
+router.get('/api/user/checkAuth', IsAuthenticated, CheckAuth);
+router.post('/api/user/:userId/accounts', IsAuthenticated, Accounts);
+router.post('/api/user/:userId/personal-info', IsAuthenticated, PersonalInfo);
+router.get('/api/user/:userId/profile', IsAuthenticated, profileInfo);
 
 module.exports = router;
