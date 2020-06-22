@@ -34,6 +34,7 @@ class TabsComponent extends Component {
 	}
 	render() {
 		const { classes } = this.props;
+		const { loading, errMessage, data, userId } = this.state;
 
 		return (
 			<Fragment>
@@ -71,23 +72,17 @@ class TabsComponent extends Component {
 									onChangeIndex={context.handleChangeIndex}
 								>
 									<TabPanel children={'span'} value={context.value} index={0}>
-										{this.state.errMessage ? (
-											this.state.errMessage
+										{errMessage ? (
+											errMessage
 										) : (
-											<AcoountsInfo
-												loading={this.state.loading}
-												info={this.state.data}
-											/>
+											<AcoountsInfo loading={loading} info={data} />
 										)}
 									</TabPanel>
 									<TabPanel children={'span'} value={context.value} index={1}>
-										{this.state.errMessage ? (
-											this.state.errMessage
+										{errMessage ? (
+											errMessage
 										) : (
-											<ScoresInfo
-												loading={this.state.loading}
-												info={this.state.data}
-											/>
+											<ScoresInfo loading={loading} info={data} />
 										)}
 									</TabPanel>
 								</SwipeableViews>
