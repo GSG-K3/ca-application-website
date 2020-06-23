@@ -14,6 +14,7 @@ import Profile from './screens/Profile';
 import PersonalInfo from './screens/PersonalInfo';
 import SignUp from './screens/SignUp';
 import Accounts from './screens/Accounts';
+import PersonalProfile from './screens/PersonalProfile';
 import Projects from './screens/Projects';
 import Welcome from './screens/Welcome';
 import { BeatLoader } from 'react-spinners';
@@ -35,6 +36,11 @@ function App() {
 						path="/user/:userId/personal-info"
 						exact
 						component={PersonalInfo}
+					/>
+					<Route
+						path="/user/:userId/profile"
+						exact
+						component={PersonalProfile}
 					/>
 					<Route path="/user/:userId/projects" exact component={Projects} />
 					<Route component={NotFoundPage} />
