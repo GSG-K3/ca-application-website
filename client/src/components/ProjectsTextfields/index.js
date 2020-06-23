@@ -12,7 +12,7 @@ class Textfields extends Component {
 		Submitted: false,
 	};
 	componentDidMount = () => {
-		if (JSON.parse(sessionStorage.getItem('submitted'))) {
+		if (JSON.parse(localStorage.getItem('submittedProjects'))) {
 			this.setState({ Submitted: true });
 		} else {
 			this.setState({ Submitted: false });
@@ -29,8 +29,8 @@ class Textfields extends Component {
 			.then(({ data }) => {
 				if (data) {
 					this.setState({ Submitted: true });
-					return sessionStorage.setItem(
-						'submitted',
+					return localStorage.setItem(
+						'submittedProjects',
 						JSON.stringify(this.state.Submitted),
 					);
 				}

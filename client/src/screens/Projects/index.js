@@ -1,7 +1,7 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import NavBar from '../../components/NavBar';
 import CollapsibleAccounts from '../../components/CollapsibleAccounts';
-import { Typography, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import style from './style';
 import { animateScroll as scroll, Events } from 'react-scroll';
@@ -21,6 +21,7 @@ class Profile extends Component {
 		Events.scrollEvent.register('end', function () {
 			console.log('end', arguments);
 		});
+
 		return this.setState({ data: Content() });
 	}
 	updateState = () => {

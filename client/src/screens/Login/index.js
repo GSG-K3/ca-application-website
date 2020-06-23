@@ -26,6 +26,7 @@ class Login extends Component {
 				{ withCredentials: true },
 			)
 			.then((data) => {
+				console.log('datahere', data);
 				let info = data.data;
 				let userId = info.user_id;
 
