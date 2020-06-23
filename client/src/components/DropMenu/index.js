@@ -17,6 +17,7 @@ import {
 import style from './style';
 import Dialog from '../Dialog';
 import axios from 'axios'
+// import { delete } from 'request';
 
 const StyledMenu = withStyles({
 	paper: {
@@ -57,9 +58,11 @@ class DropMenu extends Component {
 		if (index === 1) {
 			return this.props.history.push('/user/:userId/profile');
 		} else if (index === 3) {
-			axios.delete('/api/logout').then(res => console.log(res))
-			return this.props.history.push('/');
-		} else this.setState({ open: true });
+					axios.delete ('/api/logout')
+					.then(res => this.props.history.push('/'))
+					.catch(this.props.history.push('/404'))
+		} 
+		else this.setState({ open: true });
 		event.preventDefault();
 	};
 	render() {
