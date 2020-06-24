@@ -29,14 +29,13 @@ class Accounts extends Component {
 	};
 
 	handleClickOpen = (id) => (event) => {
-		// this.props.history.push('/');
-		// console.log(this.props, id);
 		event.preventDefault();
 	};
 
 	render() {
 		const { classes } = this.props;
 		let location = this.props.match.path;
+		const userId = this.props.match.params.userId;
 
 		return (
 			<Grid>
@@ -56,6 +55,7 @@ class Accounts extends Component {
 									id={data.id}
 									onClick={this.handleClickOpen}
 									location={location}
+									userId={userId}
 								/>
 							);
 						})}

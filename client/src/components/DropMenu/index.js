@@ -49,7 +49,6 @@ class DropMenu extends Component {
 	};
 
 	handleClose = () => {
-		console.log('here');
 		this.setState({ anchorEl: null });
 	};
 

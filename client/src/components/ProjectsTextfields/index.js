@@ -21,7 +21,7 @@ class Textfields extends Component {
 	handleClick = (event) => {
 		event.preventDefault();
 		axios
-			.post(`/api/user/${this.state.userId}/projects`, {
+			.patch(`/api/user/${this.state.userId}/projects`, {
 				firstProject: this.state.firstProject,
 				secondProject: this.state.secondProject,
 				userId: this.state.userId,

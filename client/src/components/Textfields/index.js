@@ -9,6 +9,7 @@ class Textfields extends Component {
 		github: '',
 		freecodecamp: '',
 		codewars: '',
+		userId: this.props.userId,
 		Submitted: false,
 	};
 
@@ -25,6 +26,7 @@ class Textfields extends Component {
 				github: this.state.github,
 				freecodecamp: this.state.freecodecamp,
 				codewars: this.state.codewars,
+				userId: this.state.userId,
 			})
 			.then(({ data }) => {
 				if (data) {

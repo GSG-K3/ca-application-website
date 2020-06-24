@@ -19,6 +19,6 @@ router.get('/api/user/:userId', IsAuthenticated, CheckAuth);
 router.post('/api/user/:userId/accounts', IsAuthenticated, Accounts);
 router.post('/api/user/:userId/personal-info', IsAuthenticated, PersonalInfo);
 router.get('/api/user/:userId/profile', IsAuthenticated, profileInfo);
-router.post('/api/user/:userId/projects', IsAuthenticated, Projects);
+router.patch('/api/user/:userId/projects', IsAuthenticated, Projects);
 
 module.exports = router;

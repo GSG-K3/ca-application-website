@@ -80,7 +80,7 @@ export default function CollapsibleAccounts(props) {
 									<Cards location={location} />
 								) : null}
 								{props.id === 2 && location.includes('/accounts') ? (
-									<TextFields />
+									<TextFields userId={userId} />
 								) : null}
 								{props.id === 3 && location.includes('/projects') ? (
 									<ProjectsTextFields

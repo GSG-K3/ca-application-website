@@ -19,7 +19,6 @@ export default function Collapsible(props) {
 	const classes = useStyles();
 
 	const { location } = props;
-	console.log(location);
 
 	return (
 		<Fragment>

@@ -32,7 +32,7 @@ class Home extends Component {
 
 			.catch((err) => {
 				this.setState({ isLoading: false });
-				console.log(err);
+				throw new Error(err);
 			});
 	}
 

@@ -22,10 +22,8 @@ class TabsComponent extends Component {
 		axios
 			.get(`/api/user/${this.state.userId}/profile`)
 			.then((data) => {
-				console.log(data);
-				if ({ data }) {
-					console.log('inside the if', data);
-					this.setState({ data: 'hello', loading: false });
+				if (data) {
+					return this.setState({ data: data.data[0], loading: false });
 				}
 				this.setState({
 					errMessage:
