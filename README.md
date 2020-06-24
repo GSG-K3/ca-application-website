@@ -5,12 +5,13 @@
 3. [Problem](#problem)
 4. [User Journey](#user-journey)
 5. [User Story ](#user-story)
-6. [Database Schema](#database-schema) 
+6. [Database Schema](#database-schema)
 7. [How to run the project?](#how-to-run-the-project?)
 8. [Used Technologies](#used-technologies)
 9. [Working Group](#working-group)
 
 ## Heroku Link
+
 https://ca-application-website.herokuapp.com/
 
 ## Figma Link
@@ -107,12 +108,13 @@ git clone https://github.com/GSG-K3/ca-application-website.git
 
 ## Working Group
 
-- **Team leader**
+- **Team lead**
   - [Rand](https://github.com/RandInaim)
 - **Design Support**
-  - [Haneen](https://www.behance.net/hanin_abu_rass)
-- **Project Owner**
-  - [Mohammad](https://github.com/MohammedYehia)
+  - [Karmel](https://github.com/karmelyoei)
+  - [Haneen]()
+- **Team instructor**
+  - [Mohammad](https://www.linkedin.com/in/mohammed-alhila)
 - **Team members**
   - [Banan](https://github.com/bananhaj)
   - [Duha](https://github.com/Duha96)

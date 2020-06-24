@@ -3,7 +3,8 @@ BEGIN;
     DROP TABLE IF EXISTS users, account, personal_info, expereince, education, mentors, stories
     CASCADE;
 
-DROP TYPE IF EXISTS gender
+DROP TYPE IF EXISTS 
+gender
 , age, westbank,gaza,code_exp,  interset , marketing, english_speak,english_understand, employment, gazaunis,westbankunis
 CASCADE;
 
@@ -11,9 +12,10 @@ CASCADE;
 CREATE TABLE users
 (
     user_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
+    name VARCHAR(100) ,
     email TEXT NOT NULL,
-    password TEXT NOT NULL
+    password TEXT NOT NULL,
+    CONSTRAINT unique_email UNIQUE(email)
 
 );
 
@@ -22,13 +24,13 @@ CREATE TABLE account
     id SERIAL PRIMARY KEY,
     user_id INTEGER,
     FOREIGN KEY (user_id) REFERENCES users (user_id),
-    github_link TEXT NOT NULL,
-    freecodecamp_link TEXT NOT NULL,
-    codewars_link TEXT NOT NULL,
-    freecodecamp_scores TEXT NOT NULL,
-    project1_link TEXT NOT NULL,
-    project2_link TEXT NOT NULL,
-    codewars_level TEXT NOT NULL
+    github_link TEXT,
+    freecodecamp_link TEXT ,
+    codewars_link TEXT ,
+    freecodecamp_scores TEXT ,
+    project1_link TEXT ,
+    project2_link TEXT ,
+    codewars_level TEXT
 );
 
 CREATE TYPE gender AS ENUM
@@ -53,7 +55,8 @@ CREATE TYPE gaza AS ENUM
 'Gaza City',
 'Middle Area of Gaza',
 'Khan Younis',
-'Rafah');
+'Rafah',
+'Other');
 
 CREATE TABLE personal_info
 (
