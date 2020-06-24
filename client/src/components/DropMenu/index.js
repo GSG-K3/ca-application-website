@@ -16,6 +16,7 @@ import {
 } from '@material-ui/icons';
 import style from './style';
 import Dialog from '../Dialog';
+import axios from 'axios'
 
 const StyledMenu = withStyles({
 	paper: {
@@ -56,8 +57,11 @@ class DropMenu extends Component {
 		if (index === 1) {
 			return this.props.history.push('/user/:userId/profile');
 		} else if (index === 3) {
-			return this.props.history.push('/');
-		} else this.setState({ open: true });
+					axios.delete ('/api/logout')
+					.then(res => this.props.history.push('/'))
+					.catch(this.props.history.push('/404'))
+		} 
+		else this.setState({ open: true });
 		event.preventDefault();
 	};
 	render() {
@@ -98,16 +102,15 @@ class DropMenu extends Component {
 							<HighlightOffIcon fontSize="small" />
 						</ListItemIcon>
 						<ListItemText primary="Delete Account" />
+					{this.state.open ? <Dialog /> : null}
 					</MenuItem>
 					<MenuItem
 						className={classes.StyledMenuItem}
-						onClick={(event) => this.handleMenuClick(event, 3)}
-					>
+						onClick={(event) => this.handleMenuClick(event, 3)}>
 						<ListItemIcon>
 							<ExitToAppIcon fontSize="small" />
 						</ListItemIcon>
 						<ListItemText primary="Sign Out" />
-						{this.state.open ? <Dialog /> : null}
 					</MenuItem>
 				</StyledMenu>
 			</Fragment>
