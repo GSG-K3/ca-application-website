@@ -24,6 +24,14 @@ class PersonalInfo extends Component {
 		GazaCity: '',
 	};
 
+	componentDidMount = () => {
+		const userId = this.props.match.params.userId;
+		axios
+			.get('/api/user/:userId')
+			.then((res) => this.props.history.push(`/user/${userId}/personal-info`))
+			.catch((error) => this.props.history.push('/login'));
+	};
+
 	handleNext = () => {
 		const userId = this.props.match.params;
 		axios

@@ -1,10 +1,19 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import NavBar from '../../components/NavBar';
 import { Typography, Grid } from '@material-ui/core';
 import useStyles from './style.js';
+import axios from 'axios';
 
 function SubmitPage(props) {
 	const classes = useStyles();
+
+	useEffect(() => {
+		const userId = props.match.params.userId;
+		axios
+			.get('/api/user/:userId')
+			.then((res) => props.history.push(`/user/${userId}/congratulation`))
+			.catch((error) => props.history.push('/login'));
+	}, []);
 	return (
 		<Fragment>
 			<Grid
