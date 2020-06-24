@@ -3,7 +3,6 @@ import { Grid } from '@material-ui/core';
 
 function AccountInfo(props) {
 	const { info, loading } = props;
-	console.log(props);
 	return (
 		<Fragment>
 			<Grid

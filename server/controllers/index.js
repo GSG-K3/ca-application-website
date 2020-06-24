@@ -15,7 +15,7 @@ router.get('/api/success-stories', getStories);
 router.get('/home/support-team', SupportTeam);
 router.post('/api/signup', SignUp);
 router.post('/api/login', Login);
-router.get('/api/user/checkAuth', IsAuthenticated, CheckAuth);
+router.get('/api/user/:userId', IsAuthenticated, CheckAuth);
 router.post('/api/user/:userId/accounts', IsAuthenticated, Accounts);
 router.post('/api/user/:userId/personal-info', IsAuthenticated, PersonalInfo);
 router.get('/api/user/:userId/profile', IsAuthenticated, profileInfo);

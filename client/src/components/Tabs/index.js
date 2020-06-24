@@ -23,7 +23,15 @@ class TabsComponent extends Component {
 			.get(`/api/user/${this.state.userId}/profile`)
 			.then((data) => {
 				console.log(data);
-				this.setState({ data: data.data[0], loading: false });
+				if ({ data }) {
+					console.log('inside the if', data);
+					this.setState({ data: 'hello', loading: false });
+				}
+				this.setState({
+					errMessage:
+						'No such a data Please create accounts (freeCode camp, Codewars, Github) to display your information ',
+					loading: false,
+				});
 			})
 			.catch((err) =>
 				this.setState({
