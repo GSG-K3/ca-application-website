@@ -17,8 +17,7 @@ import Accounts from './screens/Accounts';
 import PersonalProfile from './screens/PersonalProfile';
 import Projects from './screens/Projects';
 import Welcome from './screens/Welcome';
-import { BeatLoader } from 'react-spinners';
-import { red } from '@material-ui/core/colors';
+import SubmitPage from './screens/SubmitPage';
 
 function App() {
 	return (
@@ -36,6 +35,11 @@ function App() {
 						path="/user/:userId/personal-info"
 						exact
 						component={PersonalInfo}
+					/>
+					<Route
+						path="/user/:userId/congratulation"
+						exact
+						component={SubmitPage}
 					/>
 					<Route
 						path="/user/:userId/profile"

@@ -54,7 +54,7 @@ class Profile extends Component {
 		} else if (id === 4) {
 			this.props.history.push(`/user/${userId}/projects`);
 		} else if (id === 5) {
-			this.props.history.push(`/user/${userId}/submitted-form`);
+			this.props.history.push(`/user/${userId}/congratulation`);
 		}
 	};
 
