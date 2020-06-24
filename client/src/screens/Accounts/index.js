@@ -8,6 +8,7 @@ import { animateScroll as scroll, Events } from 'react-scroll';
 import Content from '../../Content/accountsPage';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import { IconButton } from '@material-ui/core';
+import axios from 'axios';
 
 class Accounts extends Component {
 	state = {
@@ -21,6 +22,11 @@ class Accounts extends Component {
 		Events.scrollEvent.register('end', function () {
 			console.log('end', arguments);
 		});
+		const userId = this.props.match.params.userId;
+		axios
+			.get('/api/user/:userId')
+			.then((res) => this.props.history.push(`/user/${userId}/accounts`))
+			.catch((error) => this.props.history.push('/login'));
 		return this.setState({ data: Content() });
 	}
 

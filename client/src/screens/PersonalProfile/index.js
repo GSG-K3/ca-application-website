@@ -5,13 +5,20 @@ import { withStyles } from '@material-ui/styles';
 import style from './style';
 import Tabs from '../../components/Tabs';
 import { ValueProvider } from './contextProvider';
+import axios from 'axios';
 
 class PersonalProfile extends Component {
 	state = {
 		value: 0,
 		userId: this.props.match.params.userId,
 	};
-
+	componentDidMount = () => {
+		const userId = this.props.match.params.userId;
+		axios
+			.get('/api/user/:userId')
+			.then((res) => this.props.history.push(`/user/${userId}/profile`))
+			.catch((error) => this.props.history.push('/login'));
+	};
 	handleChange = (event, newValue) => {
 		this.setState({ value: newValue });
 	};
