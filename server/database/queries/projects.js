@@ -3,7 +3,7 @@ const db_connection = require('../connection');
 let insertUserProjects = (user) => {
 	const sql = {
 		text:
-			'Insert INTO account (user_id, project1_link, project2_link)  VALUES($1,$2,$3);',
+			'Update account SET  project1_link =$2, project2_link = $3 Where user_id=$1',
 		values: [user.userId, user.firstProject, user.secondProject],
 	};
 	return db_connection.query(sql.text, sql.values);

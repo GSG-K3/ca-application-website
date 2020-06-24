@@ -9,11 +9,12 @@ class Textfields extends Component {
 		github: '',
 		freecodecamp: '',
 		codewars: '',
+		userId: this.props.userId,
 		Submitted: false,
 	};
 
 	componentDidMount = () => {
-		if (JSON.parse(sessionStorage.getItem('submitted'))) {
+		if (JSON.parse(localStorage.getItem('submitted'))) {
 			this.setState({ Submitted: true });
 		} else {
 			this.setState({ Submitted: false });
@@ -25,11 +26,12 @@ class Textfields extends Component {
 				github: this.state.github,
 				freecodecamp: this.state.freecodecamp,
 				codewars: this.state.codewars,
+				userId: this.state.userId,
 			})
 			.then(({ data }) => {
 				if (data) {
 					this.setState({ Submitted: true });
-					return sessionStorage.setItem(
+					return localStorage.setItem(
 						'submitted',
 						JSON.stringify(this.state.Submitted),
 					);

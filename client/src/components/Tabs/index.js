@@ -1,74 +1,102 @@
 import React, { Fragment, Component } from 'react';
-import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import { withStyles } from '@material-ui/core/styles';
 import { AppBar, Tabs, Tab, Box, Typography } from '@material-ui/core';
 import styles from './style';
 import AcoountsInfo from '../AccountInfo';
 import ScoresInfo from '../ScoresInfo';
+import axios from 'axios';
+import { ValueConsmer } from '../../screens/PersonalProfile/contextProvider';
+import TabPanel from './TabPanel';
+import a11yProps from './a11yProps';
 
-function TabPanel(props) {
-	const { children, value, index, ...other } = props;
-
-	return (
-		<div
-			role="tabpanel"
-			hidden={value !== index}
-			id={`full-width-tabpanel-${index}`}
-			aria-labelledby={`full-width-tab-${index}`}
-			{...other}
-		>
-			{value === index && (
-				<Box p={3}>
-					<Typography>{children}</Typography>
-				</Box>
-			)}
-		</div>
-	);
-}
-
-TabPanel.propTypes = {
-	children: PropTypes.node,
-	index: PropTypes.any.isRequired,
-	value: PropTypes.any.isRequired,
-};
-
-function a11yProps(index) {
-	return {
-		id: `full-width-tab-${index}`,
-		'aria-controls': `full-width-tabpanel-${index}`,
-	};
-}
 class TabsComponent extends Component {
-	state = {};
+	state = {
+		userId: this.props.userId,
+		data: {},
+		loading: false,
+		errMessage: '',
+	};
+	componentDidMount() {
+		this.setState({ loading: true });
+		axios
+			.get(`/api/user/${this.state.userId}/profile`)
+			.then((data) => {
+				if (data) {
+					return this.setState({ data: data.data[0], loading: false });
+				}
+				this.setState({
+					errMessage:
+						'No such a data Please create accounts (freeCode camp, Codewars, Github) to display your information ',
+					loading: false,
+				});
+			})
+			.catch((err) =>
+				this.setState({
+					errMessage:
+						'No such a data Please create accounts (freeCode camp, Codewars, Github) to display your information ',
+					loading: false,
+				}),
+			);
+	}
 	render() {
 		const { classes } = this.props;
+		const { loading, errMessage, data, userId } = this.state;
+
 		return (
 			<Fragment>
-				<AppBar position="static" color="default" className={classes.appbar}>
-					<Tabs
-						value={this.props.value}
-						onChange={this.props.handleChange}
-						indicatorColor="secondary"
-						textColor="#00000"
-						variant="fullWidth"
-						aria-label="full width tabs example"
-					>
-						<Tab label="Accounts" {...a11yProps(0)} className={classes.btn1} />
-						<Tab label="Scores" {...a11yProps(1)} className={classes.btn2} />
-					</Tabs>
-				</AppBar>
-				<SwipeableViews
-					index={this.props.value}
-					onChangeIndex={this.props.handleChangeIndex}
-				>
-					<TabPanel value={this.props.value} index={0}>
-						<AcoountsInfo />
-					</TabPanel>
-					<TabPanel value={this.props.value} index={1}>
-						<ScoresInfo />
-					</TabPanel>
-				</SwipeableViews>
+				<ValueConsmer>
+					{(context) => {
+						return (
+							<Fragment>
+								<AppBar
+									position="static"
+									color="default"
+									className={classes.appbar}
+								>
+									<Tabs
+										value={context.value}
+										onChange={context.handleChange}
+										indicatorColor="secondary"
+										textColor="inherit"
+										variant="fullWidth"
+										aria-label="full width tabs example"
+									>
+										<Tab
+											label="Accounts"
+											{...a11yProps(0)}
+											className={classes.btn1}
+										/>
+										<Tab
+											label="Scores"
+											{...a11yProps(1)}
+											className={classes.btn2}
+										/>
+									</Tabs>
+								</AppBar>
+								<SwipeableViews
+									index={context.value}
+									onChangeIndex={context.handleChangeIndex}
+								>
+									<TabPanel children={'span'} value={context.value} index={0}>
+										{errMessage ? (
+											errMessage
+										) : (
+											<AcoountsInfo loading={loading} info={data} />
+										)}
+									</TabPanel>
+									<TabPanel children={'span'} value={context.value} index={1}>
+										{errMessage ? (
+											errMessage
+										) : (
+											<ScoresInfo loading={loading} info={data} />
+										)}
+									</TabPanel>
+								</SwipeableViews>
+							</Fragment>
+						);
+					}}
+				</ValueConsmer>
 			</Fragment>
 		);
 	}

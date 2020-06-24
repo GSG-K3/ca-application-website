@@ -57,7 +57,6 @@ export default function SuccessStories() {
 		axios
 			.get('/api/success-stories')
 			.then((response) => {
-				console.log(response.data);
 				storyFn(response.data);
 			})
 			.catch((error) => console.log(error));

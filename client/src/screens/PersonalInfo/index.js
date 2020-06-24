@@ -25,8 +25,9 @@ class PersonalInfo extends Component {
 	};
 
 	handleNext = () => {
+		const userId = this.props.match.params;
 		axios
-			.post('/api/user/:userId/personal-info', this.state)
+			.post(`/api/user/${userId}/personal-info`, this.state)
 			.then((data) => {
 				if (data.data === 'yes')
 					this.setState((prevState) => {

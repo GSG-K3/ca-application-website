@@ -9,11 +9,14 @@ import Content from '../../Content/firstPage';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import { IconButton } from '@material-ui/core';
 import axios from 'axios';
+
 class Profile extends Component {
 	state = {
 		data: [],
 	};
+
 	componentDidMount() {
+		const userId = this.props.match.params.userId;
 		Events.scrollEvent.register('begin', function () {
 			console.log('begin', arguments);
 		});
@@ -23,7 +26,7 @@ class Profile extends Component {
 		});
 		axios
 			.get('/api/user/checkAuth')
-			.then((res) => this.props.history.push('/user/:userId'))
+			.then((res) => this.props.history.push(`/user/${userId}`))
 			.catch((error) => this.props.history.push('/login'));
 
 		return this.setState({ data: Content() });
@@ -38,11 +41,21 @@ class Profile extends Component {
 	handleClickOpen = (id) => (event) => {
 		event.preventDefault();
 		const userId = this.props.match.params.userId;
-		if (id === 1) this.props.history.push(`/user/${userId}/personal-info`);
-		else if (id === 3) this.props.history.push(`/user/${userId}/accounts`);
-		else if (id === 4) this.props.history.push(`/user/${userId}/projects`);
-		else if (id === 5)
+		if (id === 1) {
+			axios
+				.get('/api/user/checkAuth')
+				.then((data) => {
+					if (data) this.props.history.push(`/user/${userId}/personal-info`);
+					else return this.props.history.push('/login');
+				})
+				.catch((err) => console.log('error hello', err));
+		} else if (id === 3) {
+			this.props.history.push(`/user/${userId}/accounts`);
+		} else if (id === 4) {
+			this.props.history.push(`/user/${userId}/projects`);
+		} else if (id === 5) {
 			this.props.history.push(`/user/${userId}/submitted-form`);
+		}
 	};
 
 	render() {

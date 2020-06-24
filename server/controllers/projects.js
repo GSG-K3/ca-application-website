@@ -6,7 +6,7 @@ const Projects = (req, res) => {
 	if (user.firstProject !== '' && user.secondProject !== '') {
 		insertUserProjects(user)
 			.then((result) => {
-				if (result.rowCount === 1) {
+				if (result.rowCount >= 1) {
 					res.send(true);
 				}
 			})
