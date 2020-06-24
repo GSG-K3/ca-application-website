@@ -17,7 +17,6 @@ import {
 import style from './style';
 import Dialog from '../Dialog';
 import axios from 'axios'
-// import { delete } from 'request';
 
 const StyledMenu = withStyles({
 	paper: {
