@@ -1,9 +1,9 @@
-const notFound = (req,res)=>{
-  res.status(404).send("<h1> 404!!  PAGE NOT FOUND</h1>")
-}
+const notFound = (err, req, res, next) => {
+	res.status(404).json({ message: '404 PAGE NOT FOUND', err });
+};
 
-const serverErr = (req,res)=>{
-  res.status(500).send("<h1> 500!!  SERVER ERROR</h1>")
-}
+const serverErr = (err, req, res, next) => {
+	res.status(500).json({ message: '500 SERVER ERROR', err });
+};
 
-module.exports = {notFound ,serverErr}
+module.exports = { notFound, serverErr };

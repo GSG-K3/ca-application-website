@@ -7,7 +7,7 @@ class TextFieldValidation extends Component {
 	state = {};
 	render() {
 		let { onChange, error, classes } = this.props;
-		console.log(classes);
+
 		return (
 			<Fragment>
 				{error.includes(' "email" is not allowed to be empty') ? (
@@ -90,9 +90,7 @@ class TextFieldValidation extends Component {
 					>
 						email or password are incorrect!
 					</Typography>
-				) : (
-					<h6></h6>
-				)}
+				) : null}
 			</Fragment>
 		);
 	}

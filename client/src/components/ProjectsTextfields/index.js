@@ -6,39 +6,36 @@ import axios from 'axios';
 
 class Textfields extends Component {
 	state = {
-		github: '',
-		freecodecamp: '',
-		codewars: '',
+		firstProject: '',
+		secondProject: '',
 		userId: this.props.userId,
 		Submitted: false,
 	};
-
 	componentDidMount = () => {
-		if (JSON.parse(localStorage.getItem('submitted'))) {
+		if (JSON.parse(localStorage.getItem('submittedProjects'))) {
 			this.setState({ Submitted: true });
 		} else {
 			this.setState({ Submitted: false });
 		}
 	};
 	handleClick = (event) => {
+		event.preventDefault();
 		axios
-			.post('/api/user/:userId/accounts', {
-				github: this.state.github,
-				freecodecamp: this.state.freecodecamp,
-				codewars: this.state.codewars,
+			.patch(`/api/user/${this.state.userId}/projects`, {
+				firstProject: this.state.firstProject,
+				secondProject: this.state.secondProject,
 				userId: this.state.userId,
 			})
 			.then(({ data }) => {
 				if (data) {
 					this.setState({ Submitted: true });
 					return localStorage.setItem(
-						'submitted',
+						'submittedProjects',
 						JSON.stringify(this.state.Submitted),
 					);
 				}
 			})
-			.catch();
-		event.preventDefault();
+			.catch((err) => this.props.history.push('/404'));
 	};
 	handleChange = (event) => {
 		const { name, value } = event.target;
@@ -46,16 +43,17 @@ class Textfields extends Component {
 	};
 	render() {
 		const { classes } = this.props;
+
 		return (
 			<Fragment>
 				<div className={classes.container}>
 					<TextField
 						id="1"
-						name="github"
+						name="firstProject"
 						onChange={this.handleChange}
-						label="Github account"
+						label="First Project"
 						style={{ margin: 8, width: '70% ' }}
-						placeholder="https://github.com/youraccount"
+						placeholder="https://github.com/yourrepoName"
 						margin="normal"
 						InputLabelProps={{
 							shrink: true,
@@ -64,25 +62,11 @@ class Textfields extends Component {
 						disabled={this.state.Submitted ? true : false}
 					/>
 					<TextField
-						name="freecodecamp"
+						name="secondProject"
 						id="2"
 						label="freecodecamp account"
 						style={{ margin: 8, width: '70% ' }}
-						placeholder="https://www.freecodecamp.org/yourusername"
-						margin="normal"
-						InputLabelProps={{
-							shrink: true,
-						}}
-						variant="outlined"
-						onChange={this.handleChange}
-						disabled={this.state.Submitted ? true : false}
-					/>
-					<TextField
-						name="codewars"
-						id="3"
-						label="codewars account"
-						style={{ margin: 8, width: '70% ' }}
-						placeholder="https://www.codewars.com/youraccountsname"
+						placeholder="https://github.com/yourrepoName"
 						margin="normal"
 						InputLabelProps={{
 							shrink: true,

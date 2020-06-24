@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import NavBar from '../../components/NavBar';
 import CollapsibleAccounts from '../../components/CollapsibleAccounts';
-import { Typography, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import style from './style';
 import { animateScroll as scroll, Events } from 'react-scroll';
-import Content from '../../Content/accountsPage';
+import Content from '../../Content/projects';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import { IconButton } from '@material-ui/core';
 
-class Accounts extends Component {
+class Profile extends Component {
 	state = {
 		data: [],
 	};
@@ -21,9 +21,12 @@ class Accounts extends Component {
 		Events.scrollEvent.register('end', function () {
 			console.log('end', arguments);
 		});
+
 		return this.setState({ data: Content() });
 	}
-
+	updateState = () => {
+		return this.setState({ data: Content() });
+	};
 	scrollToTop = () => {
 		scroll.scrollToTop();
 	};
@@ -34,17 +37,12 @@ class Accounts extends Component {
 
 	render() {
 		const { classes } = this.props;
-		let location = this.props.match.path;
-		const userId = this.props.match.params.userId;
+		const location = this.props.match.path;
 
 		return (
 			<Grid>
 				<NavBar matchPath={this.props.match} history={this.props.history} />
 				<Grid className={classes.pageContent}>
-					<Typography color="primary" className={classes.welcome}>
-						Step three of the application
-					</Typography>
-
 					<Grid className={classes.collapseContainer}>
 						{this.state.data.map((data, index) => {
 							return (
@@ -55,7 +53,8 @@ class Accounts extends Component {
 									id={data.id}
 									onClick={this.handleClickOpen}
 									location={location}
-									userId={userId}
+									userId={this.props.match.params.userId}
+									history={this.props.history}
 								/>
 							);
 						})}
@@ -81,4 +80,4 @@ class Accounts extends Component {
 	}
 }
 
-export default withStyles(style)(Accounts);
+export default withStyles(style)(Profile);

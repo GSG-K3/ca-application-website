@@ -32,7 +32,7 @@ class Home extends Component {
 
 			.catch((err) => {
 				this.setState({ isLoading: false });
-				console.log(err);
+				throw new Error(err);
 			});
 	}
 
@@ -54,7 +54,7 @@ class Home extends Component {
 						</div>
 					</div>
 				) : (
-					<Fragment id="home" className={classes.body}>
+					<Fragment id="/" className={classes.body}>
 						<NavBar matchPath={this.props.match} />
 						<About />
 						<Requierments />
