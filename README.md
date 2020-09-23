@@ -109,6 +109,10 @@ git clone https://github.com/GSG-K3/ca-application-website.git
 
 - **Team leader**
   - [Rand](https://github.com/RandInaim)
+- **Team Leader (Refactoring)**
+ - [Duaa'](https://github.com/DuaaH)
+- **Team Reviewer**
+  - [Greg](https://github.com/leggomuhgreggo)
 - **Design Support**
   - [Haneen](https://www.behance.net/hanin_abu_rass)
 - **Project Owner**
